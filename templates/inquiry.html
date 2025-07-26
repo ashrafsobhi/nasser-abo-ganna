@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}تواصل معنا - متجر الهدايا{% endblock %}
+
+{% block content %}
+<div class="inquiry-page">
+    <div class="container">
+        <div class="inquiry-form-container">
+            <h1>تواصل معنا</h1>
+            <p class="subtitle">لديك سؤال أو استفسار؟ املأ النموذج أدناه وسنرد عليك في أقرب وقت ممكن.</p>
+            
+            <form method="POST" action="{% url 'store:inquiry' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
+                </div>
+                <div class="form-group">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                </div>
+                <div class="form-group">
+                    {{ form.subject.label_tag }}
+                    {{ form.subject }}
+                </div>
+                <div class="form-group">
+                    {{ form.message.label_tag }}
+                    {{ form.message }}
+                </div>
+                <button type="submit" class="btn btn-primary-full">إرسال الرسالة</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %} 

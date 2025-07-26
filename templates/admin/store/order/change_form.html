@@ -1,0 +1,81 @@
+{% extends "admin/change_form.html" %}
+{% load i18n static %}
+
+{% block content %}
+<style>
+    .order-details-card {
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .order-details-card h2 {
+        font-size: 1.5em;
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #333;
+        border-bottom: 2px solid #79aec8;
+        padding-bottom: 10px;
+    }
+    .details-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    .detail-item {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+    }
+    .detail-item strong {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+    }
+    .detail-item p {
+        margin: 0;
+        font-size: 1.1em;
+        color: #000;
+    }
+</style>
+
+<div class="order-details-card">
+    <h2>{% trans "تفاصيل العميل والطلب" %}</h2>
+    <div class="details-grid">
+        {% if original.customer %}
+            <div class="detail-item">
+                <strong>{% trans "الاسم الكامل" %}</strong>
+                <p>{{ original.customer.get_full_name }}</p>
+            </div>
+            <div class="detail-item">
+                <strong>{% trans "البريد الإلكتروني" %}</strong>
+                <p>{{ original.customer.get_email }}</p>
+            </div>
+        {% endif %}
+        <div class="detail-item">
+            <strong>{% trans "رقم الهاتف" %}</strong>
+            <p>{{ original.phone_number }}</p>
+        </div>
+        <div class="detail-item">
+            <strong>{% trans "عنوان الشحن" %}</strong>
+            <p>{{ original.shipping_address }}</p>
+        </div>
+        <div class="detail-item">
+            <strong>{% trans "ملاحظات" %}</strong>
+            <p>{{ original.notes|default:"-" }}</p>
+        </div>
+        <div class="detail-item">
+            <strong>{% trans "كود الخصم" %}</strong>
+            <p>{{ original.coupon.code|default:"-" }}</p>
+        </div>
+        <div class="detail-item">
+            <strong>{% trans "طريقة الدفع" %}</strong>
+            <p>{{ original.get_payment_method_display }}</p>
+        </div>
+    </div>
+</div>
+
+{{ block.super }}
+{% endblock %}

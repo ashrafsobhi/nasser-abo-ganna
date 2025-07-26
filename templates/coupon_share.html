@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "احصل على خصمك!" %} - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-7 col-md-9 col-sm-12">
+            <div class="coupon-card shadow-lg rounded-3 overflow-hidden text-center">
+                <div class="coupon-header p-4 bg-primary text-white d-flex align-items-center justify-content-center">
+                    <i class="fas fa-gift fa-3x me-3"></i>
+                    <div>
+                        <h2 class="mb-1 display-5 fw-bold">{% trans "متجر الهدايا" %}</h2>
+                        <p class="lead mb-0">{% trans "خصم" %} {{ coupon.discount }}%</p>
+                    </div>
+                </div>
+                <div class="coupon-body p-4 bg-white">
+                    <p class="lead mb-4">{% trans "استخدم هذا الكود عند الدفع للحصول على خصمك!" %}</p>
+                    <div class="coupon-code-container d-flex align-items-center justify-content-center bg-light p-3 rounded-pill mb-4">
+                        <span id="coupon-code-text" class="coupon-code-text fw-bold me-3">{{ coupon.code }}</span>
+                        <button id="copy-button" class="btn btn-outline-primary copy-btn" title="{% trans 'نسخ الكود' %}">
+                            <i class="far fa-copy me-2"></i>{% trans "نسخ الكود" %}
+                        </button>
+                    </div>
+                    <p class="text-muted small mb-0">{% trans "صالح حتى" %}: {{ coupon.valid_to|date:"d F Y" }}</p>
+                </div>
+                <div class="coupon-footer p-3 bg-light text-muted small">
+                    <p class="mb-0">{% trans "الشروط والأحكام قد تنطبق. يرجى مراجعة تفاصيل العرض." %}</p>
+                </div>
+            </div>
+            <div id="copy-feedback" class="copy-feedback mt-3 alert alert-success d-none" role="alert">
+                <i class="fas fa-check-circle me-2"></i>{% trans "تم النسخ!" %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const copyButton = document.getElementById('copy-button');
+    const couponCodeText = document.getElementById('coupon-code-text').innerText;
+    const copyFeedback = document.getElementById('copy-feedback');
+
+    copyButton.addEventListener('click', function () {
+        navigator.clipboard.writeText(couponCodeText).then(function () {
+            copyFeedback.classList.remove('d-none');
+            setTimeout(function () {
+                copyFeedback.classList.add('d-none');
+            }, 2000);
+        }, function (err) {
+            console.error('Could not copy text: ', err);
+        });
+    });
+});
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .coupon-card {
+        border: none;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .coupon-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("{% static 'images/coupon-pattern.png' %}"); /* A subtle pattern image */
+        background-size: 150px;
+        opacity: 0.05;
+        z-index: 0;
+    }
+
+    .coupon-header,
+    .coupon-body,
+    .coupon-footer {
+        position: relative;
+        z-index: 1;
+    }
+
+    .coupon-header {
+        background-color: var(--color-primary) !important;
+        padding: 30px !important;
+        border-bottom: 2px dashed rgba(255,255,255,0.3);
+    }
+
+    .coupon-header h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: white;
+    }
+
+    .coupon-header p {
+        font-size: 1.5rem;
+        color: rgba(255,255,255,0.9);
+    }
+
+    .coupon-body {
+        padding: 40px !important;
+    }
+
+    .coupon-body .lead {
+        color: var(--color-text);
+        font-weight: 500;
+    }
+
+    .coupon-code-container {
+        border: 2px dashed var(--color-primary-light);
+        padding: 15px 25px !important;
+        background-color: var(--color-bg);
+        transition: all 0.3s ease;
+    }
+
+    .coupon-code-container:hover {
+        background-color: var(--color-primary-light-alpha);
+    }
+
+    .coupon-code-text {
+        font-size: 2rem;
+        color: var(--color-primary);
+        letter-spacing: 2px;
+    }
+
+    .copy-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+        border-radius: 50px;
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+        transition: all 0.3s ease;
+    }
+
+    .copy-btn:hover {
+        background-color: var(--color-primary);
+        color: white;
+    }
+
+    .coupon-footer {
+        background-color: var(--color-light-bg) !important;
+        padding: 15px !important;
+        border-top: 1px solid var(--color-border);
+        color: var(--color-text-secondary);
+    }
+
+    .copy-feedback {
+        background-color: var(--color-success-light);
+        color: var(--color-success-dark);
+        padding: 10px 20px;
+        border-radius: var(--border-radius);
+        font-weight: bold;
+        text-align: center;
+        display: none;
+        animation: fadeInOut 2s forwards;
+    }
+
+    @keyframes fadeInOut {
+        0% { opacity: 0; transform: translateY(20px); }
+        10% { opacity: 1; transform: translateY(0); }
+        90% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(20px); }
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .coupon-header h2 {
+            font-size: 2rem;
+        }
+        .coupon-header p {
+            font-size: 1.2rem;
+        }
+        .coupon-code-text {
+            font-size: 1.5rem;
+        }
+        .copy-btn {
+            font-size: 0.9rem;
+            padding: 8px 15px;
+        }
+    }
+</style>
+{% endblock extra_css %} 

@@ -1,0 +1,241 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load store_extras %}
+
+{% block title %}تفاصيل الطلب - {{ order.id }}{% endblock %}
+
+{% block content %}
+
+<style>
+    .order-detail-page {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .order-detail-page h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+    }
+    .order-summary, .shipping-details, .items-section, .totals-section {
+        margin-bottom: 30px;
+        border: 1px solid #eee;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    .order-summary h2, .shipping-details h2, .items-section h2, .totals-section h2 {
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 10px;
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 1.4em;
+    }
+    .detail-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    .detail-grid p {
+        margin: 0;
+        padding: 5px 0;
+    }
+    .items-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .items-table th, .items-table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: right;
+    }
+    .items-table th {
+        background-color: #f8f8f8;
+    }
+    .totals-table {
+        width: 50%;
+        margin-left: auto;
+    }
+    .totals-table td {
+        padding: 8px 0;
+    }
+    .final-total {
+        font-weight: bold;
+        font-size: 1.2em;
+        border-top: 2px solid #333;
+    }
+
+    /* Order Tracking Timeline */
+    .tracking-timeline {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    .tracking-timeline::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 4px;
+        width: 100%;
+        background-color: #e0e0e0;
+        z-index: 1;
+    }
+    .tracking-timeline .timeline-step {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        flex: 1; /* Distribute space evenly */
+        padding: 0 10px; /* Add some padding */
+    }
+    .timeline-step .step-icon {
+        width: 40px; /* Slightly larger icons */
+        height: 40px;
+        border-radius: 50%;
+        background-color: #e0e0e0;
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid #e0e0e0;
+        transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+        font-size: 1.2em; /* Icon size */
+    }
+    .timeline-step .step-label {
+        margin-top: 10px;
+        font-size: 0.9em;
+        color: #777;
+    }
+
+    /* Active & Completed States */
+    .timeline-step.completed .step-icon {
+        background-color: #28a745; /* Green for completed */
+        border-color: #28a745;
+    }
+    .timeline-step.active .step-icon {
+        background-color: #007bff; /* Blue for active */
+        border-color: #007bff;
+    }
+    .timeline-step.active .step-label {
+        font-weight: bold;
+        color: #007bff;
+    }
+    .timeline-step.final-state .step-icon { /* For cancelled, returned */
+        background-color: #dc3545; /* Red */
+        border-color: #dc3545;
+    }
+    .timeline-step.final-state .step-label {
+        color: #dc3545;
+        font-weight: bold;
+    }
+</style>
+
+<div class="order-detail-page">
+    <h1>تفاصيل الطلب رقم #{{ order.id }}</h1>
+
+    <section class="tracking-section">
+        <ul class="tracking-timeline">
+            {% if order.status == 'cancelled' or order.status == 'returned' or order.status == 'cancelled_by_customer' %}
+                <li class="timeline-step final-state">
+                    <div class="step-icon"><i class="fas fa-times"></i></div>
+                    <div class="step-label">
+                        {% if order.status == 'cancelled' %}{% trans "ملغي" %}
+                        {% elif order.status == 'returned' %}{% trans "مرتجع" %}
+                        {% else %}{% trans "ملغي من قبل العميل" %}{% endif %}
+                    </div>
+                </li>
+            {% else %}
+                {% for stage in ordered_stages %}
+                    {% with forloop.counter0 as stage_index %}
+                        <li class="timeline-step {% if stage_index < current_stage_index %}completed{% elif stage_index == current_stage_index %}active{% endif %}">
+                            <div class="step-icon">
+                                {% if stage == 'address_pending' %}<i class="fas fa-map-marker-alt"></i>
+                                {% elif stage == 'confirmed' %}<i class="fas fa-check-double"></i>
+                                {% elif stage == 'processing' %}<i class="fas fa-cogs"></i>
+                                {% elif stage == 'shipped' %}<i class="fas fa-truck"></i>
+                                {% elif stage == 'delivered' %}<i class="fas fa-box"></i>
+                                {% endif %}
+                            </div>
+                            <div class="step-label">{{ order|get_stage_display:stage }}</div>
+                        </li>
+                    {% endwith %}
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </section>
+
+    <section class="order-summary">
+        <h2>ملخص الطلب</h2>
+        <div class="detail-grid">
+            <p><strong>تاريخ الطلب:</strong> {{ order.date_ordered|date:"d F Y" }}</p>
+            <p><strong>حالة الطلب:</strong> <span class="status-{{ order.status }}">{{ order.get_status_display }}</span></p>
+            <p><strong>طريقة الدفع:</strong> {{ order.get_payment_method_display }}</p>
+            <p><strong>حالة الدفع:</strong> {{ order.get_payment_status_display }}</p>
+        </div>
+    </section>
+
+    <section class="shipping-details">
+        <h2>تفاصيل الشحن</h2>
+        <div class="detail-grid">
+            <p><strong>المستلم:</strong> {{ recipient_display_name }}</p>
+            <p><strong>رقم الهاتف:</strong> {{ order.phone_number }}</p>
+            <p><strong>عنوان الشحن:</strong> {{ order.shipping_address }}</p>
+            {% if order.notes %}
+            <p><strong>ملاحظات:</strong> {{ order.notes }}</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="items-section">
+        <h2>المنتجات</h2>
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th>المنتج</th>
+                    <th>الكمية</th>
+                    <th>السعر</th>
+                    <th>الإجمالي</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in order.orderitem_set.all %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.price|floatformat:2 }} جنيه</td>
+                    <td>{{ item.get_total|floatformat:2 }} جنيه</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section class="totals-section">
+        <h2>إجمالي الفاتورة</h2>
+        <table class="totals-table">
+            <tr>
+                <td>الإجمالي الفرعي:</td>
+                <td>{{ order.total_before_discount|floatformat:2 }} جنيه</td>
+            </tr>
+            {% if order.coupon %}
+            <tr>
+                <td>الخصم ({{ order.coupon.discount }}%):</td>
+                <td>- {{ order.total_before_discount|sub:order.final_total|floatformat:2 }} جنيه</td>
+            </tr>
+            {% endif %}
+            <tr class="final-total">
+                <td>الإجمالي النهائي:</td>
+                <td>{{ order.final_total|floatformat:2 }} جنيه</td>
+            </tr>
+        </table>
+    </section>
+
+</div>
+
+{% endblock content %} 

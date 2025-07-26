@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "تعديل الملف الشخصي" %}{% endblock %}
+
+{% block extra_head %}
+<style>
+.form-control-rounded {
+    border-radius: 50rem; /* A large value to ensure rounded ends */
+    padding: 0.75rem 1.25rem;
+    text-align: right;
+}
+
+.profile-card .profile-picture-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.profile-card .profile-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.profile-card .profile-picture-wrapper:hover .profile-picture {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.profile-card .profile-picture-wrapper .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-card .profile-picture-wrapper:hover .overlay {
+    opacity: 1;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-10">
+            <div class="card shadow-sm profile-card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center border-end">
+                            <h4 class="mb-4">{% trans "الصورة الشخصية" %}</h4>
+                            <form id="picture_form" method="post" enctype="multipart/form-data" class="text-center">
+                                {% csrf_token %}
+                                <input type="hidden" name="form_type" value="picture_update">
+                                <div class="profile-picture-wrapper mb-3" onclick="document.getElementById('id_profile_picture').click();">
+                                    <img id="image_preview" src="{% if customer.profile_picture %}{{ customer.profile_picture.url }}{% else %}{% static 'images/default-avatar.png' %}{% endif %}" alt="{{ customer.name }}" class="profile-picture">
+                                    <div class="overlay">
+                                        <i class="fas fa-camera"></i>
+                                    </div>
+                                </div>
+                                <div style="display: none;">
+                                    {{ picture_form.profile_picture }}
+                                </div>
+                                <p class="text-muted small">{% trans "اضغط على الصورة لتغييرها" %}</p>
+                                <button type="submit" class="btn btn-primary btn-sm">{% trans "حفظ الصورة" %}</button>
+                                {% if picture_form.profile_picture.errors %}
+                                    <div class="alert alert-danger mt-2 p-2 small">{{ picture_form.profile_picture.errors.as_text }}</div>
+                                {% endif %}
+                            </form>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="p-3">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h4 class="text-end">{% trans "تفاصيل الحساب" %}</h4>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-6"><label class="labels">{% trans "الاسم" %}</label><h5>{{ customer.name|default:request.user.username }}</h5></div>
+                                    <div class="col-md-6"><label class="labels">{% trans "البريد الإلكتروني" %}</label><p class="text-muted">{{ customer.email }}</p></div>
+                                </div>
+                                <hr>
+                                <!-- Edit Profile Form -->
+                                <p class="font-weight-bold">{% trans "تعديل البيانات" %}</p>
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="form_type" value="profile_update">
+                                    <div class="row mt-3">
+                                        <div class="col-md-12 mb-3"><label class="labels">{% trans "الاسم الكامل" %}</label>{{ profile_form.name }}</div>
+                                        <div class="col-md-12 mb-3"><label class="labels">{% trans "البريد الإلكتروني" %}</label>{{ profile_form.email }}</div>
+                                    </div>
+                                    <div class="mt-3 text-center"><button class="btn btn-primary" type="submit">{% trans "حفظ التغييرات" %}</button></div>
+                                </form>
+                                <hr>
+                                <!-- Change Phone Number Form -->
+                                <p class="font-weight-bold">{% trans "تغيير رقم الهاتف" %}</p>
+                                <p>{% trans "رقمك الحالي:" %} <strong>{{ customer.phone_number|default:'غير محدد' }}</strong></p>
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="form_type" value="phone_change_request">
+                                    <div class="col-md-12 mb-3">
+                                        <label class="labels">{{ phone_form.phone_number.label }}</label>
+                                        {{ phone_form.phone_number }}
+                                        {% if phone_form.phone_number.errors %}
+                                            <div class="invalid-feedback d-block">{{ phone_form.phone_number.errors.as_text }}</div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="mt-3 text-center"><button class="btn btn-primary" type="submit">{% trans "تغيير الرقم" %}</button></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const fileInput = document.getElementById('id_profile_picture');
+    const imagePreview = document.getElementById('image_preview');
+    const pictureForm = document.getElementById('picture_form');
+
+    if (fileInput) {
+        fileInput.addEventListener('change', function(event) {
+            if (event.target.files && event.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                }
+                reader.readAsDataURL(event.target.files[0]);
+
+                // Optional: Automatically submit the form upon file selection
+                // pictureForm.submit();
+            }
+        });
+    }
+});
+</script>
+{% endblock %} 

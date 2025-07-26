@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "الإشعارات" %}{% endblock %}
+
+{% block content %}
+<style>
+    .notifications-page {
+        padding: 60px 0;
+        background-color: #f8f9fa;
+    }
+    .notifications-container {
+        max-width: 800px;
+        margin: auto;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        padding: 40px;
+    }
+    .notifications-header h1 {
+        font-size: 2.5em;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: #333;
+    }
+    .notification-list {
+        list-style: none;
+        padding: 0;
+    }
+    .notification-item {
+        border-bottom: 1px solid #e9ecef;
+        padding: 20px 0;
+    }
+    .notification-item:last-child {
+        border-bottom: none;
+    }
+    .notification-title {
+        font-weight: 600;
+        font-size: 1.2em;
+        color: #343a40;
+        margin-bottom: 5px;
+    }
+    .notification-message {
+        color: #6c757d;
+        line-height: 1.6;
+    }
+    .notification-date {
+        font-size: 0.9em;
+        color: #adb5bd;
+        margin-top: 10px;
+    }
+    .no-notifications {
+        text-align: center;
+        padding: 50px;
+        font-size: 1.2em;
+        color: #777;
+    }
+    .no-notifications i {
+        font-size: 3em;
+        display: block;
+        margin-bottom: 20px;
+        color: #ced4da;
+    }
+</style>
+
+<div class="notifications-page">
+    <div class="notifications-container">
+        <div class="notifications-header">
+            <h1>{% trans "الإشعارات" %}</h1>
+        </div>
+        <ul class="notification-list">
+            {% for notification in notifications %}
+                <li class="notification-item">
+                    <p class="notification-title">{{ notification.title }}</p>
+                    <p class="notification-message">{{ notification.message|linebreaksbr }}</p>
+                    <p class="notification-date">{{ notification.created_at|timesince }} {% trans "ago" %}</p>
+                </li>
+            {% empty %}
+                <li class="no-notifications">
+                    <i class="fas fa-bell-slash"></i>
+                    <p>{% trans "لا توجد إشعارات لعرضها حالياً." %}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %} 

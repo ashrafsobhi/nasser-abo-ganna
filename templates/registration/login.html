@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "تسجيل الدخول" %}{% endblock %}
+
+{% block content %}
+<style>
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        padding: 2rem 0;
+    }
+    .login-card {
+        max-width: 480px;
+        width: 100%;
+        border: none;
+        border-radius: 1rem;
+        box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    .login-card-header {
+        background: linear-gradient(135deg, #5664d4, #2a359a);
+        color: white;
+        padding: 2.5rem;
+        text-align: center;
+    }
+    .login-card-header h2 {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    .login-card-body {
+        padding: 2.5rem;
+        background-color: #ffffff;
+    }
+    .form-control-lg {
+        border-radius: 0.5rem;
+        padding: 0.8rem 1rem;
+    }
+    .btn-lg {
+        border-radius: 0.5rem;
+        padding: 0.8rem 1.5rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    .btn-primary {
+        background-color: #5664d4;
+        border-color: #5664d4;
+    }
+    .btn-primary:hover {
+        background-color: #4451b4;
+        border-color: #4451b4;
+    }
+    .divider-text {
+        position: relative;
+        text-align: center;
+        margin: 1.5rem 0;
+        color: #6c757d;
+        font-weight: 500;
+    }
+    .divider-text::before, .divider-text::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 40%;
+        height: 1px;
+        background-color: #dee2e6;
+    }
+    .divider-text::before {
+        left: 0;
+    }
+    .divider-text::after {
+        right: 0;
+    }
+    .btn-google {
+        background-color: #ffffff;
+        color: #495057;
+        border: 1px solid #dee2e6;
+    }
+    .btn-google:hover {
+        background-color: #f8f9fa;
+        color: #212529;
+    }
+    .form-label {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+</style>
+
+<div class="container login-container">
+    <div class="card login-card">
+        <div class="login-card-header">
+            <h2>{% trans "مرحباً بعودتك!" %}</h2>
+            <p class="mb-0">{% trans "سجل الدخول للمتابعة إلى حسابك" %}</p>
+        </div>
+        <div class="card-body login-card-body">
+            
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger text-center p-2" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger text-center p-2" role="alert">
+                    {% for error in form.non_field_errors %}
+                        <p class="mb-0">{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <form method="post" action="{% url 'store:login' %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="{{ form.login_identifier.id_for_label }}" class="form-label">{{ form.login_identifier.label }}</label>
+                    {{ form.login_identifier }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.password.id_for_label }}" class="form-label">{{ form.password.label }}</label>
+                    {{ form.password }}
+                </div>
+                <div class="d-flex justify-content-end mb-4">
+                    <a href="{% url 'store:password_reset' %}" class="text-primary fw-bold"><small>{% trans "هل نسيت كلمة المرور؟" %}</small></a>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">{% trans "تسجيل الدخول" %}</button>
+                </div>
+            </form>
+
+            <div class="divider-text">{% trans "أو" %}</div>
+
+            <div class="d-grid">
+                 <a href="#" class="btn btn-lg btn-google">
+                    <img src="https://img.icons8.com/color/16/000000/google-logo.png" class="me-2" alt="Google"> {% trans "المتابعة باستخدام جوجل" %}
+                </a>
+            </div>
+
+            <div class="mt-4 text-center">
+                <p class="text-muted">{% trans "ليس لديك حساب؟" %} <a href="{% url 'store:register' %}" class="text-primary fw-bold">{% trans "أنشئ حسابًا" %}</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

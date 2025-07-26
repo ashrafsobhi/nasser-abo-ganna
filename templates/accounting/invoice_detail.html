@@ -1,0 +1,151 @@
+{% extends 'accounting/base_accounting.html' %}
+{% load i18n %}
+{% load store_extras %}
+
+{% block title %}{{ title }} - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h3 class="mb-4 text-center">{{ title }} - #{{ invoice.pk }}</h3>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <a href="{% url 'accounting:invoice_list' %}" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> {% trans "العودة إلى الفواتير" %}
+        </a>
+        <div>
+            <a href="{% url 'accounting:invoice_thermal_print_view' invoice.uuid %}" class="btn btn-info" target="_blank">
+                <i class="fas fa-print"></i> {% trans "طباعة حرارية" %}
+            </a>
+            <button type="button" class="btn btn-primary" id="shareInvoiceButton">
+                <i class="fas fa-share-alt"></i> {% trans "مشاركة الفاتورة" %}
+            </button>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-light">{% trans "تفاصيل العميل" %}</div>
+        <div class="card-body">
+            <p><strong>{% trans "الاسم الكامل" %}:</strong> {{ invoice.customer_name }}</p>
+            <p><strong>{% trans "رقم الهاتف" %}:</strong> {{ invoice.customer_phone }}</p>
+            {% if invoice.customer_email %}<p><strong>{% trans "البريد الإلكتروني" %}:</strong> {{ invoice.customer_email }}</p>{% endif %}
+            {% if invoice.customer_address %}<p><strong>{% trans "العنوان" %}:</strong> {{ invoice.customer_address }}</p>{% endif %}
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-light">{% trans "المنتجات/الخدمات" %}</div>
+        <div class="card-body">
+            {% if invoice_items %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>{% trans "المنتج" %}</th>
+                            <th>{% trans "الكمية" %}</th>
+                            <th>{% trans "سعر الوحدة" %}</th>
+                            <th>{% trans "الإجمالي" %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in invoice_items %}
+                        <tr>
+                            <td>{{ item.description }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.unit_price|floatformat:2 }}</td>
+                            <td>{{ item.subtotal|floatformat:2 }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p>{% trans "لا توجد منتجات/خدمات في هذه الفاتورة." %}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-light">{% trans "ملخص الفاتورة" %}</div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong>{% trans "إجمالي المبلغ (قبل الضريبة والخصم)" %}:</strong>
+                    <span>{{ invoice.total_amount|floatformat:2 }} ريال</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong>{% trans "نسبة الضريبة" %} ({{ invoice.tax_rate|floatformat:2 }}%):</strong>
+                    <span>
+                        {% with tax_amount=invoice.total_amount|multiply:invoice.tax_rate|divide:100 %}
+                            {{ tax_amount|floatformat:2 }} ريال
+                        {% endwith %}
+                    </span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong>{% trans "الخصم اليدوي" %}:</strong>
+                    <span>{{ invoice.discount_amount|floatformat:2 }} ريال</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center bg-light">
+                    <h5 class="mb-0"><strong>{% trans "الإجمالي النهائي" %}:</strong></h5>
+                    <h5 class="mb-0">{{ invoice.final_total|floatformat:2 }} ريال</h5>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-light">{% trans "معلومات الدفع وملاحظات" %}</div>
+        <div class="card-body">
+            <p><strong>{% trans "طريقة الدفع" %}:</strong> {{ invoice.get_payment_method_display }}</p>
+            <p><strong>{% trans "حالة الدفع" %}:</strong> 
+                {% if invoice.is_paid %}
+                    <span class="badge bg-success">{% trans "تم الدفع" %}</span>
+                {% else %}
+                    <span class="badge bg-warning text-dark">{% trans "معلق" %}</span>
+                {% endif %}
+            </p>
+            {% if invoice.internal_notes %}<p><strong>{% trans "ملاحظات داخلية" %}:</strong> {{ invoice.internal_notes }}</p>{% endif %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const shareInvoiceButton = document.getElementById('shareInvoiceButton');
+        if (shareInvoiceButton) {
+            shareInvoiceButton.addEventListener('click', function() {
+                const invoiceShareUrl = '{% url "accounting:invoice_detail" invoice.uuid %}'; 
+                
+                // Use the Web Share API if available
+                if (navigator.share) {
+                    navigator.share({
+                        title: '{% trans "فاتورة من متجر الهدايا" %} #{{ invoice.pk }}',
+                        text: '{% trans "يرجى مراجعة فاتورتك" %}: {{ invoice.customer_name }}',
+                        url: invoiceShareUrl,
+                    }).then(() => {
+                        console.log('Thanks for sharing!');
+                    }).catch(console.error);
+                } else {
+                    // Fallback for browsers that do not support Web Share API
+                    navigator.clipboard.writeText(invoiceShareUrl).then(function() {
+                        alert('{% trans "تم نسخ رابط الفاتورة إلى الحافظة!" %}');
+                    }).catch(function() {
+                        alert('{% trans "فشل نسخ الرابط. يرجى النسخ يدوياً:" %}\n' + invoiceShareUrl);
+                    });
+                }
+            });
+        }
+    });
+</script>
+{% endblock js %} 

@@ -1,0 +1,1636 @@
+INFO 2025-07-24 16:49:19,816 autoreload 3412 3356 Watching for file changes with StatReloader
+INFO 2025-07-24 16:49:28,208 autoreload 3412 3356 C:\Users\cybha\Desktop\nasser 7mad\store\whatsapp_service.py changed, reloading.
+INFO 2025-07-24 16:49:29,627 autoreload 16652 20352 Watching for file changes with StatReloader
+INFO 2025-07-24 16:49:40,015 autoreload 16652 20352 C:\Users\cybha\Desktop\nasser 7mad\store\whatsapp_service.py changed, reloading.
+INFO 2025-07-24 16:49:41,479 autoreload 22936 13460 Watching for file changes with StatReloader
+INFO 2025-07-24 16:49:57,107 runserver 22936 8072 [mHTTP GET /cart/ 200 [0.05, 127.0.0.1:50485][0m
+INFO 2025-07-24 16:49:57,150 runserver 22936 8072 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:50485][0m
+INFO 2025-07-24 16:49:57,153 runserver 22936 8072 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:50487][0m
+INFO 2025-07-24 16:49:57,163 runserver 22936 8072 [mHTTP GET /media/site/logo-3.png 200 [0.02, 127.0.0.1:50486][0m
+WARNING 2025-07-24 16:49:57,172 log 22936 14176 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 16:49:57,174 runserver 22936 8072 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:50488][0m
+INFO 2025-07-24 16:49:57,701 runserver 22936 8072 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50489]
+INFO 2025-07-24 16:49:57,749 runserver 22936 8072 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50489]
+INFO 2025-07-24 16:49:58,594 runserver 22936 8072 [mHTTP GET /store/ 200 [0.02, 127.0.0.1:50488][0m
+INFO 2025-07-24 16:49:58,646 runserver 22936 8072 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50489]
+WARNING 2025-07-24 16:49:58,660 log 22936 14176 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2025-07-24 16:49:58,664 runserver 22936 8072 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:50486][0m
+WARNING 2025-07-24 16:49:58,665 runserver 22936 8072 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.04, 127.0.0.1:50488][0m
+INFO 2025-07-24 16:49:58,671 runserver 22936 8072 [mHTTP GET /static/js/main.js 200 [0.02, 127.0.0.1:50485][0m
+INFO 2025-07-24 16:49:58,684 runserver 22936 8072 [mHTTP GET /media/site/logo-3.png 200 [0.03, 127.0.0.1:50487][0m
+INFO 2025-07-24 16:49:58,866 runserver 22936 8072 [mHTTP GET /media/products/2025/07/24/profile.png 200 [0.01, 127.0.0.1:50487][0m
+INFO 2025-07-24 16:49:58,904 runserver 22936 8072 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50492]
+INFO 2025-07-24 16:49:58,913 runserver 22936 8072 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50492]
+INFO 2025-07-24 16:50:01,344 runserver 22936 8072 [mHTTP POST /add_to_cart/ 200 [1.41, 127.0.0.1:50487][0m
+INFO 2025-07-24 16:50:01,440 runserver 22936 8072 [mHTTP GET /store/ 200 [0.08, 127.0.0.1:50487][0m
+INFO 2025-07-24 16:50:01,459 runserver 22936 8072 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50492]
+INFO 2025-07-24 16:50:01,519 runserver 22936 8072 [mHTTP GET /static/css/style.css 200 [0.02, 127.0.0.1:50485][0m
+INFO 2025-07-24 16:50:01,528 runserver 22936 8072 [mHTTP GET /static/js/main.js 200 [0.02, 127.0.0.1:50488][0m
+INFO 2025-07-24 16:50:01,564 runserver 22936 8072 [mHTTP GET /media/site/logo-3.png 200 [0.06, 127.0.0.1:50486][0m
+WARNING 2025-07-24 16:50:01,568 log 22936 14176 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 16:50:01,573 runserver 22936 8072 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.08, 127.0.0.1:50487][0m
+INFO 2025-07-24 16:50:01,705 runserver 22936 8072 [mHTTP GET /media/products/2025/07/24/profile.png 200 [0.02, 127.0.0.1:50487][0m
+INFO 2025-07-24 16:50:01,721 runserver 22936 8072 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50496]
+INFO 2025-07-24 16:50:01,735 runserver 22936 8072 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50496]
+INFO 2025-07-24 16:50:04,328 runserver 22936 8072 [mHTTP POST /add_to_cart/ 200 [1.46, 127.0.0.1:50487][0m
+INFO 2025-07-24 16:50:04,408 runserver 22936 8072 [mHTTP GET /store/ 200 [0.07, 127.0.0.1:50487][0m
+INFO 2025-07-24 16:50:04,418 runserver 22936 8072 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50496]
+INFO 2025-07-24 16:50:04,471 runserver 22936 8072 [mHTTP GET /static/css/style.css 200 [0.02, 127.0.0.1:50486][0m
+INFO 2025-07-24 16:50:04,493 runserver 22936 8072 [mHTTP GET /static/js/main.js 200 [0.03, 127.0.0.1:50485][0m
+WARNING 2025-07-24 16:50:04,504 log 22936 3296 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 16:50:04,506 runserver 22936 8072 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.05, 127.0.0.1:50487][0m
+INFO 2025-07-24 16:50:04,510 runserver 22936 8072 [mHTTP GET /media/site/logo-3.png 200 [0.05, 127.0.0.1:50488][0m
+INFO 2025-07-24 16:50:04,885 runserver 22936 8072 [mHTTP GET /media/products/2025/07/24/profile.png 200 [0.01, 127.0.0.1:50488][0m
+INFO 2025-07-24 16:50:04,891 runserver 22936 8072 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50501]
+INFO 2025-07-24 16:50:04,914 runserver 22936 8072 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50501]
+INFO 2025-07-24 16:50:06,030 runserver 22936 8072 [mHTTP GET /cart/ 200 [0.04, 127.0.0.1:50488][0m
+INFO 2025-07-24 16:50:06,075 runserver 22936 8072 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50501]
+INFO 2025-07-24 16:50:06,141 runserver 22936 8072 [mHTTP GET /static/css/style.css 200 [0.04, 127.0.0.1:50487][0m
+INFO 2025-07-24 16:50:06,146 runserver 22936 8072 [mHTTP GET /static/js/main.js 200 [0.03, 127.0.0.1:50504][0m
+WARNING 2025-07-24 16:50:06,159 log 22936 3296 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 16:50:06,163 runserver 22936 8072 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.10, 127.0.0.1:50488][0m
+INFO 2025-07-24 16:50:06,191 runserver 22936 8072 [mHTTP GET /media/site/logo-3.png 200 [0.09, 127.0.0.1:50485][0m
+INFO 2025-07-24 16:50:06,200 runserver 22936 8072 [mHTTP GET /media/products/2025/07/24/profile.png 200 [0.10, 127.0.0.1:50486][0m
+INFO 2025-07-24 16:50:06,309 runserver 22936 8072 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50505]
+INFO 2025-07-24 16:50:06,320 runserver 22936 8072 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50505]
+INFO 2025-07-24 16:50:07,382 runserver 22936 8072 [mHTTP GET /checkout/ 200 [0.04, 127.0.0.1:50486][0m
+INFO 2025-07-24 16:50:07,427 runserver 22936 8072 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50505]
+INFO 2025-07-24 16:50:07,475 runserver 22936 8072 [mHTTP GET /static/css/style.css 200 [0.05, 127.0.0.1:50485][0m
+INFO 2025-07-24 16:50:07,486 runserver 22936 8072 [mHTTP GET /static/js/main.js 200 [0.05, 127.0.0.1:50504][0m
+WARNING 2025-07-24 16:50:07,498 log 22936 14176 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 16:50:07,501 runserver 22936 8072 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.09, 127.0.0.1:50486][0m
+INFO 2025-07-24 16:50:07,521 runserver 22936 8072 [mHTTP GET /media/site/logo-3.png 200 [0.09, 127.0.0.1:50488][0m
+INFO 2025-07-24 16:50:07,636 runserver 22936 8072 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50507]
+INFO 2025-07-24 16:50:07,645 runserver 22936 8072 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50507]
+DEBUG 2025-07-24 16:50:14,054 whatsapp_service 22936 22024 Inside send_order_confirmation_whatsapp for Order ID: 11
+INFO 2025-07-24 16:50:14,088 runserver 22936 8072 [32mHTTP POST /checkout/ 302 [1.14, 127.0.0.1:50488][0m
+INFO 2025-07-24 16:50:14,255 runserver 22936 8072 [mHTTP GET /account/ 200 [0.15, 127.0.0.1:50488][0m
+INFO 2025-07-24 16:50:14,314 runserver 22936 8072 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50507]
+INFO 2025-07-24 16:50:14,350 runserver 22936 8072 [mHTTP GET /static/css/style.css 200 [0.02, 127.0.0.1:50486][0m
+WARNING 2025-07-24 16:50:14,353 log 22936 3296 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2025-07-24 16:50:14,356 runserver 22936 8072 [mHTTP GET /static/js/main.js 200 [0.03, 127.0.0.1:50487][0m
+WARNING 2025-07-24 16:50:14,357 runserver 22936 8072 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.06, 127.0.0.1:50488][0m
+INFO 2025-07-24 16:50:14,392 runserver 22936 8072 [mHTTP GET /media/site/logo-3.png 200 [0.06, 127.0.0.1:50504][0m
+INFO 2025-07-24 16:50:14,396 runserver 22936 8072 [mHTTP GET /media/profile_pics/profile.png 200 [0.07, 127.0.0.1:50485][0m
+INFO 2025-07-24 16:50:14,804 runserver 22936 8072 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50513]
+INFO 2025-07-24 16:50:14,815 runserver 22936 8072 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50513]
+INFO 2025-07-24 16:50:14,832 runserver 22936 8072 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50515]
+INFO 2025-07-24 16:50:14,854 runserver 22936 8072 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50515]
+INFO 2025-07-24 16:51:05,097 autoreload 22356 18736 Watching for file changes with StatReloader
+INFO 2025-07-24 16:51:08,353 runserver 22356 22388 [mHTTP GET /cart/ 200 [0.07, 127.0.0.1:50569][0m
+INFO 2025-07-24 16:51:08,396 runserver 22356 22388 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:50569][0m
+INFO 2025-07-24 16:51:08,399 runserver 22356 22388 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:50573][0m
+INFO 2025-07-24 16:51:08,407 runserver 22356 22388 [mHTTP GET /media/site/logo-3.png 200 [0.02, 127.0.0.1:50570][0m
+WARNING 2025-07-24 16:51:08,417 log 22356 17120 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 16:51:08,418 runserver 22356 22388 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:50572][0m
+INFO 2025-07-24 16:51:09,021 runserver 22356 22388 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50574]
+INFO 2025-07-24 16:51:09,086 runserver 22356 22388 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50574]
+INFO 2025-07-24 16:51:10,064 runserver 22356 22388 [mHTTP GET /store/ 200 [0.05, 127.0.0.1:50572][0m
+INFO 2025-07-24 16:51:10,124 runserver 22356 22388 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50574]
+INFO 2025-07-24 16:51:10,166 runserver 22356 22388 [mHTTP GET /static/js/main.js 200 [0.03, 127.0.0.1:50569][0m
+INFO 2025-07-24 16:51:10,169 runserver 22356 22388 [mHTTP GET /static/css/style.css 200 [0.04, 127.0.0.1:50570][0m
+WARNING 2025-07-24 16:51:10,175 log 22356 17120 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 16:51:10,177 runserver 22356 22388 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.06, 127.0.0.1:50572][0m
+INFO 2025-07-24 16:51:10,185 runserver 22356 22388 [mHTTP GET /media/site/logo-3.png 200 [0.05, 127.0.0.1:50573][0m
+INFO 2025-07-24 16:51:10,345 runserver 22356 22388 [mHTTP GET /media/products/2025/07/24/profile.png 200 [0.01, 127.0.0.1:50573][0m
+INFO 2025-07-24 16:51:10,364 runserver 22356 22388 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50578]
+INFO 2025-07-24 16:51:10,379 runserver 22356 22388 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50578]
+INFO 2025-07-24 16:51:13,019 runserver 22356 22388 [mHTTP POST /add_to_cart/ 200 [1.49, 127.0.0.1:50573][0m
+INFO 2025-07-24 16:51:13,088 runserver 22356 22388 [mHTTP GET /store/ 200 [0.06, 127.0.0.1:50573][0m
+INFO 2025-07-24 16:51:13,101 runserver 22356 22388 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50578]
+INFO 2025-07-24 16:51:13,140 runserver 22356 22388 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:50573][0m
+INFO 2025-07-24 16:51:13,151 runserver 22356 22388 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:50569][0m
+INFO 2025-07-24 16:51:13,200 runserver 22356 22388 [mHTTP GET /media/site/logo-3.png 200 [0.07, 127.0.0.1:50572][0m
+WARNING 2025-07-24 16:51:13,202 log 22356 22988 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 16:51:13,204 runserver 22356 22388 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.07, 127.0.0.1:50570][0m
+INFO 2025-07-24 16:51:13,302 runserver 22356 22388 [mHTTP GET /media/products/2025/07/24/profile.png 200 [0.01, 127.0.0.1:50570][0m
+INFO 2025-07-24 16:51:13,331 runserver 22356 22388 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50581]
+INFO 2025-07-24 16:51:13,349 runserver 22356 22388 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50581]
+INFO 2025-07-24 16:51:14,149 runserver 22356 22388 [mHTTP GET /cart/ 200 [0.04, 127.0.0.1:50570][0m
+INFO 2025-07-24 16:51:14,215 runserver 22356 22388 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50581]
+INFO 2025-07-24 16:51:14,247 runserver 22356 22388 [mHTTP GET /static/css/style.css 200 [0.03, 127.0.0.1:50572][0m
+INFO 2025-07-24 16:51:14,264 runserver 22356 22388 [mHTTP GET /static/js/main.js 200 [0.03, 127.0.0.1:50584][0m
+WARNING 2025-07-24 16:51:14,278 log 22356 23440 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 16:51:14,282 runserver 22356 22388 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.08, 127.0.0.1:50570][0m
+INFO 2025-07-24 16:51:14,298 runserver 22356 22388 [mHTTP GET /media/site/logo-3.png 200 [0.08, 127.0.0.1:50569][0m
+INFO 2025-07-24 16:51:14,299 runserver 22356 22388 [mHTTP GET /media/products/2025/07/24/profile.png 200 [0.08, 127.0.0.1:50573][0m
+INFO 2025-07-24 16:51:14,465 runserver 22356 22388 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50585]
+INFO 2025-07-24 16:51:14,479 runserver 22356 22388 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50585]
+INFO 2025-07-24 16:51:15,462 runserver 22356 22388 [mHTTP GET /checkout/ 200 [0.05, 127.0.0.1:50573][0m
+INFO 2025-07-24 16:51:15,494 runserver 22356 22388 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50585]
+INFO 2025-07-24 16:51:15,523 runserver 22356 22388 [mHTTP GET /static/css/style.css 200 [0.02, 127.0.0.1:50569][0m
+INFO 2025-07-24 16:51:15,528 runserver 22356 22388 [mHTTP GET /static/js/main.js 200 [0.02, 127.0.0.1:50584][0m
+WARNING 2025-07-24 16:51:15,530 log 22356 22988 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 16:51:15,533 runserver 22356 22388 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.04, 127.0.0.1:50573][0m
+INFO 2025-07-24 16:51:15,585 runserver 22356 22388 [mHTTP GET /media/site/logo-3.png 200 [0.08, 127.0.0.1:50570][0m
+INFO 2025-07-24 16:51:15,753 runserver 22356 22388 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50588]
+INFO 2025-07-24 16:51:15,763 runserver 22356 22388 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50588]
+DEBUG 2025-07-24 16:51:22,291 whatsapp_service 22356 14108 Inside send_order_confirmation_whatsapp for Order ID: 12
+INFO 2025-07-24 16:51:22,336 runserver 22356 22388 [32mHTTP POST /checkout/ 302 [1.21, 127.0.0.1:50570][0m
+INFO 2025-07-24 16:51:22,564 runserver 22356 22388 [mHTTP GET /account/ 200 [0.21, 127.0.0.1:50570][0m
+INFO 2025-07-24 16:51:22,627 runserver 22356 22388 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50588]
+INFO 2025-07-24 16:51:22,658 runserver 22356 22388 [mHTTP GET /static/js/main.js 200 [0.02, 127.0.0.1:50572][0m
+WARNING 2025-07-24 16:51:22,659 log 22356 17120 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2025-07-24 16:51:22,664 runserver 22356 22388 [mHTTP GET /static/css/style.css 200 [0.03, 127.0.0.1:50573][0m
+WARNING 2025-07-24 16:51:22,667 runserver 22356 22388 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.06, 127.0.0.1:50570][0m
+INFO 2025-07-24 16:51:22,683 runserver 22356 22388 [mHTTP GET /media/site/logo-3.png 200 [0.05, 127.0.0.1:50584][0m
+INFO 2025-07-24 16:51:22,686 runserver 22356 22388 [mHTTP GET /media/profile_pics/profile.png 200 [0.05, 127.0.0.1:50569][0m
+INFO 2025-07-24 16:51:22,940 runserver 22356 22388 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50594]
+INFO 2025-07-24 16:51:22,960 runserver 22356 22388 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50594]
+INFO 2025-07-24 16:51:22,976 runserver 22356 22388 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50596]
+INFO 2025-07-24 16:51:22,995 runserver 22356 22388 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50596]
+INFO 2025-07-24 16:55:06,117 autoreload 20000 24860 Watching for file changes with StatReloader
+INFO 2025-07-24 16:55:13,945 runserver 20000 2740 [mHTTP GET /cart/ 200 [0.16, 127.0.0.1:50789][0m
+INFO 2025-07-24 16:55:14,013 runserver 20000 2740 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:50790][0m
+INFO 2025-07-24 16:55:14,016 runserver 20000 2740 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:50792][0m
+WARNING 2025-07-24 16:55:14,046 log 20000 20640 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2025-07-24 16:55:14,048 runserver 20000 2740 [mHTTP GET /media/site/logo-3.png 200 [0.05, 127.0.0.1:50791][0m
+WARNING 2025-07-24 16:55:14,049 runserver 20000 2740 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.06, 127.0.0.1:50789][0m
+INFO 2025-07-24 16:55:14,579 runserver 20000 2740 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50796]
+INFO 2025-07-24 16:55:14,755 runserver 20000 2740 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50796]
+INFO 2025-07-24 16:55:15,366 runserver 20000 2740 [mHTTP GET /store/ 200 [0.05, 127.0.0.1:50791][0m
+INFO 2025-07-24 16:55:15,421 runserver 20000 2740 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50796]
+INFO 2025-07-24 16:55:15,458 runserver 20000 2740 [mHTTP GET /static/js/main.js 200 [0.03, 127.0.0.1:50790][0m
+INFO 2025-07-24 16:55:15,459 runserver 20000 2740 [mHTTP GET /static/css/style.css 200 [0.03, 127.0.0.1:50789][0m
+WARNING 2025-07-24 16:55:15,462 log 20000 10408 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 16:55:15,464 runserver 20000 2740 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.06, 127.0.0.1:50791][0m
+INFO 2025-07-24 16:55:15,482 runserver 20000 2740 [mHTTP GET /media/site/logo-3.png 200 [0.05, 127.0.0.1:50792][0m
+INFO 2025-07-24 16:55:15,654 runserver 20000 2740 [mHTTP GET /media/products/2025/07/24/profile.png 200 [0.01, 127.0.0.1:50792][0m
+INFO 2025-07-24 16:55:15,658 runserver 20000 2740 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50799]
+INFO 2025-07-24 16:55:15,671 runserver 20000 2740 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50799]
+INFO 2025-07-24 16:55:18,453 runserver 20000 2740 [mHTTP POST /add_to_cart/ 200 [1.68, 127.0.0.1:50792][0m
+INFO 2025-07-24 16:55:18,554 runserver 20000 2740 [mHTTP GET /store/ 200 [0.09, 127.0.0.1:50792][0m
+INFO 2025-07-24 16:55:18,572 runserver 20000 2740 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50799]
+INFO 2025-07-24 16:55:18,652 runserver 20000 2740 [mHTTP GET /static/css/style.css 200 [0.04, 127.0.0.1:50791][0m
+INFO 2025-07-24 16:55:18,655 runserver 20000 2740 [mHTTP GET /static/js/main.js 200 [0.03, 127.0.0.1:50790][0m
+WARNING 2025-07-24 16:55:18,665 log 20000 10408 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 16:55:18,667 runserver 20000 2740 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.07, 127.0.0.1:50792][0m
+INFO 2025-07-24 16:55:18,675 runserver 20000 2740 [mHTTP GET /media/site/logo-3.png 200 [0.06, 127.0.0.1:50789][0m
+INFO 2025-07-24 16:55:18,952 runserver 20000 2740 [mHTTP GET /media/products/2025/07/24/profile.png 200 [0.00, 127.0.0.1:50789][0m
+INFO 2025-07-24 16:55:18,978 runserver 20000 2740 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50805]
+INFO 2025-07-24 16:55:19,015 runserver 20000 2740 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50805]
+INFO 2025-07-24 16:55:19,731 runserver 20000 2740 [mHTTP GET /cart/ 200 [0.04, 127.0.0.1:50789][0m
+INFO 2025-07-24 16:55:19,778 runserver 20000 2740 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50805]
+INFO 2025-07-24 16:55:19,815 runserver 20000 2740 [mHTTP GET /static/css/style.css 200 [0.03, 127.0.0.1:50792][0m
+INFO 2025-07-24 16:55:19,820 runserver 20000 2740 [mHTTP GET /static/js/main.js 200 [0.02, 127.0.0.1:50807][0m
+WARNING 2025-07-24 16:55:19,822 log 20000 10408 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 16:55:19,828 runserver 20000 2740 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.06, 127.0.0.1:50789][0m
+INFO 2025-07-24 16:55:19,860 runserver 20000 2740 [mHTTP GET /media/site/logo-3.png 200 [0.08, 127.0.0.1:50790][0m
+INFO 2025-07-24 16:55:19,865 runserver 20000 2740 [mHTTP GET /media/products/2025/07/24/profile.png 200 [0.08, 127.0.0.1:50791][0m
+INFO 2025-07-24 16:55:19,953 runserver 20000 2740 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50808]
+INFO 2025-07-24 16:55:19,963 runserver 20000 2740 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50808]
+INFO 2025-07-24 16:55:21,835 runserver 20000 2740 [mHTTP GET /checkout/ 200 [0.04, 127.0.0.1:50791][0m
+INFO 2025-07-24 16:55:21,870 runserver 20000 2740 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50808]
+INFO 2025-07-24 16:55:21,899 runserver 20000 2740 [mHTTP GET /static/css/style.css 200 [0.03, 127.0.0.1:50790][0m
+INFO 2025-07-24 16:55:21,905 runserver 20000 2740 [mHTTP GET /static/js/main.js 200 [0.03, 127.0.0.1:50807][0m
+WARNING 2025-07-24 16:55:21,913 log 20000 10408 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 16:55:21,916 runserver 20000 2740 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.05, 127.0.0.1:50791][0m
+INFO 2025-07-24 16:55:21,933 runserver 20000 2740 [mHTTP GET /media/site/logo-3.png 200 [0.06, 127.0.0.1:50789][0m
+INFO 2025-07-24 16:55:22,108 runserver 20000 2740 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50811]
+INFO 2025-07-24 16:55:22,119 runserver 20000 2740 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50811]
+DEBUG 2025-07-24 16:55:28,867 whatsapp_service 20000 14880 Inside send_order_confirmation_whatsapp for Order ID: 13
+INFO 2025-07-24 16:55:28,895 runserver 20000 2740 [32mHTTP POST /checkout/ 302 [1.09, 127.0.0.1:50789][0m
+INFO 2025-07-24 16:55:29,127 runserver 20000 2740 [mHTTP GET /account/ 200 [0.22, 127.0.0.1:50789][0m
+INFO 2025-07-24 16:55:29,193 runserver 20000 2740 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:50811]
+INFO 2025-07-24 16:55:29,215 runserver 20000 2740 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:50791][0m
+INFO 2025-07-24 16:55:29,217 runserver 20000 2740 [mHTTP GET /static/js/main.js 200 [0.02, 127.0.0.1:50792][0m
+WARNING 2025-07-24 16:55:29,222 log 20000 10408 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 16:55:29,224 runserver 20000 2740 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.05, 127.0.0.1:50789][0m
+INFO 2025-07-24 16:55:29,240 runserver 20000 2740 [mHTTP GET /media/site/logo-3.png 200 [0.04, 127.0.0.1:50807][0m
+INFO 2025-07-24 16:55:29,244 runserver 20000 2740 [mHTTP GET /media/profile_pics/profile.png 200 [0.04, 127.0.0.1:50790][0m
+INFO 2025-07-24 16:55:29,559 runserver 20000 2740 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50817]
+INFO 2025-07-24 16:55:29,587 runserver 20000 2740 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50817]
+INFO 2025-07-24 16:55:29,604 runserver 20000 2740 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:50819]
+INFO 2025-07-24 16:55:29,619 runserver 20000 2740 WebSocket CONNECT /ws/notifications/ [127.0.0.1:50819]
+INFO 2025-07-24 16:59:07,599 autoreload 20000 24860 C:\Users\cybha\Desktop\nasser 7mad\store\models.py changed, reloading.
+INFO 2025-07-24 16:59:09,275 autoreload 25396 3100 Watching for file changes with StatReloader
+INFO 2025-07-24 17:03:07,162 autoreload 11732 14744 Watching for file changes with StatReloader
+INFO 2025-07-24 17:03:11,523 runserver 11732 19352 [32mHTTP GET /admin/store/product/ 302 [0.03, 127.0.0.1:51172][0m
+INFO 2025-07-24 17:03:11,572 runserver 11732 19352 [mHTTP GET /admin/login/?next=/admin/store/product/ 200 [0.04, 127.0.0.1:51172][0m
+INFO 2025-07-24 17:03:11,611 runserver 11732 19352 [36mHTTP GET /static/admin/css/base.css 304 [0.01, 127.0.0.1:51172][0m
+INFO 2025-07-24 17:03:11,612 runserver 11732 19352 [36mHTTP GET /static/jet/css/vendor.css?v=1.3.10 304 [0.01, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:03:11,612 runserver 11732 19352 [36mHTTP GET /static/jet/css/icons/style.css?v=1.3.10 304 [0.01, 127.0.0.1:51175][0m
+INFO 2025-07-24 17:03:11,613 runserver 11732 19352 [36mHTTP GET /static/jet/css/themes/default/base.css?v=1.3.10 304 [0.01, 127.0.0.1:51176][0m
+INFO 2025-07-24 17:03:11,615 runserver 11732 19352 [36mHTTP GET /static/jet/css/themes/default/select2.theme.css?v=1.3.10 304 [0.01, 127.0.0.1:51177][0m
+INFO 2025-07-24 17:03:11,615 runserver 11732 19352 [36mHTTP GET /static/jet/css/themes/default/jquery-ui.theme.css?v=1.3.10 304 [0.01, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:03:11,620 runserver 11732 19352 [36mHTTP GET /static/admin/css/login.css 304 [0.01, 127.0.0.1:51172][0m
+INFO 2025-07-24 17:03:11,622 runserver 11732 19352 [36mHTTP GET /static/admin/js/vendor/jquery/jquery.min.js 304 [0.01, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:03:11,623 runserver 11732 19352 [36mHTTP GET /static/admin/js/jquery.init.js 304 [0.01, 127.0.0.1:51175][0m
+INFO 2025-07-24 17:03:11,624 runserver 11732 19352 [36mHTTP GET /static/jet/js/build/bundle.min.js?v=1.3.10 304 [0.01, 127.0.0.1:51177][0m
+INFO 2025-07-24 17:03:11,625 runserver 11732 19352 [36mHTTP GET /static/jet/js/i18n/select2/en.js?v=1.3.10 304 [0.01, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:03:11,633 runserver 11732 19352 [mHTTP GET /jet/jsi18n/ 200 [0.02, 127.0.0.1:51176][0m
+INFO 2025-07-24 17:03:11,694 runserver 11732 19352 [36mHTTP GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s 304 [0.01, 127.0.0.1:51176][0m
+INFO 2025-07-24 17:03:19,081 runserver 11732 19352 [32mHTTP POST /admin/login/?next=/admin/store/product/ 302 [0.82, 127.0.0.1:51176][0m
+INFO 2025-07-24 17:03:19,323 runserver 11732 19352 [mHTTP GET /admin/store/product/ 200 [0.24, 127.0.0.1:51176][0m
+INFO 2025-07-24 17:03:19,375 runserver 11732 19352 [36mHTTP GET /static/admin/css/changelists.css 304 [0.02, 127.0.0.1:51176][0m
+INFO 2025-07-24 17:03:19,377 runserver 11732 19352 [36mHTTP GET /static/admin/css/forms.css 304 [0.02, 127.0.0.1:51177][0m
+INFO 2025-07-24 17:03:19,379 runserver 11732 19352 [36mHTTP GET /static/admin/js/vendor/jquery/jquery.js 304 [0.02, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:03:19,381 runserver 11732 19352 [36mHTTP GET /static/admin/js/core.js 304 [0.02, 127.0.0.1:51172][0m
+INFO 2025-07-24 17:03:19,408 runserver 11732 19352 [36mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 304 [0.02, 127.0.0.1:51176][0m
+INFO 2025-07-24 17:03:19,413 runserver 11732 19352 [36mHTTP GET /static/admin/js/actions.js 304 [0.02, 127.0.0.1:51177][0m
+INFO 2025-07-24 17:03:19,416 runserver 11732 19352 [36mHTTP GET /static/admin/js/prepopulate.js 304 [0.02, 127.0.0.1:51172][0m
+INFO 2025-07-24 17:03:19,419 runserver 11732 19352 [36mHTTP GET /static/admin/js/urlify.js 304 [0.03, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:03:19,448 runserver 11732 19352 [36mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 304 [0.02, 127.0.0.1:51176][0m
+INFO 2025-07-24 17:03:19,459 runserver 11732 19352 [mHTTP GET /jet/jsi18n/ 200 [0.10, 127.0.0.1:51175][0m
+INFO 2025-07-24 17:03:19,467 runserver 11732 19352 [36mHTTP GET /static/admin/img/search.svg 304 [0.02, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:03:19,472 runserver 11732 19352 [mHTTP GET /admin/jsi18n/ 200 [0.11, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:03:19,485 runserver 11732 19352 [36mHTTP GET /static/admin/js/filters.js 304 [0.01, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:03:25,536 runserver 11732 19352 [mHTTP GET /admin/store/product/add/ 200 [0.09, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:03:25,569 runserver 11732 19352 [36mHTTP GET /static/admin/js/prepopulate_init.js 304 [0.01, 127.0.0.1:51175][0m
+INFO 2025-07-24 17:03:25,588 runserver 11732 19352 [mHTTP GET /jet/jsi18n/ 200 [0.03, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:03:25,601 runserver 11732 19352 [36mHTTP GET /static/admin/img/icon-changelink.svg 304 [0.01, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:03:25,609 runserver 11732 19352 [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:03:25,628 runserver 11732 19352 [36mHTTP GET /static/admin/img/icon-addlink.svg 304 [0.02, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:03:25,630 runserver 11732 19352 [36mHTTP GET /static/admin/img/icon-viewlink.svg 304 [0.01, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:03:25,640 runserver 11732 19352 [36mHTTP GET /static/admin/js/change_form.js 304 [0.01, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:03:28,751 runserver 11732 19352 [mHTTP GET /admin/store/category/add/?_to_field=id&_popup=1 200 [0.02, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:03:38,085 runserver 11732 19352 [mHTTP GET /admin/store/category/ 200 [0.06, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:03:38,158 runserver 11732 19352 [mHTTP GET /jet/jsi18n/ 200 [0.03, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:03:38,168 runserver 11732 19352 [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:03:39,578 runserver 11732 19352 [mHTTP GET /admin/store/category/add/ 200 [0.05, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:03:39,641 runserver 11732 19352 [mHTTP GET /jet/jsi18n/ 200 [0.04, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:03:39,654 runserver 11732 19352 [mHTTP GET /admin/jsi18n/ 200 [0.06, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:04:05,334 runserver 11732 19352 [32mHTTP POST /admin/store/category/add/ 302 [0.03, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:04:05,479 runserver 11732 19352 [mHTTP GET /admin/store/category/ 200 [0.14, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:04:05,536 runserver 11732 19352 [mHTTP GET /jet/jsi18n/ 200 [0.03, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:04:05,543 runserver 11732 19352 [mHTTP GET /admin/jsi18n/ 200 [0.04, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:04:10,462 runserver 11732 19352 [mHTTP GET /admin/store/product/ 200 [0.06, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:04:10,521 runserver 11732 19352 [mHTTP GET /jet/jsi18n/ 200 [0.03, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:04:10,532 runserver 11732 19352 [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:04:12,150 runserver 11732 19352 [mHTTP GET /admin/store/product/add/ 200 [0.07, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:04:12,218 runserver 11732 19352 [mHTTP GET /jet/jsi18n/ 200 [0.05, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:04:12,236 runserver 11732 19352 [mHTTP GET /admin/jsi18n/ 200 [0.07, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:04:51,569 runserver 11732 19352 [mHTTP POST /admin/store/product/add/ 200 [0.11, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:04:51,638 runserver 11732 19352 [mHTTP GET /jet/jsi18n/ 200 [0.05, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:04:51,658 runserver 11732 19352 [mHTTP GET /admin/jsi18n/ 200 [0.07, 127.0.0.1:51173][0m
+WARNING 2025-07-24 17:04:51,688 log 11732 19596 Not Found: /media/profile.png
+WARNING 2025-07-24 17:04:51,693 runserver 11732 19352 [33mHTTP GET /media/profile.png 404 [0.11, 127.0.0.1:51238][0m
+INFO 2025-07-24 17:05:02,698 runserver 11732 19352 [32mHTTP POST /admin/store/product/add/ 302 [0.08, 127.0.0.1:51238][0m
+INFO 2025-07-24 17:05:02,847 runserver 11732 19352 [mHTTP GET /admin/store/product/ 200 [0.14, 127.0.0.1:51238][0m
+INFO 2025-07-24 17:05:02,910 runserver 11732 19352 [mHTTP GET /jet/jsi18n/ 200 [0.04, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:05:02,924 runserver 11732 19352 [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:05:02,930 runserver 11732 19352 [mHTTP GET /media/products/2025/07/24/profile_vjE4trk.png 200 [0.06, 127.0.0.1:51238][0m
+INFO 2025-07-24 17:05:06,701 runserver 11732 19352 [mHTTP GET /admin/store/ 200 [0.09, 127.0.0.1:51238][0m
+INFO 2025-07-24 17:05:06,719 runserver 11732 19352 [36mHTTP GET /static/admin/css/dashboard.css 304 [0.00, 127.0.0.1:51238][0m
+INFO 2025-07-24 17:05:06,729 runserver 11732 19352 [mHTTP GET /jet/jsi18n/ 200 [0.01, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:05:09,400 runserver 11732 19352 [mHTTP GET /admin/store/siteconfiguration/ 200 [0.06, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:05:09,465 runserver 11732 19352 [mHTTP GET /jet/jsi18n/ 200 [0.04, 127.0.0.1:51238][0m
+INFO 2025-07-24 17:05:09,471 runserver 11732 19352 [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:05:11,187 runserver 11732 19352 [mHTTP GET /admin/store/siteconfiguration/add/ 200 [0.06, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:05:11,245 runserver 11732 19352 [mHTTP GET /jet/jsi18n/ 200 [0.04, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:05:11,257 runserver 11732 19352 [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:51238][0m
+INFO 2025-07-24 17:05:25,082 runserver 11732 19352 [mHTTP POST /admin/store/siteconfiguration/add/ 200 [0.13, 127.0.0.1:51238][0m
+INFO 2025-07-24 17:05:25,123 runserver 11732 19352 [mHTTP GET /jet/jsi18n/ 200 [0.03, 127.0.0.1:51238][0m
+INFO 2025-07-24 17:05:25,140 runserver 11732 19352 [mHTTP GET /admin/jsi18n/ 200 [0.04, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:05:48,683 runserver 11732 19352 [32mHTTP POST /admin/store/siteconfiguration/add/ 302 [0.28, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:05:48,840 runserver 11732 19352 [mHTTP GET /admin/store/siteconfiguration/ 200 [0.15, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:05:48,916 runserver 11732 19352 [mHTTP GET /jet/jsi18n/ 200 [0.04, 127.0.0.1:51238][0m
+INFO 2025-07-24 17:05:48,922 runserver 11732 19352 [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:51173][0m
+WARNING 2025-07-24 17:05:52,930 log 11732 23112 Not Found: /account/
+WARNING 2025-07-24 17:05:52,932 runserver 11732 19352 [33mHTTP GET /account/ 404 [0.03, 127.0.0.1:51173][0m
+WARNING 2025-07-24 17:05:53,020 log 11732 13980 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:05:53,022 runserver 11732 19352 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.05, 127.0.0.1:51173][0m
+ERROR 2025-07-24 17:05:57,620 log 11732 20920 Internal Server Error: /checkout/
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\store\views.py", line 215, in checkout
+    customer = request.user.customer
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 525, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+django.contrib.auth.models.User.customer.RelatedObjectDoesNotExist: User has no customer.
+ERROR 2025-07-24 17:05:57,638 runserver 11732 19352 [35;1mHTTP GET /checkout/ 500 [0.08, 127.0.0.1:51173][0m
+WARNING 2025-07-24 17:05:57,724 log 11732 13980 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:05:57,728 runserver 11732 19352 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.05, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:06:01,292 runserver 11732 19352 [mHTTP GET / 200 [0.05, 127.0.0.1:51173][0m
+INFO 2025-07-24 17:06:01,382 runserver 11732 19352 [mHTTP GET /static/css/style.css 200 [0.05, 127.0.0.1:51238][0m
+INFO 2025-07-24 17:06:01,387 runserver 11732 19352 [mHTTP GET /static/js/main.js 200 [0.03, 127.0.0.1:51275][0m
+WARNING 2025-07-24 17:06:01,412 log 11732 13980 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:06:01,422 runserver 11732 19352 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.11, 127.0.0.1:51173][0m
+WARNING 2025-07-24 17:06:01,427 runserver 11732 19352 [33mHTTP GET /static/images/placeholder_banner.jpg 404 [0.07, 127.0.0.1:51276][0m
+WARNING 2025-07-24 17:06:01,433 runserver 11732 19352 [33mHTTP GET /static/images/placeholder_cat.jpg 404 [0.09, 127.0.0.1:51274][0m
+INFO 2025-07-24 17:06:01,476 runserver 11732 19352 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.14, 127.0.0.1:51178][0m
+WARNING 2025-07-24 17:06:01,958 runserver 11732 19352 [33mHTTP GET /static/images/placeholder_about.jpg 404 [0.01, 127.0.0.1:51274][0m
+INFO 2025-07-24 17:06:01,961 runserver 11732 19352 [mHTTP GET /media/products/2025/07/24/profile_vjE4trk.png 200 [0.01, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:06:01,982 runserver 11732 19352 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:51279]
+INFO 2025-07-24 17:06:02,163 runserver 11732 19352 WebSocket CONNECT /ws/notifications/ [127.0.0.1:51279]
+WARNING 2025-07-24 17:06:11,094 log 11732 20920 Not Found: /account/
+WARNING 2025-07-24 17:06:11,096 runserver 11732 19352 [33mHTTP GET /account/ 404 [0.03, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:06:11,146 runserver 11732 19352 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:51279]
+WARNING 2025-07-24 17:06:11,188 log 11732 13980 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:06:11,190 runserver 11732 19352 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.06, 127.0.0.1:51178][0m
+INFO 2025-07-24 17:06:46,073 autoreload 11732 14744 C:\Users\cybha\Desktop\nasser 7mad\store\views.py changed, reloading.
+INFO 2025-07-24 17:06:47,643 autoreload 12724 13532 Watching for file changes with StatReloader
+ERROR 2025-07-24 17:06:55,608 log 12724 4812 Internal Server Error: /account/
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\store\views.py", line 471, in account_view
+    user_form = UserProfileForm(instance=request.user) # Assuming UserProfileForm exists
+                ^^^^^^^^^^^^^^^
+NameError: name 'UserProfileForm' is not defined. Did you mean: 'CustomerProfileForm'?
+ERROR 2025-07-24 17:06:55,613 runserver 12724 24640 [35;1mHTTP GET /account/ 500 [0.05, 127.0.0.1:51330][0m
+WARNING 2025-07-24 17:06:55,637 log 12724 4812 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:06:55,638 runserver 12724 24640 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.01, 127.0.0.1:51330][0m
+INFO 2025-07-24 17:07:21,839 autoreload 12724 13532 C:\Users\cybha\Desktop\nasser 7mad\store\forms.py changed, reloading.
+INFO 2025-07-24 17:07:23,218 autoreload 23088 3356 Watching for file changes with StatReloader
+INFO 2025-07-24 17:07:49,184 autoreload 23088 3356 C:\Users\cybha\Desktop\nasser 7mad\store\views.py changed, reloading.
+INFO 2025-07-24 17:07:50,550 autoreload 5356 9580 Watching for file changes with StatReloader
+ERROR 2025-07-24 17:17:23,592 log 5356 25300 Internal Server Error: /account/
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\store\views.py", line 471, in account_view
+    user_form = UserProfileForm(instance=request.user)
+                ^^^^^^^^^^^^^^^
+NameError: name 'UserProfileForm' is not defined. Did you mean: 'CustomerProfileForm'?
+ERROR 2025-07-24 17:17:23,597 runserver 5356 22416 [35;1mHTTP GET /account/ 500 [0.04, 127.0.0.1:51703][0m
+WARNING 2025-07-24 17:17:23,634 log 5356 25300 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:17:23,635 runserver 5356 22416 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.02, 127.0.0.1:51703][0m
+INFO 2025-07-24 17:17:50,552 autoreload 5356 9580 C:\Users\cybha\Desktop\nasser 7mad\store\views.py changed, reloading.
+INFO 2025-07-24 17:17:52,274 autoreload 3936 15560 Watching for file changes with StatReloader
+ERROR 2025-07-24 17:18:02,397 log 3936 24732 Internal Server Error: /account/
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\store\views.py", line 473, in account_view
+    address_form = AddressForm(customer=customer)
+TypeError: BaseModelForm.__init__() got an unexpected keyword argument 'customer'
+ERROR 2025-07-24 17:18:02,413 runserver 3936 11836 [35;1mHTTP GET /account/ 500 [0.18, 127.0.0.1:51743][0m
+WARNING 2025-07-24 17:18:02,458 log 3936 24732 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:18:02,459 runserver 3936 11836 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:51743][0m
+INFO 2025-07-24 17:20:02,409 autoreload 3936 15560 C:\Users\cybha\Desktop\nasser 7mad\store\views.py changed, reloading.
+INFO 2025-07-24 17:20:03,906 autoreload 24820 9960 Watching for file changes with StatReloader
+INFO 2025-07-24 17:20:51,674 runserver 24820 16820 [mHTTP GET /account/ 200 [0.58, 127.0.0.1:51933][0m
+INFO 2025-07-24 17:20:51,716 runserver 24820 16820 [mHTTP GET /static/css/style.css 200 [0.02, 127.0.0.1:51934][0m
+WARNING 2025-07-24 17:20:51,724 log 24820 17972 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:20:51,725 runserver 24820 16820 [33mHTTP GET /static/images/default-avatar.png 404 [0.02, 127.0.0.1:51936][0m
+WARNING 2025-07-24 17:20:51,727 runserver 24820 16820 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.04, 127.0.0.1:51933][0m
+INFO 2025-07-24 17:20:51,729 runserver 24820 16820 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:20:51,735 runserver 24820 16820 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.03, 127.0.0.1:51935][0m
+WARNING 2025-07-24 17:20:52,166 runserver 24820 16820 [33mHTTP GET /static/images/default-avatar.png 404 [0.00, 127.0.0.1:51935][0m
+INFO 2025-07-24 17:20:52,259 runserver 24820 16820 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:51938]
+INFO 2025-07-24 17:20:52,315 runserver 24820 16820 WebSocket CONNECT /ws/notifications/ [127.0.0.1:51938]
+INFO 2025-07-24 17:20:52,327 runserver 24820 16820 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:51941]
+INFO 2025-07-24 17:20:52,332 runserver 24820 16820 WebSocket CONNECT /ws/notifications/ [127.0.0.1:51941]
+INFO 2025-07-24 17:20:55,099 runserver 24820 16820 [mHTTP GET /cart/ 200 [0.06, 127.0.0.1:51935][0m
+INFO 2025-07-24 17:20:55,140 runserver 24820 16820 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:51938]
+INFO 2025-07-24 17:20:55,141 runserver 24820 16820 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:51941]
+INFO 2025-07-24 17:20:55,177 runserver 24820 16820 [mHTTP GET /static/css/style.css 200 [0.03, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:20:55,181 runserver 24820 16820 [mHTTP GET /static/js/main.js 200 [0.02, 127.0.0.1:51936][0m
+WARNING 2025-07-24 17:20:55,184 log 24820 17972 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:20:55,187 runserver 24820 16820 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.05, 127.0.0.1:51935][0m
+INFO 2025-07-24 17:20:55,196 runserver 24820 16820 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.04, 127.0.0.1:51933][0m
+INFO 2025-07-24 17:20:55,412 runserver 24820 16820 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:51946]
+INFO 2025-07-24 17:20:55,435 runserver 24820 16820 WebSocket CONNECT /ws/notifications/ [127.0.0.1:51946]
+INFO 2025-07-24 17:20:56,656 runserver 24820 16820 [mHTTP GET /store/ 200 [0.04, 127.0.0.1:51933][0m
+INFO 2025-07-24 17:20:56,695 runserver 24820 16820 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:51946]
+INFO 2025-07-24 17:20:56,745 runserver 24820 16820 [mHTTP GET /static/css/style.css 200 [0.04, 127.0.0.1:51935][0m
+INFO 2025-07-24 17:20:56,751 runserver 24820 16820 [mHTTP GET /static/js/main.js 200 [0.05, 127.0.0.1:51937][0m
+WARNING 2025-07-24 17:20:56,766 log 24820 17972 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:20:56,771 runserver 24820 16820 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.09, 127.0.0.1:51933][0m
+INFO 2025-07-24 17:20:56,794 runserver 24820 16820 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.09, 127.0.0.1:51936][0m
+INFO 2025-07-24 17:20:56,918 runserver 24820 16820 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:51948]
+INFO 2025-07-24 17:20:56,921 runserver 24820 16820 [mHTTP GET /media/products/2025/07/24/profile_vjE4trk.png 200 [0.02, 127.0.0.1:51936][0m
+INFO 2025-07-24 17:20:56,931 runserver 24820 16820 WebSocket CONNECT /ws/notifications/ [127.0.0.1:51948]
+INFO 2025-07-24 17:21:00,218 runserver 24820 16820 [mHTTP POST /add_to_cart/ 200 [2.10, 127.0.0.1:51936][0m
+INFO 2025-07-24 17:21:00,320 runserver 24820 16820 [mHTTP GET /store/ 200 [0.09, 127.0.0.1:51936][0m
+INFO 2025-07-24 17:21:00,348 runserver 24820 16820 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:51948]
+INFO 2025-07-24 17:21:00,424 runserver 24820 16820 [mHTTP GET /static/js/main.js 200 [0.02, 127.0.0.1:51935][0m
+INFO 2025-07-24 17:21:00,425 runserver 24820 16820 [mHTTP GET /static/css/style.css 200 [0.03, 127.0.0.1:51933][0m
+WARNING 2025-07-24 17:21:00,427 log 24820 23096 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:21:00,429 runserver 24820 16820 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.05, 127.0.0.1:51936][0m
+INFO 2025-07-24 17:21:00,439 runserver 24820 16820 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.05, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:21:00,557 runserver 24820 16820 [mHTTP GET /media/products/2025/07/24/profile_vjE4trk.png 200 [0.02, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:21:00,572 runserver 24820 16820 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:51953]
+INFO 2025-07-24 17:21:00,590 runserver 24820 16820 WebSocket CONNECT /ws/notifications/ [127.0.0.1:51953]
+INFO 2025-07-24 17:21:01,531 runserver 24820 16820 [mHTTP GET /cart/ 200 [0.04, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:21:01,589 runserver 24820 16820 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:51953]
+INFO 2025-07-24 17:21:01,685 runserver 24820 16820 [mHTTP GET /static/css/style.css 200 [0.09, 127.0.0.1:51936][0m
+INFO 2025-07-24 17:21:01,688 runserver 24820 16820 [mHTTP GET /static/js/main.js 200 [0.03, 127.0.0.1:51934][0m
+WARNING 2025-07-24 17:21:01,693 log 24820 23096 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:21:01,696 runserver 24820 16820 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.12, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:21:01,720 runserver 24820 16820 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.12, 127.0.0.1:51933][0m
+INFO 2025-07-24 17:21:01,724 runserver 24820 16820 [mHTTP GET /media/products/2025/07/24/profile_vjE4trk.png 200 [0.12, 127.0.0.1:51935][0m
+INFO 2025-07-24 17:21:01,797 runserver 24820 16820 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:51955]
+INFO 2025-07-24 17:21:01,809 runserver 24820 16820 WebSocket CONNECT /ws/notifications/ [127.0.0.1:51955]
+INFO 2025-07-24 17:21:03,712 runserver 24820 16820 [mHTTP GET /checkout/ 200 [0.03, 127.0.0.1:51935][0m
+INFO 2025-07-24 17:21:03,747 runserver 24820 16820 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:51955]
+INFO 2025-07-24 17:21:03,793 runserver 24820 16820 [mHTTP GET /static/css/style.css 200 [0.03, 127.0.0.1:51933][0m
+INFO 2025-07-24 17:21:03,799 runserver 24820 16820 [mHTTP GET /static/js/main.js 200 [0.04, 127.0.0.1:51934][0m
+WARNING 2025-07-24 17:21:03,806 log 24820 17972 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:21:03,812 runserver 24820 16820 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.07, 127.0.0.1:51935][0m
+INFO 2025-07-24 17:21:03,826 runserver 24820 16820 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.06, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:21:03,943 runserver 24820 16820 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:51958]
+INFO 2025-07-24 17:21:03,952 runserver 24820 16820 WebSocket CONNECT /ws/notifications/ [127.0.0.1:51958]
+ERROR 2025-07-24 17:21:12,696 log 24820 23096 Internal Server Error: /checkout/
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: store_order.uuid
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\store\views.py", line 259, in checkout
+    order = Order.objects.create(
+        customer=customer,
+    ...<6 lines>...
+        payment_method=payment_method,
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 1071, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 1112, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: store_order.uuid
+ERROR 2025-07-24 17:21:12,714 runserver 24820 16820 [35;1mHTTP POST /checkout/ 500 [0.29, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:21:12,722 runserver 24820 16820 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:51958]
+WARNING 2025-07-24 17:21:12,788 log 24820 17972 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:21:12,789 runserver 24820 16820 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.04, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:21:31,122 runserver 24820 16820 [mHTTP GET /checkout/ 200 [0.01, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:21:31,190 runserver 24820 16820 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:51935][0m
+WARNING 2025-07-24 17:21:31,192 log 24820 23096 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:21:31,196 runserver 24820 16820 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.04, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:21:31,206 runserver 24820 16820 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:51935][0m
+INFO 2025-07-24 17:21:31,212 runserver 24820 16820 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.03, 127.0.0.1:51934][0m
+INFO 2025-07-24 17:21:31,396 runserver 24820 16820 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:51978]
+INFO 2025-07-24 17:21:31,407 runserver 24820 16820 WebSocket CONNECT /ws/notifications/ [127.0.0.1:51978]
+INFO 2025-07-24 17:21:33,426 runserver 24820 16820 [mHTTP GET /cart/ 200 [0.01, 127.0.0.1:51934][0m
+INFO 2025-07-24 17:21:33,464 runserver 24820 16820 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:51978]
+WARNING 2025-07-24 17:21:33,483 log 24820 17972 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:21:33,489 runserver 24820 16820 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.04, 127.0.0.1:51934][0m
+INFO 2025-07-24 17:21:33,497 runserver 24820 16820 [mHTTP GET /static/css/style.css 200 [0.02, 127.0.0.1:51935][0m
+INFO 2025-07-24 17:21:33,503 runserver 24820 16820 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:51936][0m
+INFO 2025-07-24 17:21:33,520 runserver 24820 16820 [mHTTP GET /media/products/2025/07/24/profile_vjE4trk.png 200 [0.03, 127.0.0.1:51933][0m
+INFO 2025-07-24 17:21:33,521 runserver 24820 16820 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.04, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:21:33,773 runserver 24820 16820 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:51983]
+INFO 2025-07-24 17:21:33,790 runserver 24820 16820 WebSocket CONNECT /ws/notifications/ [127.0.0.1:51983]
+INFO 2025-07-24 17:21:36,902 runserver 24820 16820 [mHTTP GET /account/ 200 [0.15, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:21:36,969 runserver 24820 16820 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:51983]
+INFO 2025-07-24 17:21:37,068 runserver 24820 16820 [mHTTP GET /static/js/main.js 200 [0.04, 127.0.0.1:51934][0m
+INFO 2025-07-24 17:21:37,070 runserver 24820 16820 [mHTTP GET /static/css/style.css 200 [0.04, 127.0.0.1:51933][0m
+WARNING 2025-07-24 17:21:37,074 log 24820 17972 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:21:37,078 runserver 24820 16820 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.13, 127.0.0.1:51937][0m
+WARNING 2025-07-24 17:21:37,080 runserver 24820 16820 [33mHTTP GET /static/images/default-avatar.png 404 [0.05, 127.0.0.1:51935][0m
+INFO 2025-07-24 17:21:37,089 runserver 24820 16820 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.04, 127.0.0.1:51936][0m
+WARNING 2025-07-24 17:21:37,235 runserver 24820 16820 [33mHTTP GET /static/images/default-avatar.png 404 [0.02, 127.0.0.1:51936][0m
+INFO 2025-07-24 17:21:37,333 runserver 24820 16820 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:51991]
+INFO 2025-07-24 17:21:37,343 runserver 24820 16820 WebSocket CONNECT /ws/notifications/ [127.0.0.1:51991]
+INFO 2025-07-24 17:21:37,357 runserver 24820 16820 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:51993]
+INFO 2025-07-24 17:21:37,368 runserver 24820 16820 WebSocket CONNECT /ws/notifications/ [127.0.0.1:51993]
+INFO 2025-07-24 17:21:45,705 runserver 24820 16820 [32mHTTP POST /account/ 302 [1.44, 127.0.0.1:51936][0m
+INFO 2025-07-24 17:21:45,797 runserver 24820 16820 [mHTTP GET /account/verify-phone-change/ 200 [0.08, 127.0.0.1:51936][0m
+INFO 2025-07-24 17:21:45,859 runserver 24820 16820 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:51991]
+INFO 2025-07-24 17:21:45,861 runserver 24820 16820 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:51993]
+INFO 2025-07-24 17:21:45,886 runserver 24820 16820 [mHTTP GET /static/css/style.css 200 [0.02, 127.0.0.1:51935][0m
+INFO 2025-07-24 17:21:45,888 runserver 24820 16820 [mHTTP GET /static/js/main.js 200 [0.02, 127.0.0.1:51933][0m
+WARNING 2025-07-24 17:21:45,896 log 24820 23096 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:21:45,898 runserver 24820 16820 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.04, 127.0.0.1:51936][0m
+INFO 2025-07-24 17:21:45,911 runserver 24820 16820 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.05, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:21:46,113 runserver 24820 16820 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:52000]
+INFO 2025-07-24 17:21:46,129 runserver 24820 16820 WebSocket CONNECT /ws/notifications/ [127.0.0.1:52000]
+INFO 2025-07-24 17:21:52,994 runserver 24820 16820 [32mHTTP POST /account/verify-phone-change/ 302 [0.06, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:21:53,094 runserver 24820 16820 [mHTTP GET /account/ 200 [0.10, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:21:53,153 runserver 24820 16820 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:52000]
+INFO 2025-07-24 17:21:53,198 runserver 24820 16820 [mHTTP GET /static/css/style.css 200 [0.04, 127.0.0.1:51936][0m
+INFO 2025-07-24 17:21:53,205 runserver 24820 16820 [mHTTP GET /static/js/main.js 200 [0.04, 127.0.0.1:51934][0m
+WARNING 2025-07-24 17:21:53,207 log 24820 17972 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:21:53,207 runserver 24820 16820 [33mHTTP GET /static/images/default-avatar.png 404 [0.04, 127.0.0.1:51935][0m
+WARNING 2025-07-24 17:21:53,211 runserver 24820 16820 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.07, 127.0.0.1:51937][0m
+INFO 2025-07-24 17:21:53,224 runserver 24820 16820 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.06, 127.0.0.1:51933][0m
+WARNING 2025-07-24 17:21:53,385 runserver 24820 16820 [33mHTTP GET /static/images/default-avatar.png 404 [0.01, 127.0.0.1:51933][0m
+INFO 2025-07-24 17:21:53,457 runserver 24820 16820 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:52005]
+INFO 2025-07-24 17:21:53,472 runserver 24820 16820 WebSocket CONNECT /ws/notifications/ [127.0.0.1:52005]
+INFO 2025-07-24 17:21:53,491 runserver 24820 16820 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:52007]
+INFO 2025-07-24 17:21:53,501 runserver 24820 16820 WebSocket CONNECT /ws/notifications/ [127.0.0.1:52007]
+ERROR 2025-07-24 17:22:02,412 log 24820 17972 Internal Server Error: /account/
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\store\views.py", line 519, in account_view
+    return redirect('store:account', tab='profile')
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'account' with keyword arguments '{'tab': 'profile'}' not found. 1 pattern(s) tried: ['account/\\Z']
+ERROR 2025-07-24 17:22:02,422 runserver 24820 16820 [35;1mHTTP POST /account/ 500 [0.21, 127.0.0.1:51933][0m
+INFO 2025-07-24 17:22:02,430 runserver 24820 16820 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:52005]
+INFO 2025-07-24 17:22:02,431 runserver 24820 16820 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:52007]
+WARNING 2025-07-24 17:22:02,500 log 24820 17972 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:22:02,503 runserver 24820 16820 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.04, 127.0.0.1:51933][0m
+INFO 2025-07-24 17:22:54,673 autoreload 24820 9960 C:\Users\cybha\Desktop\nasser 7mad\store\views.py changed, reloading.
+INFO 2025-07-24 17:22:56,136 autoreload 8852 3656 Watching for file changes with StatReloader
+INFO 2025-07-24 17:23:29,040 runserver 8852 2756 [32mHTTP POST /account/ 302 [0.06, 127.0.0.1:52082][0m
+INFO 2025-07-24 17:23:29,098 runserver 8852 2756 [mHTTP GET /account/?tab=profile 200 [0.05, 127.0.0.1:52082][0m
+WARNING 2025-07-24 17:23:29,151 log 8852 24268 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:23:29,153 runserver 8852 2756 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:52082][0m
+INFO 2025-07-24 17:23:29,161 runserver 8852 2756 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:52083][0m
+INFO 2025-07-24 17:23:29,183 runserver 8852 2756 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:52083][0m
+INFO 2025-07-24 17:23:29,187 runserver 8852 2756 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.02, 127.0.0.1:52085][0m
+INFO 2025-07-24 17:23:29,211 runserver 8852 2756 [mHTTP GET /media/profile_pics/profile_iRx3VEG.png 200 [0.05, 127.0.0.1:52086][0m
+INFO 2025-07-24 17:23:29,654 runserver 8852 2756 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:52087]
+INFO 2025-07-24 17:23:29,730 runserver 8852 2756 WebSocket CONNECT /ws/notifications/ [127.0.0.1:52087]
+INFO 2025-07-24 17:23:29,784 runserver 8852 2756 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:52090]
+INFO 2025-07-24 17:23:29,795 runserver 8852 2756 WebSocket CONNECT /ws/notifications/ [127.0.0.1:52090]
+INFO 2025-07-24 17:23:47,100 runserver 8852 2756 [mHTTP GET /cart/ 200 [0.06, 127.0.0.1:52086][0m
+INFO 2025-07-24 17:23:47,115 runserver 8852 2756 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:52087]
+INFO 2025-07-24 17:23:47,117 runserver 8852 2756 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:52090]
+INFO 2025-07-24 17:23:47,187 runserver 8852 2756 [mHTTP GET /static/css/style.css 200 [0.02, 127.0.0.1:52086][0m
+INFO 2025-07-24 17:23:47,210 runserver 8852 2756 [mHTTP GET /static/js/main.js 200 [0.03, 127.0.0.1:52101][0m
+WARNING 2025-07-24 17:23:47,282 log 8852 24268 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2025-07-24 17:23:47,285 runserver 8852 2756 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.12, 127.0.0.1:52085][0m
+INFO 2025-07-24 17:23:47,286 runserver 8852 2756 [mHTTP GET /media/products/2025/07/24/profile_vjE4trk.png 200 [0.12, 127.0.0.1:52083][0m
+WARNING 2025-07-24 17:23:47,287 runserver 8852 2756 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.12, 127.0.0.1:52082][0m
+INFO 2025-07-24 17:23:47,386 runserver 8852 2756 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:52103]
+INFO 2025-07-24 17:23:47,401 runserver 8852 2756 WebSocket CONNECT /ws/notifications/ [127.0.0.1:52103]
+INFO 2025-07-24 17:23:50,803 runserver 8852 2756 [mHTTP GET /checkout/ 200 [0.05, 127.0.0.1:52083][0m
+INFO 2025-07-24 17:23:50,812 runserver 8852 2756 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:52103]
+INFO 2025-07-24 17:23:50,860 runserver 8852 2756 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:52085][0m
+INFO 2025-07-24 17:23:50,884 runserver 8852 2756 [mHTTP GET /static/js/main.js 200 [0.03, 127.0.0.1:52101][0m
+WARNING 2025-07-24 17:23:50,891 log 8852 24268 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:23:50,892 runserver 8852 2756 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.05, 127.0.0.1:52083][0m
+INFO 2025-07-24 17:23:50,895 runserver 8852 2756 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.05, 127.0.0.1:52082][0m
+INFO 2025-07-24 17:23:51,092 runserver 8852 2756 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:52106]
+INFO 2025-07-24 17:23:51,100 runserver 8852 2756 WebSocket CONNECT /ws/notifications/ [127.0.0.1:52106]
+ERROR 2025-07-24 17:23:56,666 log 8852 25084 Internal Server Error: /checkout/
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: store_order.uuid
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\store\views.py", line 259, in checkout
+    order = Order.objects.create(
+        customer=customer,
+    ...<6 lines>...
+        payment_method=payment_method,
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 1071, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 1112, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: store_order.uuid
+ERROR 2025-07-24 17:23:56,687 runserver 8852 2756 [35;1mHTTP POST /checkout/ 500 [0.13, 127.0.0.1:52082][0m
+INFO 2025-07-24 17:23:56,696 runserver 8852 2756 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:52106]
+WARNING 2025-07-24 17:23:56,760 log 8852 24268 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:23:56,762 runserver 8852 2756 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.05, 127.0.0.1:52082][0m
+ERROR 2025-07-24 17:26:21,913 log 8852 25084 Internal Server Error: /checkout/
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: store_order.uuid
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\store\views.py", line 259, in checkout
+    order = Order.objects.create(
+        customer=customer,
+    ...<6 lines>...
+        payment_method=payment_method,
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 1071, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 1112, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: store_order.uuid
+ERROR 2025-07-24 17:26:21,931 runserver 8852 2756 [35;1mHTTP POST /checkout/ 500 [0.11, 127.0.0.1:52270][0m
+WARNING 2025-07-24 17:26:21,961 log 8852 24268 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:26:21,962 runserver 8852 2756 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.02, 127.0.0.1:52270][0m
+INFO 2025-07-24 17:26:53,457 autoreload 8852 3656 C:\Users\cybha\Desktop\nasser 7mad\store\views.py changed, reloading.
+INFO 2025-07-24 17:26:55,242 autoreload 1892 24360 Watching for file changes with StatReloader
+ERROR 2025-07-24 17:27:20,600 log 1892 4768 Internal Server Error: /checkout/
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\store\views.py", line 263, in checkout
+    order = Order.objects.create(
+        customer=customer,
+    ...<7 lines>...
+        uuid=generated_uuid, # Explicitly pass the generated UUID
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\query.py", line 677, in create
+    obj = self.model(**kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 567, in __init__
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: Order() got unexpected keyword arguments: 'uuid'
+ERROR 2025-07-24 17:27:20,605 runserver 1892 5360 [35;1mHTTP POST /checkout/ 500 [0.05, 127.0.0.1:52358][0m
+WARNING 2025-07-24 17:27:20,633 log 1892 4768 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:27:20,634 runserver 1892 5360 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.01, 127.0.0.1:52358][0m
+INFO 2025-07-24 17:27:23,816 runserver 1892 5360 [mHTTP GET /checkout/ 200 [0.03, 127.0.0.1:52358][0m
+INFO 2025-07-24 17:27:23,857 runserver 1892 5360 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:52359][0m
+WARNING 2025-07-24 17:27:23,860 log 1892 4768 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:27:23,862 runserver 1892 5360 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:52358][0m
+INFO 2025-07-24 17:27:23,874 runserver 1892 5360 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:52359][0m
+INFO 2025-07-24 17:27:23,877 runserver 1892 5360 [mHTTP GET /media/site/logo-3_tuxSN0A.png 200 [0.02, 127.0.0.1:52365][0m
+INFO 2025-07-24 17:27:25,285 runserver 1892 5360 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:52368]
+INFO 2025-07-24 17:27:25,519 runserver 1892 5360 WebSocket CONNECT /ws/notifications/ [127.0.0.1:52368]
+ERROR 2025-07-24 17:27:29,191 log 1892 4768 Internal Server Error: /checkout/
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\store\views.py", line 263, in checkout
+    order = Order.objects.create(
+        customer=customer,
+    ...<7 lines>...
+        uuid=generated_uuid, # Explicitly pass the generated UUID
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\query.py", line 677, in create
+    obj = self.model(**kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 567, in __init__
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: Order() got unexpected keyword arguments: 'uuid'
+ERROR 2025-07-24 17:27:29,209 runserver 1892 5360 [35;1mHTTP POST /checkout/ 500 [0.09, 127.0.0.1:52365][0m
+INFO 2025-07-24 17:27:29,220 runserver 1892 5360 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:52368]
+WARNING 2025-07-24 17:27:29,314 log 1892 4768 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:27:29,315 runserver 1892 5360 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.05, 127.0.0.1:52365][0m
+INFO 2025-07-24 17:28:21,878 autoreload 1892 24360 C:\Users\cybha\Desktop\nasser 7mad\store\views.py changed, reloading.
+INFO 2025-07-24 17:28:23,337 autoreload 11912 14232 Watching for file changes with StatReloader
+ERROR 2025-07-24 17:28:49,768 log 11912 23792 Internal Server Error: /checkout/
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: store_order.uuid
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\store\views.py", line 260, in checkout
+    order = Order.objects.create(
+        customer=customer,
+    ...<6 lines>...
+        payment_method=payment_method,
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 1071, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 1112, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: store_order.uuid
+ERROR 2025-07-24 17:28:49,775 runserver 11912 23860 [35;1mHTTP POST /checkout/ 500 [0.05, 127.0.0.1:52517][0m
+WARNING 2025-07-24 17:28:49,798 log 11912 23792 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:28:49,798 runserver 11912 23860 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.01, 127.0.0.1:52517][0m
+ERROR 2025-07-24 17:28:50,666 log 11912 23792 Internal Server Error: /checkout/
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: store_order.uuid
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\store\views.py", line 260, in checkout
+    order = Order.objects.create(
+        customer=customer,
+    ...<6 lines>...
+        payment_method=payment_method,
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 1071, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\base.py", line 1112, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: store_order.uuid
+ERROR 2025-07-24 17:28:50,671 runserver 11912 23860 [35;1mHTTP POST /checkout/ 500 [0.03, 127.0.0.1:52517][0m
+WARNING 2025-07-24 17:28:50,693 log 11912 23792 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:28:50,694 runserver 11912 23860 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.01, 127.0.0.1:52517][0m
+INFO 2025-07-24 17:43:52,589 autoreload 18104 8524 Watching for file changes with StatReloader
+INFO 2025-07-24 17:44:00,294 runserver 18104 13316 [32mHTTP GET /admin/store/siteconfiguration/ 302 [0.07, 127.0.0.1:53283][0m
+INFO 2025-07-24 17:44:00,436 runserver 18104 13316 [mHTTP GET /admin/login/?next=/admin/store/siteconfiguration/ 200 [0.14, 127.0.0.1:53283][0m
+INFO 2025-07-24 17:44:00,463 runserver 18104 13316 [36mHTTP GET /static/admin/css/base.css 304 [0.01, 127.0.0.1:53283][0m
+INFO 2025-07-24 17:44:00,464 runserver 18104 13316 [36mHTTP GET /static/jet/css/vendor.css?v=1.3.10 304 [0.01, 127.0.0.1:53284][0m
+INFO 2025-07-24 17:44:00,465 runserver 18104 13316 [36mHTTP GET /static/jet/css/icons/style.css?v=1.3.10 304 [0.01, 127.0.0.1:53285][0m
+INFO 2025-07-24 17:44:00,466 runserver 18104 13316 [36mHTTP GET /static/jet/css/themes/default/base.css?v=1.3.10 304 [0.01, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:44:00,467 runserver 18104 13316 [36mHTTP GET /static/jet/css/themes/default/select2.theme.css?v=1.3.10 304 [0.01, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:00,467 runserver 18104 13316 [36mHTTP GET /static/jet/css/themes/default/jquery-ui.theme.css?v=1.3.10 304 [0.01, 127.0.0.1:53288][0m
+INFO 2025-07-24 17:44:00,471 runserver 18104 13316 [36mHTTP GET /static/admin/css/login.css 304 [0.01, 127.0.0.1:53283][0m
+INFO 2025-07-24 17:44:00,473 runserver 18104 13316 [36mHTTP GET /static/admin/js/vendor/jquery/jquery.min.js 304 [0.01, 127.0.0.1:53284][0m
+INFO 2025-07-24 17:44:00,474 runserver 18104 13316 [36mHTTP GET /static/admin/js/jquery.init.js 304 [0.01, 127.0.0.1:53285][0m
+INFO 2025-07-24 17:44:00,474 runserver 18104 13316 [36mHTTP GET /static/jet/js/build/bundle.min.js?v=1.3.10 304 [0.01, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:00,474 runserver 18104 13316 [36mHTTP GET /static/jet/js/i18n/select2/en.js?v=1.3.10 304 [0.01, 127.0.0.1:53288][0m
+INFO 2025-07-24 17:44:00,481 runserver 18104 13316 [mHTTP GET /jet/jsi18n/ 200 [0.01, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:44:00,516 runserver 18104 13316 [36mHTTP GET /static/jet/css/icons/fonts/jet-icons.ttf?415d6s 304 [0.00, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:44:03,420 runserver 18104 13316 [32mHTTP POST /admin/login/?next=/admin/store/siteconfiguration/ 302 [0.32, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:44:03,451 runserver 18104 13316 [mHTTP GET /admin/store/siteconfiguration/ 200 [0.03, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:44:03,476 runserver 18104 13316 [36mHTTP GET /static/admin/css/changelists.css 304 [0.00, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:44:03,477 runserver 18104 13316 [36mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 304 [0.00, 127.0.0.1:53283][0m
+INFO 2025-07-24 17:44:03,477 runserver 18104 13316 [36mHTTP GET /static/admin/js/core.js 304 [0.01, 127.0.0.1:53284][0m
+INFO 2025-07-24 17:44:03,478 runserver 18104 13316 [36mHTTP GET /static/admin/js/vendor/jquery/jquery.js 304 [0.01, 127.0.0.1:53285][0m
+INFO 2025-07-24 17:44:03,486 runserver 18104 13316 [36mHTTP GET /static/admin/js/urlify.js 304 [0.01, 127.0.0.1:53283][0m
+INFO 2025-07-24 17:44:03,487 runserver 18104 13316 [36mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 304 [0.00, 127.0.0.1:53285][0m
+INFO 2025-07-24 17:44:03,487 runserver 18104 13316 [36mHTTP GET /static/admin/js/actions.js 304 [0.01, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:44:03,488 runserver 18104 13316 [36mHTTP GET /static/admin/js/prepopulate.js 304 [0.01, 127.0.0.1:53284][0m
+INFO 2025-07-24 17:44:03,495 runserver 18104 13316 [mHTTP GET /jet/jsi18n/ 200 [0.02, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:03,497 runserver 18104 13316 [mHTTP GET /admin/jsi18n/ 200 [0.03, 127.0.0.1:53288][0m
+INFO 2025-07-24 17:44:03,503 runserver 18104 13316 [36mHTTP GET /static/admin/js/filters.js 304 [0.01, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:06,611 runserver 18104 13316 [mHTTP GET /admin/store/ 200 [0.04, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:06,632 runserver 18104 13316 [36mHTTP GET /static/admin/css/dashboard.css 304 [0.00, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:06,640 runserver 18104 13316 [mHTTP GET /jet/jsi18n/ 200 [0.01, 127.0.0.1:53288][0m
+INFO 2025-07-24 17:44:13,374 runserver 18104 13316 [mHTTP GET /admin/store/category/ 200 [0.02, 127.0.0.1:53288][0m
+INFO 2025-07-24 17:44:13,406 runserver 18104 13316 [mHTTP GET /jet/jsi18n/ 200 [0.02, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:13,408 runserver 18104 13316 [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:53288][0m
+INFO 2025-07-24 17:44:14,912 runserver 18104 13316 [mHTTP GET /admin/store/category/add/ 200 [0.02, 127.0.0.1:53288][0m
+INFO 2025-07-24 17:44:14,934 runserver 18104 13316 [36mHTTP GET /static/admin/css/forms.css 304 [0.01, 127.0.0.1:53288][0m
+INFO 2025-07-24 17:44:14,936 runserver 18104 13316 [36mHTTP GET /static/admin/js/prepopulate_init.js 304 [0.01, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:44:14,948 runserver 18104 13316 [mHTTP GET /jet/jsi18n/ 200 [0.02, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:14,953 runserver 18104 13316 [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:53284][0m
+INFO 2025-07-24 17:44:14,959 runserver 18104 13316 [36mHTTP GET /static/admin/js/change_form.js 304 [0.00, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:21,619 runserver 18104 13316 [32mHTTP POST /admin/store/category/add/ 302 [0.02, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:21,646 runserver 18104 13316 [mHTTP GET /admin/store/category/ 200 [0.02, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:21,676 runserver 18104 13316 [mHTTP GET /jet/jsi18n/ 200 [0.01, 127.0.0.1:53284][0m
+INFO 2025-07-24 17:44:21,678 runserver 18104 13316 [mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:30,162 runserver 18104 13316 [mHTTP GET /admin/store/product/ 200 [0.03, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:30,193 runserver 18104 13316 [36mHTTP GET /static/admin/img/search.svg 304 [0.01, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:44:30,216 runserver 18104 13316 [mHTTP GET /jet/jsi18n/ 200 [0.03, 127.0.0.1:53284][0m
+INFO 2025-07-24 17:44:30,229 runserver 18104 13316 [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:31,604 runserver 18104 13316 [mHTTP GET /admin/store/product/add/ 200 [0.03, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:31,641 runserver 18104 13316 [mHTTP GET /jet/jsi18n/ 200 [0.02, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:31,645 runserver 18104 13316 [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:53284][0m
+INFO 2025-07-24 17:44:31,651 runserver 18104 13316 [36mHTTP GET /static/admin/img/icon-changelink.svg 304 [0.00, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:31,674 runserver 18104 13316 [36mHTTP GET /static/admin/img/icon-addlink.svg 304 [0.01, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:44:31,675 runserver 18104 13316 [36mHTTP GET /static/admin/img/icon-viewlink.svg 304 [0.01, 127.0.0.1:53284][0m
+INFO 2025-07-24 17:44:53,242 runserver 18104 13316 [mHTTP POST /admin/store/product/add/ 200 [0.67, 127.0.0.1:53284][0m
+INFO 2025-07-24 17:44:53,280 runserver 18104 13316 [mHTTP GET /jet/jsi18n/ 200 [0.02, 127.0.0.1:53284][0m
+INFO 2025-07-24 17:44:53,288 runserver 18104 13316 [mHTTP GET /admin/jsi18n/ 200 [0.03, 127.0.0.1:53287][0m
+WARNING 2025-07-24 17:44:53,292 log 18104 492 Not Found: /media/profile.png
+WARNING 2025-07-24 17:44:53,293 runserver 18104 13316 [33mHTTP GET /media/profile.png 404 [0.03, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:45:01,071 runserver 18104 13316 [32mHTTP POST /admin/store/product/add/ 302 [0.02, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:45:01,101 runserver 18104 13316 [mHTTP GET /admin/store/product/ 200 [0.03, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:45:01,133 runserver 18104 13316 [mHTTP GET /jet/jsi18n/ 200 [0.01, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:45:01,135 runserver 18104 13316 [mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:53286][0m
+ERROR 2025-07-24 17:45:05,350 log 18104 19904 Internal Server Error: /checkout/
+Traceback (most recent call last):
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 489, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 439, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\asgiref\sync.py", line 493, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cybha\Desktop\nasser 7mad\store\views.py", line 216, in checkout
+    customer = request.user.customer
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+  File "C:\Users\cybha\Desktop\nasser 7mad\.venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 525, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+django.contrib.auth.models.User.customer.RelatedObjectDoesNotExist: User has no customer.
+ERROR 2025-07-24 17:45:05,354 runserver 18104 13316 [35;1mHTTP GET /checkout/ 500 [0.02, 127.0.0.1:53286][0m
+WARNING 2025-07-24 17:45:05,389 log 18104 492 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:45:05,390 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.02, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:45:06,006 runserver 18104 13316 [mHTTP GET /cart/ 200 [0.03, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:45:06,045 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:53284][0m
+WARNING 2025-07-24 17:45:06,046 log 18104 492 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2025-07-24 17:45:06,046 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:53287][0m
+WARNING 2025-07-24 17:45:06,048 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:45:07,117 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:53417]
+INFO 2025-07-24 17:45:07,798 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:53417]
+INFO 2025-07-24 17:45:13,114 runserver 18104 13316 [mHTTP GET /store/ 200 [0.02, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:45:13,119 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:53417]
+INFO 2025-07-24 17:45:13,166 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:53284][0m
+INFO 2025-07-24 17:45:13,168 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:53287][0m
+WARNING 2025-07-24 17:45:13,171 log 18104 492 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:45:13,173 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:45:13,796 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:53423]
+INFO 2025-07-24 17:45:13,803 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:53423]
+WARNING 2025-07-24 17:45:14,594 runserver 18104 13316 [33mHTTP GET /static/images/placeholder_product.png 404 [0.00, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:45:26,696 runserver 18104 13316 [mHTTP GET /store/ 200 [0.01, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:45:26,703 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:53423]
+INFO 2025-07-24 17:45:26,759 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.02, 127.0.0.1:53287][0m
+INFO 2025-07-24 17:45:26,769 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.02, 127.0.0.1:53284][0m
+WARNING 2025-07-24 17:45:26,774 log 18104 18360 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 17:45:26,775 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.04, 127.0.0.1:53286][0m
+WARNING 2025-07-24 17:45:28,398 runserver 18104 13316 [33mHTTP GET /static/images/placeholder_product.png 404 [0.01, 127.0.0.1:53286][0m
+INFO 2025-07-24 17:45:28,418 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:53432]
+INFO 2025-07-24 17:45:28,430 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:53432]
+INFO 2025-07-24 18:06:19,580 runserver 18104 13316 [mHTTP GET /admin/store/product/1/change/ 200 [0.03, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:19,623 runserver 18104 13316 [mHTTP GET /jet/jsi18n/ 200 [0.02, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:19,627 runserver 18104 13316 [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:06:28,659 runserver 18104 13316 [32mHTTP POST /admin/store/product/1/change/ 302 [0.02, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:06:28,686 runserver 18104 13316 [mHTTP GET /admin/store/product/ 200 [0.02, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:06:28,735 runserver 18104 13316 [mHTTP GET /jet/jsi18n/ 200 [0.02, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:28,738 runserver 18104 13316 [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:06:28,751 runserver 18104 13316 [mHTTP GET /media/products/2025/07/24/profile_mxagLpy.png 200 [0.03, 127.0.0.1:54188][0m
+INFO 2025-07-24 18:06:31,260 runserver 18104 13316 [mHTTP GET /store/ 200 [0.02, 127.0.0.1:54188][0m
+INFO 2025-07-24 18:06:31,266 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:53432]
+INFO 2025-07-24 18:06:31,310 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:54188][0m
+INFO 2025-07-24 18:06:31,316 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:54182][0m
+WARNING 2025-07-24 18:06:31,332 log 18104 17216 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:06:31,334 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.02, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:31,788 runserver 18104 13316 [mHTTP GET /media/products/2025/07/24/profile_mxagLpy.png 200 [0.00, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:31,815 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54191]
+INFO 2025-07-24 18:06:31,830 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54191]
+INFO 2025-07-24 18:06:35,259 runserver 18104 13316 [mHTTP POST /add_to_cart/ 200 [1.81, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:35,298 runserver 18104 13316 [mHTTP GET /store/ 200 [0.02, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:35,308 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54191]
+INFO 2025-07-24 18:06:35,383 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.02, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:06:35,384 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.02, 127.0.0.1:54188][0m
+WARNING 2025-07-24 18:06:35,388 log 18104 17216 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:06:35,390 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.04, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:35,520 runserver 18104 13316 [mHTTP GET /media/products/2025/07/24/profile_mxagLpy.png 200 [0.01, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:35,534 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54196]
+INFO 2025-07-24 18:06:35,547 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54196]
+INFO 2025-07-24 18:06:36,436 runserver 18104 13316 [mHTTP GET /cart/ 200 [0.01, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:36,441 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54196]
+INFO 2025-07-24 18:06:36,480 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:54188][0m
+INFO 2025-07-24 18:06:36,491 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:54198][0m
+WARNING 2025-07-24 18:06:36,493 log 18104 17216 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:06:36,494 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:36,498 runserver 18104 13316 [mHTTP GET /media/products/2025/07/24/profile_mxagLpy.png 200 [0.03, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:06:36,683 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54199]
+INFO 2025-07-24 18:06:36,694 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54199]
+INFO 2025-07-24 18:06:37,700 runserver 18104 13316 [mHTTP GET /checkout/ 200 [0.02, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:06:37,708 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54199]
+INFO 2025-07-24 18:06:37,779 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.02, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:37,784 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.02, 127.0.0.1:54198][0m
+WARNING 2025-07-24 18:06:37,786 log 18104 17216 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:06:37,788 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.05, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:06:37,952 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54201]
+INFO 2025-07-24 18:06:37,968 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54201]
+INFO 2025-07-24 18:06:41,862 runserver 18104 13316 [mHTTP GET /account/ 200 [0.03, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:06:41,867 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54201]
+INFO 2025-07-24 18:06:41,907 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:54182][0m
+WARNING 2025-07-24 18:06:41,920 runserver 18104 13316 [33mHTTP GET /static/images/default-avatar.png 404 [0.02, 127.0.0.1:54198][0m
+INFO 2025-07-24 18:06:41,925 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.02, 127.0.0.1:54188][0m
+WARNING 2025-07-24 18:06:41,940 log 18104 492 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:06:41,941 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.04, 127.0.0.1:54181][0m
+WARNING 2025-07-24 18:06:42,091 runserver 18104 13316 [33mHTTP GET /static/images/default-avatar.png 404 [0.00, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:42,165 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54207]
+INFO 2025-07-24 18:06:42,177 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54207]
+INFO 2025-07-24 18:06:42,190 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54209]
+INFO 2025-07-24 18:06:42,199 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54209]
+INFO 2025-07-24 18:06:48,707 runserver 18104 13316 [32mHTTP POST /account/ 302 [1.18, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:48,731 runserver 18104 13316 [mHTTP GET /account/verify-phone-change/ 200 [0.02, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:48,738 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54207]
+INFO 2025-07-24 18:06:48,738 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54209]
+INFO 2025-07-24 18:06:48,786 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:48,787 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:54188][0m
+WARNING 2025-07-24 18:06:48,807 log 18104 17216 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:06:48,809 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:54198][0m
+INFO 2025-07-24 18:06:49,047 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54215]
+INFO 2025-07-24 18:06:49,063 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54215]
+INFO 2025-07-24 18:06:59,088 runserver 18104 13316 [32mHTTP POST /account/verify-phone-change/ 302 [0.03, 127.0.0.1:54198][0m
+INFO 2025-07-24 18:06:59,114 runserver 18104 13316 [mHTTP GET /account/ 200 [0.02, 127.0.0.1:54198][0m
+INFO 2025-07-24 18:06:59,121 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54215]
+INFO 2025-07-24 18:06:59,180 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.02, 127.0.0.1:54188][0m
+INFO 2025-07-24 18:06:59,183 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:54182][0m
+WARNING 2025-07-24 18:06:59,187 log 18104 492 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:06:59,191 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.04, 127.0.0.1:54198][0m
+WARNING 2025-07-24 18:06:59,192 runserver 18104 13316 [33mHTTP GET /static/images/default-avatar.png 404 [0.03, 127.0.0.1:54181][0m
+WARNING 2025-07-24 18:06:59,362 runserver 18104 13316 [33mHTTP GET /static/images/default-avatar.png 404 [0.00, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:06:59,430 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54222]
+INFO 2025-07-24 18:06:59,440 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54222]
+INFO 2025-07-24 18:06:59,455 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54224]
+INFO 2025-07-24 18:06:59,461 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54224]
+INFO 2025-07-24 18:07:06,688 runserver 18104 13316 [32mHTTP POST /account/ 302 [0.02, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:07:06,717 runserver 18104 13316 [mHTTP GET /account/?tab=profile 200 [0.02, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:07:06,726 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54222]
+INFO 2025-07-24 18:07:06,726 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54224]
+INFO 2025-07-24 18:07:06,780 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:07:06,812 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.02, 127.0.0.1:54181][0m
+WARNING 2025-07-24 18:07:06,816 log 18104 17216 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:07:06,817 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.05, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:07:06,834 runserver 18104 13316 [mHTTP GET /media/profile_pics/profile_PEEMId5.png 200 [0.07, 127.0.0.1:54198][0m
+INFO 2025-07-24 18:07:07,020 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54229]
+INFO 2025-07-24 18:07:07,029 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54229]
+INFO 2025-07-24 18:07:07,042 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54231]
+INFO 2025-07-24 18:07:07,046 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54231]
+INFO 2025-07-24 18:07:09,187 runserver 18104 13316 [mHTTP GET /cart/ 200 [0.02, 127.0.0.1:54198][0m
+INFO 2025-07-24 18:07:09,192 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54229]
+INFO 2025-07-24 18:07:09,193 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54231]
+INFO 2025-07-24 18:07:09,242 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:54198][0m
+INFO 2025-07-24 18:07:09,247 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:54188][0m
+WARNING 2025-07-24 18:07:09,266 log 18104 17216 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:07:09,267 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:07:09,268 runserver 18104 13316 [mHTTP GET /media/products/2025/07/24/profile_mxagLpy.png 200 [0.04, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:07:09,456 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54233]
+INFO 2025-07-24 18:07:09,463 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54233]
+INFO 2025-07-24 18:07:10,612 runserver 18104 13316 [mHTTP GET /checkout/ 200 [0.01, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:07:10,616 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54233]
+INFO 2025-07-24 18:07:10,656 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:07:10,657 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:54188][0m
+WARNING 2025-07-24 18:07:10,660 log 18104 17216 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:07:10,662 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.02, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:07:10,817 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54236]
+INFO 2025-07-24 18:07:10,829 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54236]
+DEBUG 2025-07-24 18:07:17,671 whatsapp_service 18104 22640 Inside send_order_confirmation_whatsapp for Order ID: 1
+INFO 2025-07-24 18:07:17,682 runserver 18104 13316 [32mHTTP POST /checkout/ 302 [1.05, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:07:17,717 runserver 18104 13316 [mHTTP GET /account/ 200 [0.03, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:07:17,724 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54236]
+INFO 2025-07-24 18:07:17,766 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:54188][0m
+INFO 2025-07-24 18:07:17,771 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:54198][0m
+WARNING 2025-07-24 18:07:17,775 log 18104 17216 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:07:17,776 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:54182][0m
+INFO 2025-07-24 18:07:17,779 runserver 18104 13316 [mHTTP GET /media/profile_pics/profile_PEEMId5.png 200 [0.03, 127.0.0.1:54181][0m
+INFO 2025-07-24 18:07:18,008 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54242]
+INFO 2025-07-24 18:07:18,017 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54242]
+INFO 2025-07-24 18:07:18,032 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54244]
+INFO 2025-07-24 18:07:18,046 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54244]
+INFO 2025-07-24 18:08:25,145 runserver 18104 13316 [mHTTP GET / 200 [0.01, 127.0.0.1:54337][0m
+INFO 2025-07-24 18:08:25,151 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54242]
+INFO 2025-07-24 18:08:25,151 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54244]
+INFO 2025-07-24 18:08:25,193 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.00, 127.0.0.1:54337][0m
+WARNING 2025-07-24 18:08:25,204 runserver 18104 13316 [33mHTTP GET /static/images/placeholder_cat.jpg 404 [0.01, 127.0.0.1:54339][0m
+INFO 2025-07-24 18:08:25,212 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:54337][0m
+WARNING 2025-07-24 18:08:25,243 log 18104 17216 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:08:25,247 runserver 18104 13316 [33mHTTP GET /static/images/placeholder_banner.jpg 404 [0.03, 127.0.0.1:54339][0m
+WARNING 2025-07-24 18:08:25,248 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.05, 127.0.0.1:54340][0m
+INFO 2025-07-24 18:08:25,906 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54341]
+WARNING 2025-07-24 18:08:25,915 runserver 18104 13316 [33mHTTP GET /static/images/placeholder_about.jpg 404 [0.01, 127.0.0.1:54340][0m
+INFO 2025-07-24 18:08:25,920 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54341]
+INFO 2025-07-24 18:08:25,922 runserver 18104 13316 [mHTTP GET /media/products/2025/07/24/profile_mxagLpy.png 200 [0.01, 127.0.0.1:54339][0m
+INFO 2025-07-24 18:08:26,630 runserver 18104 13316 [mHTTP GET /store/ 200 [0.01, 127.0.0.1:54339][0m
+INFO 2025-07-24 18:08:26,636 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54341]
+INFO 2025-07-24 18:08:26,686 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.00, 127.0.0.1:54337][0m
+INFO 2025-07-24 18:08:26,688 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.01, 127.0.0.1:54340][0m
+WARNING 2025-07-24 18:08:26,688 log 18104 18360 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:08:26,689 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.03, 127.0.0.1:54339][0m
+INFO 2025-07-24 18:08:26,887 runserver 18104 13316 [mHTTP GET /media/products/2025/07/24/profile_mxagLpy.png 200 [0.00, 127.0.0.1:54339][0m
+INFO 2025-07-24 18:08:26,904 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54343]
+INFO 2025-07-24 18:08:26,913 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54343]
+INFO 2025-07-24 18:08:28,625 runserver 18104 13316 [mHTTP GET /about/ 200 [0.03, 127.0.0.1:54339][0m
+INFO 2025-07-24 18:08:28,632 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54343]
+INFO 2025-07-24 18:08:28,733 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.03, 127.0.0.1:54337][0m
+INFO 2025-07-24 18:08:28,734 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.04, 127.0.0.1:54340][0m
+WARNING 2025-07-24 18:08:28,741 log 18104 18360 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:08:28,744 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.06, 127.0.0.1:54339][0m
+INFO 2025-07-24 18:08:28,914 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54346]
+INFO 2025-07-24 18:08:28,928 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54346]
+INFO 2025-07-24 18:08:30,222 runserver 18104 13316 [mHTTP GET /contact/ 200 [0.03, 127.0.0.1:54339][0m
+INFO 2025-07-24 18:08:30,230 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54346]
+INFO 2025-07-24 18:08:30,295 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.02, 127.0.0.1:54337][0m
+INFO 2025-07-24 18:08:30,303 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.03, 127.0.0.1:54340][0m
+WARNING 2025-07-24 18:08:30,326 log 18104 18360 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:08:30,329 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.07, 127.0.0.1:54339][0m
+INFO 2025-07-24 18:08:30,511 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54349]
+INFO 2025-07-24 18:08:30,526 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54349]
+INFO 2025-07-24 18:08:45,870 runserver 18104 13316 [mHTTP GET /privacy-policy/ 200 [0.03, 127.0.0.1:54339][0m
+INFO 2025-07-24 18:08:45,878 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54349]
+INFO 2025-07-24 18:08:45,957 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.02, 127.0.0.1:54340][0m
+INFO 2025-07-24 18:08:45,960 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.02, 127.0.0.1:54337][0m
+WARNING 2025-07-24 18:08:46,007 log 18104 18360 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:08:46,009 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.08, 127.0.0.1:54339][0m
+INFO 2025-07-24 18:08:46,195 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54358]
+INFO 2025-07-24 18:08:46,217 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54358]
+INFO 2025-07-24 18:08:49,993 runserver 18104 13316 [mHTTP GET /shipping-policy/ 200 [0.03, 127.0.0.1:54339][0m
+INFO 2025-07-24 18:08:50,000 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54358]
+INFO 2025-07-24 18:08:50,059 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.01, 127.0.0.1:54340][0m
+INFO 2025-07-24 18:08:50,062 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.03, 127.0.0.1:54337][0m
+WARNING 2025-07-24 18:08:50,067 log 18104 18360 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:08:50,069 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.05, 127.0.0.1:54339][0m
+INFO 2025-07-24 18:08:50,263 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54363]
+INFO 2025-07-24 18:08:50,271 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54363]
+INFO 2025-07-24 18:09:04,858 runserver 18104 13316 [mHTTP GET / 200 [0.04, 127.0.0.1:54339][0m
+INFO 2025-07-24 18:09:04,867 runserver 18104 13316 WebSocket DISCONNECT /ws/notifications/ [127.0.0.1:54363]
+INFO 2025-07-24 18:09:04,945 runserver 18104 13316 [mHTTP GET /static/css/style.css 200 [0.04, 127.0.0.1:54337][0m
+WARNING 2025-07-24 18:09:04,980 runserver 18104 13316 [33mHTTP GET /static/images/placeholder_cat.jpg 404 [0.07, 127.0.0.1:54340][0m
+INFO 2025-07-24 18:09:04,989 runserver 18104 13316 [mHTTP GET /static/js/main.js 200 [0.06, 127.0.0.1:54374][0m
+WARNING 2025-07-24 18:09:05,019 runserver 18104 13316 [33mHTTP GET /static/images/placeholder_banner.jpg 404 [0.08, 127.0.0.1:54375][0m
+WARNING 2025-07-24 18:09:05,020 log 18104 492 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-24 18:09:05,025 runserver 18104 13316 [33mHTTP GET /.well-known/appspecific/com.chrome.devtools.json 404 [0.13, 127.0.0.1:54339][0m
+WARNING 2025-07-24 18:09:05,100 runserver 18104 13316 [33mHTTP GET /static/images/placeholder_about.jpg 404 [0.02, 127.0.0.1:54375][0m
+INFO 2025-07-24 18:09:05,107 runserver 18104 13316 [mHTTP GET /media/products/2025/07/24/profile_mxagLpy.png 200 [0.03, 127.0.0.1:54339][0m
+INFO 2025-07-24 18:09:05,142 runserver 18104 13316 WebSocket HANDSHAKING /ws/notifications/ [127.0.0.1:54376]
+INFO 2025-07-24 18:09:05,156 runserver 18104 13316 WebSocket CONNECT /ws/notifications/ [127.0.0.1:54376]

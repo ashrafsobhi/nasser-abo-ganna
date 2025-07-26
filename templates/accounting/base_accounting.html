@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/accounting_style.css' %}">
+{% endblock extra_head %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'accounting:dashboard' %}">{% trans "نظام المحاسبة" %}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#accountingNavbar" aria-controls="accountingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="accountingNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accounting:dashboard' %}">{% trans "الرئيسية" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accounting:order_list' %}">{% trans "الطلبات" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accounting:reports' %}">{% trans "التقارير" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accounting:invoice_list' %}">{% trans "الفواتير" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin:index' %}">{% trans "لوحة تحكم Django" %}</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% if user.is_authenticated %}{{ user.username }}{% else %}{% trans "المسؤول" %}{% endif %}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{% url 'admin:logout' %}">{% trans "تسجيل الخروج" %}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock navbar %}
+
+{% block offcanvas_menu %}
+{% endblock offcanvas_menu %}
+
+{% block bottom_nav %}
+{% endblock bottom_nav %}
+
+{% block footer %}
+{% endblock footer %} 

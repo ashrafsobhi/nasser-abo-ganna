@@ -1,0 +1,97 @@
+{% extends 'accounting/base_accounting.html' %}
+{% load i18n %}
+
+{% block title %}{{ title }} - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h3 class="mb-4 text-center">{{ title }}</h3>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">{% trans "الطلب رقم" %} #{{ order.id }}</h5>
+        </div>
+        <div class="card-body">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <h6>{% trans "تفاصيل العميل" %}</h6>
+                    <p class="mb-1"><strong>{% trans "الاسم" %}:</strong> {% if order.customer %}{{ order.customer.user.username|default:order.customer.get_full_name }}{% else %}{% trans "ضيف" %}{% endif %}</p>
+                    <p class="mb-1"><strong>{% trans "البريد الإلكتروني" %}:</strong> {% if order.customer and order.customer.user.email %}{{ order.customer.user.email }}{% else %}{% trans "غير متاح" %}{% endif %}</p>
+                    <p class="mb-1"><strong>{% trans "رقم الهاتف" %}:</strong> {{ order.phone_number }}</p>
+                </div>
+                <div class="col-md-6">
+                    <h6>{% trans "تفاصيل الطلب" %}</h6>
+                    <p class="mb-1"><strong>{% trans "تاريخ الطلب" %}:</strong> {{ order.date_ordered|date:"d M, Y H:i" }}</p>
+                    <p class="mb-1"><strong>{% trans "الإجمالي النهائي" %}:</strong> {{ order.final_total|floatformat:2 }} {% trans "ريال" %}</p>
+                    <p class="mb-1"><strong>{% trans "حالة الدفع" %}:</strong> 
+                        {% if order.payment_status == 'paid' %}
+                            <span class="badge bg-success">{% trans "مدفوع" %}</span>
+                        {% elif order.payment_status == 'pending' %}
+                            <span class="badge bg-warning text-dark">{% trans "معلق" %}</span>
+                        {% elif order.payment_status == 'failed' %}
+                            <span class="badge bg-danger">{% trans "فشل الدفع" %}</span>
+                        {% endif %}
+                    </p>
+                    <p class="mb-1"><strong>{% trans "وسيلة الدفع" %}:</strong> {{ order.get_payment_method_display }}</p>
+                </div>
+            </div>
+
+            <h5 class="mb-3">{% trans "عنوان الشحن" %}</h5>
+            <p>{{ order.shipping_address }}</p>
+
+            {% if order.notes %}
+            <h5 class="mb-3 mt-4">{% trans "ملاحظات العميل" %}</h5>
+            <p>{{ order.notes }}</p>
+            {% endif %}
+
+            <h5 class="mb-3 mt-4">{% trans "المنتجات المطلوبة" %}</h5>
+            <div class="table-responsive mb-4">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>{% trans "المنتج" %}</th>
+                            <th>{% trans "الكمية" %}</th>
+                            <th>{% trans "السعر (وحدة)" %}</th>
+                            <th>{% trans "الإجمالي الفرعي" %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in order.orderitem_set.all %}
+                        <tr>
+                            <td>{{ item.product.name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.price|floatformat:2 }} {% trans "ريال" %}</td>
+                            <td>{{ item.get_total|floatformat:2 }} {% trans "ريال" %}</td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td colspan="3" class="text-end"><strong>{% trans "المجموع قبل الخصم" %}:</strong></td>
+                            <td><strong>{{ order.total_before_discount|floatformat:2 }} {% trans "ريال" %}</strong></td>
+                        </tr>
+                        {% if order.coupon %}
+                        <tr>
+                            <td colspan="3" class="text-end"><strong>{% trans "الخصم" %} ({{ order.coupon.discount }}%):</strong></td>
+                            <td><strong>- {{ order.discount_amount|floatformat:2 }} {% trans "ريال" %}</strong></td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                            <td colspan="3" class="text-end"><strong>{% trans "الإجمالي النهائي" %}:</strong></td>
+                            <td><strong>{{ order.final_total|floatformat:2 }} {% trans "ريال" %}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+            
+            <h5 class="mb-3">{% trans "تعديل حالة الطلب" %}</h5>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">{% trans "حفظ التغييرات" %}</button>
+                <a href="{% url 'accounting:order_list' %}" class="btn btn-secondary">{% trans "العودة لقائمة الطلبات" %}</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %} 

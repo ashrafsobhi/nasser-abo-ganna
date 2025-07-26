@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "التحقق من رقم الهاتف" %}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header text-center bg-primary text-white">
+                    <h4>{% trans "التحقق من رقم الهاتف الجديد" %}</h4>
+                </div>
+                <div class="card-body p-5">
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{% if message.tags %}{{ message.tags }}{% else %}info{% endif %} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <p class="text-center mb-4">
+                        {% trans "لقد أرسلنا رمز تحقق إلى رقم واتساب الجديد الذي أدخلته. الرجاء إدخال الرمز أدناه." %}
+                    </p>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group mb-4">
+                            {{ form.otp.label_tag }}
+                            <input type="text" name="otp" class="form-control form-control-lg text-center {% if form.otp.errors %}is-invalid{% endif %}" required>
+                            {% if form.otp.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.otp.errors %}<span>{{ error }}</span>{% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">{% trans "تحقق وتحديث الرقم" %}</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="{% url 'store:account' %}">{% trans "العودة إلى الحساب" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

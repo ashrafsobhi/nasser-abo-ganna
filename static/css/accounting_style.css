@@ -1,0 +1,167 @@
+/* General body and container styles for the accounting app */
+body {
+    background-color: #f0f2f5; /* A light, clean background */
+    font-family: 'Tajawal', sans-serif; /* Consistent font */
+}
+
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Navbar styles */
+.navbar-dark.bg-dark {
+    background-color: #2c3e50 !important; /* Darker, professional blue-grey */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #ffffff; /* Brighter white on hover/active */
+}
+
+/* Card styles */
+.card {
+    border-radius: 12px; /* More rounded corners */
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Enhanced shadow for depth */
+    overflow: hidden; /* Ensures content stays within rounded corners */
+}
+
+.card-header {
+    background-color: #e9ecef; /* Light grey header */
+    border-bottom: 1px solid #dee2e6;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Info Cards (Dashboard) */
+.card.text-white {
+    color: #ffffff !important;
+}
+
+.card.bg-primary {
+    background-color: #3498db !important; /* A professional blue */
+}
+.card.bg-info {
+    background-color: #1abc9c !important; /* A teal-ish color */
+}
+.card.bg-success {
+    background-color: #2ecc71 !important; /* Vibrant green */
+}
+.card.bg-warning {
+    background-color: #f39c12 !important; /* A strong orange/amber */
+}
+.card.bg-danger {
+    background-color: #e74c3c !important; /* A clear red */
+}
+.card.bg-dark {
+    background-color: #34495e !important; /* Dark blue-grey */
+}
+
+.card-text.display-4 {
+    font-size: 2.8rem; /* Slightly smaller for better fit */
+    font-weight: 700;
+}
+
+.card .opacity-25 {
+    opacity: 0.15; /* More subtle icon */
+}
+
+/* List Group Styles (for reports/breakdowns) */
+.list-group-item {
+    border-color: #f0f2f5;
+    background-color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+.badge {
+    min-width: 70px;
+    padding: 0.5em 0.7em;
+    font-size: 0.8em;
+    border-radius: 0.5rem; /* Slightly more rounded */
+}
+
+/* Table styles */
+.table {
+    border-radius: 12px; /* Apply border-radius to table container if responsive */
+    overflow: hidden; /* Important for rounded corners on tables */
+}
+
+.table thead th {
+    background-color: #e9ecef;
+    color: #495057;
+    font-weight: 600;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody tr:hover {
+    background-color: #f5f5f5; /* Light hover effect */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fdfdfe; /* Lighter stripe */
+}
+
+/* Form elements */
+.form-control,
+.form-select {
+    border-radius: 8px; /* Slightly rounded for inputs */
+    border-color: #ced4da;
+}
+
+.btn-primary {
+    background-color: #3498db !important;
+    border-color: #3498db !important;
+    border-radius: 8px; /* Consistent with inputs */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2185d0 !important;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border-radius: 8px;
+}
+
+/* Specific to Reports page date inputs */
+.form-label {
+    font-weight: 500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card-text.display-4 {
+        font-size: 2rem;
+    }
+    .card-title {
+        font-size: 1rem;
+    }
+    .card-body {
+        padding: 1rem;
+    }
+    .card-header {
+        padding: 0.75rem 1rem;
+    }
+} 

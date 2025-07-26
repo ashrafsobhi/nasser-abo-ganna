@@ -1,0 +1,187 @@
+{% extends "jet/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+    .stats-container {
+        padding: 20px;
+    }
+    .summary-cards {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+    }
+    .summary-card {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        flex: 1;
+        min-width: 200px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        text-align: center;
+    }
+    .summary-card h3 {
+        margin-top: 0;
+        font-size: 16px;
+        color: #666;
+    }
+    .summary-card .value {
+        font-size: 28px;
+        font-weight: bold;
+        color: #333;
+    }
+    .charts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 30px;
+    }
+    .chart-container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .actions {
+        margin-top: 20px;
+        text-align: right;
+    }
+    .actions .btn {
+        background-color: #79aec8;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+    .actions .btn:hover {
+        background-color: #609ab6;
+    }
+    @media print {
+        body * {
+            visibility: hidden;
+        }
+        .stats-container, .stats-container * {
+            visibility: visible;
+        }
+        .stats-container {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+        .actions {
+            display: none;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="stats-container" id="stats-page">
+    <div class="actions">
+        <!-- Export button will be implemented later -->
+        <a href="#" class="btn">تصدير CSV</a>
+        <button onclick="window.print();" class="btn">طباعة</button>
+    </div>
+    
+    <h1>{{ title }}</h1>
+  
+    <div class="summary-cards">
+        <div class="summary-card">
+            <h3>إجمالي الإيرادات (الطلبات المكتملة)</h3>
+            <p class="value">{{ total_revenue|floatformat:2 }} ريال</p>
+        </div>
+        <div class="summary-card">
+            <h3>إجمالي الطلبات</h3>
+            <p class="value">{{ total_orders }}</p>
+        </div>
+        <div class="summary-card">
+            <h3>إجمالي العملاء</h3>
+            <p class="value">{{ total_customers }}</p>
+        </div>
+        <div class="summary-card">
+            <h3>إجمالي المنتجات</h3>
+            <p class="value">{{ total_products }}</p>
+        </div>
+    </div>
+
+    <div class="charts-grid">
+        <div class="chart-container">
+            <h3>المبيعات خلال آخر 30 يومًا</h3>
+            <canvas id="salesChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h3>أفضل 5 منتجات مبيعًا</h3>
+            <canvas id="productsChart"></canvas>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Sales Chart
+    const salesCtx = document.getElementById('salesChart').getContext('2d');
+    new Chart(salesCtx, {
+        type: 'line',
+        data: {
+            labels: {{ sales_chart_labels|safe }},
+            datasets: [{
+                label: 'إجمالي المبيعات (ريال)',
+                data: {{ sales_chart_data|safe }},
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderWidth: 2,
+                fill: true,
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Products Chart
+    const productsCtx = document.getElementById('productsChart').getContext('2d');
+    new Chart(productsCtx, {
+        type: 'doughnut',
+        data: {
+            labels: {{ products_chart_labels|safe }},
+            datasets: [{
+                label: 'الكمية المباعة',
+                data: {{ products_chart_data|safe }},
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)',
+                ],
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                }
+            }
+        }
+    });
+});
+</script>
+{% endblock %} 

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "التسجيل برقم الهاتف - الخطوة 3" %}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header text-center bg-primary text-white">
+                    <h4>{% trans "تسجيل حساب جديد" %}</h4>
+                    <p class="mb-0">{% trans "الخطوة 3 من 3: اختر اسم المستخدم وكلمة المرور" %}</p>
+                </div>
+                <div class="card-body p-5">
+
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {% for error in form.non_field_errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            {{ form.username.label_tag }}
+                            {{ form.username }}
+                            {% if form.username.help_text %}
+                                <div class="form-text">{{ form.username.help_text|safe }}</div>
+                            {% endif %}
+                            {% if form.username.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.username.errors %}<span>{{ error }}</span>{% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.password.label_tag }}
+                            {{ form.password }}
+                            {% if form.password.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.password.errors %}<span>{{ error }}</span>{% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.password_confirm.label_tag }}
+                            {{ form.password_confirm }}
+                             {% if form.password_confirm.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.password_confirm.errors %}<span>{{ error }}</span>{% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">{% trans "إنشاء حسابي" %}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

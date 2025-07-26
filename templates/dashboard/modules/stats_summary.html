@@ -1,0 +1,72 @@
+{% load i18n %}
+<style>
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+    }
+    .stat-card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+    .stat-card .icon {
+        font-size: 40px;
+        padding: 20px;
+        border-radius: 50%;
+        color: #fff;
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+    }
+    .stat-card .info h3 {
+        margin: 0;
+        font-size: 16px;
+        color: #888;
+        font-weight: 500;
+    }
+    .stat-card .info p.value {
+        margin: 5px 0;
+        font-size: 28px;
+        font-weight: bold;
+        color: #333;
+    }
+    .stat-card .info p.sub-value {
+        margin: 0;
+        font-size: 14px;
+        color: #aaa;
+    }
+    .bg-primary { background-color: #4e73df !important; }
+    .bg-success { background-color: #1cc88a !important; }
+    .bg-info { background-color: #36b9cc !important; }
+    .bg-warning { background-color: #f6c23e !important; }
+</style>
+<div class="stats-grid">
+    {% for stat in module.children %}
+    <div class="stat-card">
+        <div class="info">
+            <h3>{{ stat.title }}</h3>
+            <p class="value">{{ stat.value }}</p>
+            <p class="sub-value">{{ stat.sub_value }}</p>
+        </div>
+        <div class="icon bg-{{ stat.color }}">
+            <i class="fas {{ stat.icon }}"></i>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div style="text-align: right; margin-top: -20px;">
+    <a href="{{ module.context.full_stats_url }}">عرض التفاصيل الكاملة &raquo;</a>
+</div> 

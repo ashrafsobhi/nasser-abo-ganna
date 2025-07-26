@@ -1,0 +1,26 @@
+{% load static %}
+{% load i18n %}
+
+<div class="card h-100 product-card shadow-sm border-0">
+    <div class="product-card-img-container">
+        <a href="{{ product.get_absolute_url }}">
+            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/placeholder_product.png' %}{% endif %}" class="card-img-top" alt="{{ product.name }}" loading="lazy">
+        </a>
+        <div class="product-card-actions-overlay">
+            <a href="{% url 'store:add_to_wishlist' product.id %}" class="btn btn-light btn-sm rounded-circle" title="{% trans 'إضافة للمفضلة' %}"><i class="far fa-heart"></i></a>
+            <button class="btn btn-light btn-sm rounded-circle quick-view-btn" data-product-id="{{ product.id }}" title="{% trans 'عرض سريع' %}"><i class="far fa-eye"></i></button>
+        </div>
+    </div>
+    <div class="card-body text-center d-flex flex-column">
+        <a href="{{ product.get_absolute_url }}" class="text-dark text-decoration-none">
+            <h6 class="card-title mb-1">{{ product.name }}</h6>
+        </a>
+        <p class="card-text text-muted small">{{ product.category.name }}</p>
+        <p class="card-text fw-bold mt-auto">{{ product.price|floatformat:2 }} {% trans "جنيه" %}</p>
+    </div>
+    <div class="card-footer bg-transparent border-0 px-3 pb-3">
+        <button class="btn btn-primary w-100 add-to-cart-btn-alt" data-product="{{product.id}}" data-action="add">
+            <i class="fas fa-shopping-cart me-2"></i> {% trans "إضافة للسلة" %}
+        </button>
+    </div>
+</div> 

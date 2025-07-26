@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "تواصل معنا" %}{% endblock %}
+
+{% block content %}
+<style>
+    :root {
+        --primary-color: #A67B5B;
+        --secondary-color: #8c6649;
+        --light-gray-color: #f8f9fa;
+        --dark-text-color: #333;
+        --light-text-color: #777;
+        --white-color: #fff;
+        --border-color: #e1e1e1;
+    }
+
+    body {
+        /* The Tajawal font is already set in base.html, so this is for assurance */
+        font-family: 'Tajawal', sans-serif; 
+    }
+
+    .contact-section {
+        padding: 80px 0;
+        background-color: var(--light-gray-color);
+    }
+
+    .contact-container {
+        max-width: 1200px;
+        margin: auto;
+        background: var(--white-color);
+        box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .contact-info-wrapper {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .contact-info-wrapper h2 {
+        font-size: 2.2em;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+
+    .contact-info-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .contact-info-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 25px;
+        font-size: 1.1em;
+    }
+    
+    .contact-info-item .icon {
+        font-size: 1.5em;
+        margin-left: 20px;
+        width: 30px;
+        flex-shrink: 0;
+    }
+
+    .contact-info-item a {
+        color: var(--white-color);
+        text-decoration: none;
+        transition: opacity 0.3s;
+    }
+    .contact-info-item a:hover {
+        opacity: 0.8;
+    }
+
+    .social-icons {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .social-icons a {
+        color: var(--white-color);
+        font-size: 1.5em;
+        margin-left: 20px;
+        transition: transform 0.3s;
+        display: inline-block;
+    }
+    .social-icons a:hover {
+        transform: scale(1.2);
+    }
+    
+    .contact-form-wrapper {
+        padding: 50px 40px;
+    }
+
+    .contact-form-wrapper h2 {
+        font-size: 2.2em;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: var(--dark-text-color);
+    }
+    
+    .contact-form-wrapper .text-muted {
+        color: var(--light-text-color) !important;
+        margin-bottom: 30px;
+    }
+
+    .form-control {
+        background-color: #f5f5f5;
+        border: 1px solid #f5f5f5;
+        border-radius: 8px;
+        height: 55px;
+        padding: 15px;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .form-control:focus {
+        background-color: var(--white-color);
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.2rem rgba(166, 123, 91, 0.25);
+    }
+    
+    textarea.form-control {
+        height: auto;
+    }
+
+    label {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--dark-text-color);
+    }
+
+    .btn-submit {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: var(--white-color);
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 1.1em;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-submit:hover {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+        transform: translateY(-2px);
+    }
+
+    .map-container {
+        margin-top: 40px;
+        height: 200px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .map-container iframe {
+        border: 0;
+        height: 100%;
+        width: 100%;
+    }
+</style>
+
+<div class="contact-section">
+    <div class="container">
+        <div class="contact-container">
+            <div class="row g-0">
+
+                <!-- Right Side: Contact Form -->
+                <div class="col-lg-7 order-lg-2">
+                    <div class="contact-form-wrapper">
+                        <h2>{% trans "أرسل لنا رسالة" %}</h2>
+                        <p class="text-muted">{% trans "لديك سؤال أو استفسار؟ املأ النموذج أدناه وسنرد عليك في أقرب وقت ممكن." %}</p>
+                        
+                        <form method="post" action="{% url 'store:contact' %}">
+                            {% csrf_token %}
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+                                    {{ form.name }}
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                                    {{ form.email }}
+                                </div>
+                                <div class="col-12">
+                                    <label for="{{ form.subject.id_for_label }}">{{ form.subject.label }}</label>
+                                    {{ form.subject }}
+                                </div>
+                                <div class="col-12">
+                                    <label for="{{ form.message.id_for_label }}">{{ form.message.label }}</label>
+                                    {{ form.message }}
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-submit w-100">{% trans "إرسال الرسالة" %}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Left Side: Contact Info -->
+                <div class="col-lg-5 order-lg-1">
+                    <div class="contact-info-wrapper">
+                        <div>
+                            <h2>{% trans "معلومات التواصل" %}</h2>
+                            <ul class="contact-info-list">
+                                {% if site_config.address %}
+                                <li class="contact-info-item">
+                                    <i class="fas fa-map-marker-alt icon"></i>
+                                    <span>{{ site_config.address|linebreaksbr }}</span>
+                                </li>
+                                {% endif %}
+                                {% if site_config.phone_number %}
+                                <li class="contact-info-item">
+                                    <i class="fas fa-phone-alt icon"></i>
+                                    <a href="tel:{{ site_config.phone_number }}" dir="ltr">{{ site_config.phone_number }}</a>
+                                </li>
+                                {% endif %}
+                                {% if site_config.contact_email %}
+                                <li class="contact-info-item">
+                                    <i class="fas fa-envelope icon"></i>
+                                    <a href="mailto:{{ site_config.contact_email }}">{{ site_config.contact_email }}</a>
+                                </li>
+                                {% endif %}
+                                {% if site_config.whatsapp_number %}
+                                <li class="contact-info-item">
+                                    <i class="fab fa-whatsapp icon"></i>
+                                    <a href="https://wa.me/{{ site_config.whatsapp_number }}" target="_blank" dir="ltr">{{ site_config.whatsapp_number }}</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+
+                             {% if site_config.address %}
+                            <div class="map-container">
+                               <iframe src="https://maps.google.com/maps?q={{ site_config.address|urlencode }}&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="social-icons">
+                            {% if site_config.facebook_url %}<a href="{{ site_config.facebook_url }}" target="_blank"><i class="fab fa-facebook-f"></i></a>{% endif %}
+                            {% if site_config.instagram_url %}<a href="{{ site_config.instagram_url }}" target="_blank"><i class="fab fa-instagram"></i></a>{% endif %}
+                            {% if site_config.twitter_url %}<a href="{{ site_config.twitter_url }}" target="_blank"><i class="fab fa-twitter"></i></a>{% endif %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

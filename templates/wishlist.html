@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "قائمة المفضلات" %} - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <h1 class="text-center mb-4">{% trans "قائمة المفضلات" %}</h1>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            {% if items %}
+                <div class="row">
+                    {% for item in items %}
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card product-card h-100">
+                                <a href="{{ item.product.get_absolute_url }}">
+                                    <img src="{% if item.product.image %}{{ item.product.image.url }}{% else %}{% static 'images/placeholder_product.png' %}{% endif %}" class="card-img-top" alt="{{ item.product.name }}">
+                                </a>
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title"><a href="{{ item.product.get_absolute_url }}" class="text-dark text-decoration-none">{{ item.product.name }}</a></h5>
+                                    <p class="card-text text-primary fw-bold fs-5 mt-auto">{{ item.product.price|floatformat:2 }} {% trans "جنيه" %}</p>
+                                </div>
+                                <div class="card-footer bg-white border-0 p-3">
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary add-to-cart-btn-alt" data-product="{{ item.product.id }}" data-action="add">{% trans "أضف للسلة" %}</button>
+                                        <a href="{% url 'store:remove_from_wishlist' item.id %}" class="btn btn-outline-danger">{% trans "إزالة" %}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="text-center py-5">
+                    <i class="fas fa-heart-broken fa-4x text-muted mb-3"></i>
+                    <h2>{% trans "قائمة مفضلاتك فارغة" %}</h2>
+                    <p class="text-muted">{% trans "لم تقم بإضافة أي منتجات إلى قائمة مفضلاتك بعد." %}</p>
+                    <a href="{% url 'store:store' %}" class="btn btn-primary mt-3">{% trans "تصفح المنتجات" %}</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %} 

@@ -1,0 +1,110 @@
+{% extends 'accounting/base_accounting.html' %}
+{% load i18n %}
+
+{% block title %}{{ title }} - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h3 class="mb-4 text-center">{{ title }}</h3>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <form method="GET" class="row g-3 align-items-center">
+                <div class="col-md-4">
+                    <label for="statusFilter" class="form-label visually-hidden">{% trans "الحالة" %}</label>
+                    <select class="form-select" id="statusFilter" name="status">
+                        <option value="all" {% if not current_status_filter or current_status_filter == 'all' %}selected{% endif %}>{% trans "جميع الحالات" %}</option>
+                        {% for status_key, status_display in status_choices %}
+                            <option value="{{ status_key }}" {% if current_status_filter == status_key %}selected{% endif %}>{{ status_display }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="dateFilter" class="form-label visually-hidden">{% trans "النطاق الزمني" %}</label>
+                    <select class="form-select" id="dateFilter" name="date_range">
+                        {% for date_key, date_display in date_range_choices.items %}
+                            <option value="{{ date_key }}" {% if current_date_filter == date_key %}selected{% endif %}>{{ date_display }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="searchInput" class="form-label visually-hidden">{% trans "بحث" %}</label>
+                    <input type="text" class="form-control" id="searchInput" name="q" placeholder="{% trans "بحث برقم الطلب، العميل، العنوان..." %}" value="{{ search_query|default_if_none:'' }}">
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" class="btn btn-primary w-100">{% trans "فلتر" %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            {% if orders %}
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped align-middle">
+                        <thead class="table-primary">
+                            <tr>
+                                <th scope="col">{% trans "رقم الطلب" %}</th>
+                                <th scope="col">{% trans "العميل" %}</th>
+                                <th scope="col">{% trans "تاريخ الطلب" %}</th>
+                                <th scope="col">{% trans "الإجمالي" %}</th>
+                                <th scope="col">{% trans "حالة الدفع" %}</th>
+                                <th scope="col">{% trans "حالة الطلب" %}</th>
+                                <th scope="col">{% trans "إجراءات" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                            <tr>
+                                <td>#{{ order.id }}</td>
+                                <td>
+                                    {% if order.customer %}
+                                        {{ order.customer.user.username|default:order.customer.phone_number }}<br>
+                                        <small class="text-muted">{{ order.customer.phone_number }}</small>
+                                    {% else %}
+                                        {% trans "ضيف" %}
+                                    {% endif %}
+                                </td>
+                                <td>{{ order.date_ordered|date:"d M, Y H:i" }}</td>
+                                <td>{{ order.final_total|floatformat:2 }} {% trans "ريال" %}</td>
+                                <td>
+                                    {% if order.payment_status == 'paid' %}
+                                        <span class="badge bg-success">{% trans "مدفوع" %}</span>
+                                    {% elif order.payment_status == 'pending' %}
+                                        <span class="badge bg-warning text-dark">{% trans "معلق" %}</span>
+                                    {% elif order.payment_status == 'failed' %}
+                                        <span class="badge bg-danger">{% trans "فشل الدفع" %}</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if order.status == 'pending' %}
+                                        <span class="badge bg-secondary">{% trans "قيد الانتظار" %}</span>
+                                    {% elif order.status == 'processing' %}
+                                        <span class="badge bg-info text-dark">{% trans "قيد المعالجة" %}</span>
+                                    {% elif order.status == 'shipped' %}
+                                        <span class="badge bg-primary">{% trans "تم الشحن" %}</span>
+                                    {% elif order.status == 'delivered' %}
+                                        <span class="badge bg-success">{% trans "تم التسليم" %}</span>
+                                    {% elif order.status == 'cancelled' %}
+                                        <span class="badge bg-danger">{% trans "ملغي" %}</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="{% url 'accounting:edit_order_status' order.id %}" class="btn btn-sm btn-outline-info me-2">{% trans "تعديل الحالة" %}</a>
+                                    <a href="{% url 'accounting:create_invoice_from_order' order.id %}" class="btn btn-sm btn-outline-success">{% trans "إنشاء فاتورة" %}</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="alert alert-info text-center" role="alert">
+                    {% trans "لا توجد طلبات لعرضها حالياً." %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %} 

@@ -1,0 +1,110 @@
+{% load i18n %}
+<div class="card shadow-sm">
+    <div class="card-body p-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="card-title mb-0">{% trans "دفتر العناوين" %}</h4>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#addAddressCollapse" aria-expanded="false" aria-controls="addAddressCollapse">
+                <i class="fas fa-plus me-2"></i>{% trans "إضافة عنوان جديد" %}
+            </button>
+        </div>
+        <hr>
+
+        <!-- Add Address Form (Collapsible) -->
+        <div class="collapse" id="addAddressCollapse">
+            <div class="card card-body mb-4">
+                <h5>{% trans "إضافة عنوان جديد" %}</h5>
+                <form action="{% url 'store:add_address' %}" method="post">
+                    {% csrf_token %}
+                    {{ address_form.as_p }}
+                    <button type="submit" class="btn btn-success">{% trans "حفظ العنوان" %}</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Existing Addresses -->
+        <div class="row">
+            {% for address in addresses %}
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{ address.street_address }}
+                            {% if address.is_default %}
+                                <span class="badge bg-success">{% trans "الافتراضي" %}</span>
+                            {% endif %}
+                        </h5>
+                        <p class="card-text mb-1">{{ address.city }}, {{ address.state }}</p>
+                        <p class="card-text">{{ address.country }}, {{ address.zip_code }}</p>
+                        <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editAddressModal-{{ address.id }}">{% trans "تعديل" %}</button>
+                        <form action="{% url 'store:delete_address' address.id %}" method="post" class="d-inline delete-address-form">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-sm btn-outline-danger" data-confirm-message="{% trans 'هل أنت متأكد من رغبتك في حذف هذا العنوان؟' %}">{% trans "حذف" %}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit Address Modal -->
+            <div class="modal fade" id="editAddressModal-{{ address.id }}" tabindex="-1" aria-labelledby="editAddressModalLabel-{{ address.id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form action="{% url 'store:edit_address' address.id %}" method="post">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editAddressModalLabel-{{ address.id }}">{% trans "تعديل العنوان" %}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {% csrf_token %}
+                                 <div class="mb-3">
+                                     <label for="id_street_address_{{address.id}}" class="form-label">{% trans "عنوان الشارع" %}</label>
+                                     <input type="text" name="street_address" class="form-control" value="{{address.street_address}}" required id="id_street_address_{{address.id}}">
+                                 </div>
+                                 <div class="mb-3">
+                                     <label for="id_city_{{address.id}}" class="form-label">{% trans "المدينة" %}</label>
+                                     <input type="text" name="city" class="form-control" value="{{address.city}}" required id="id_city_{{address.id}}">
+                                 </div>
+                                 <div class="mb-3">
+                                     <label for="id_state_{{address.id}}" class="form-label">{% trans "المحافظة/الولاية" %}</label>
+                                     <input type="text" name="state" class="form-control" value="{{address.state}}" id="id_state_{{address.id}}">
+                                 </div>
+                                  <div class="mb-3">
+                                     <label for="id_zip_code_{{address.id}}" class="form-label">{% trans "الرمز البريدي" %}</label>
+                                     <input type="text" name="zip_code" class="form-control" value="{{address.zip_code}}" required id="id_zip_code_{{address.id}}">
+                                 </div>
+                                 <div class="mb-3">
+                                     <label for="id_country_{{address.id}}" class="form-label">{% trans "الدولة" %}</label>
+                                     <input type="text" name="country" class="form-control" value="{{address.country}}" required id="id_country_{{address.id}}">
+                                 </div>
+                                 <div class="form-check">
+                                    <input type="checkbox" name="is_default" class="form-check-input" id="id_is_default_{{address.id}}" {% if address.is_default %}checked{% endif %}>
+                                    <label class="form-check-label" for="id_is_default_{{address.id}}">{% trans "اجعله العنوان الافتراضي" %}</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans "إغلاق" %}</button>
+                                <button type="submit" class="btn btn-primary">{% trans "حفظ التغييرات" %}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>{% trans "لم تقم بإضافة أي عناوين بعد." %}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+// Simple confirmation for delete buttons
+document.querySelectorAll('.delete-address-form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+        const message = this.querySelector('button[type="submit"]').dataset.confirmMessage;
+        if (!confirm(message)) {
+            e.preventDefault();
+        }
+    });
+});
+</script>

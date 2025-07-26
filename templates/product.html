@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{{ product.name }} - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <!-- Product Image Section -->
+        <div class="col-md-6 text-center">
+            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/placeholder.png' %}{% endif %}" alt="{{ product.name }}" class="img-fluid rounded shadow-sm">
+        </div>
+
+        <!-- Product Details Section -->
+        <div class="col-md-6">
+            <div class="product-details-card p-4">
+                <h1 class="product-title display-5">{{ product.name }}</h1>
+                <p class="product-category text-muted">
+                    {% trans "الفئة" %}: <a href="{% url 'store:store' %}?category={{ product.category.slug }}">{{ product.category.name }}</a>
+                </p>
+                <hr>
+                <p class="product-price h3">{{ product.price|floatformat:2 }} {% trans "جنيه" %}</p>
+                
+                <div class="product-stock mb-3">
+                    {% if product.stock > 10 %}
+                        <span class="badge bg-success">{% trans "متوفر" %}</span>
+                    {% elif product.stock > 0 %}
+                        <span class="badge bg-warning text-dark">{% trans "كمية محدودة" %} ({{ product.stock }})</span>
+                    {% else %}
+                        <span class="badge bg-danger">{% trans "غير متوفر" %}</span>
+                    {% endif %}
+                </div>
+
+                <form action="{% url 'store:add_to_cart_from_detail' product.id %}" method="post" class="purchase-form mt-4">
+                    {% csrf_token %}
+                    <div class="d-flex align-items-center mb-3">
+                        <label for="quantity" class="form-label me-3">{% trans "الكمية" %}:</label>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1" {% if product.stock > 0 %}max="{{ product.stock }}"{% else %}disabled{% endif %} class="form-control" style="width: 80px;">
+                    </div>
+                    
+                    <div class="button-group mt-3">
+                        <button type="submit" name="action" value="add_to_cart" class="btn btn-primary btn-lg me-2" {% if product.stock <= 0 %}disabled{% endif %}>
+                            <i class="fas fa-shopping-cart"></i> {% trans "أضف إلى السلة" %}
+                        </button>
+                        <button type="submit" name="action" value="buy_now" class="btn btn-success btn-lg" {% if product.stock <= 0 %}disabled{% endif %}>
+                            <i class="fas fa-bolt"></i> {% trans "شراء الآن" %}
+                        </button>
+                    </div>
+                </form>
+
+                <div class="product-description-full mt-4">
+                    <h4>{% trans "الوصف" %}</h4>
+                    <p>{{ product.description|linebreaks }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

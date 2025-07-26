@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}من نحن{% endblock %}
+
+{% block content %}
+<style>
+    .about-page-container {
+        padding: 60px 20px;
+        background-color: #ffffff;
+    }
+    .about-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .about-header h1 {
+        font-size: 3.5em;
+        font-weight: 700;
+        color: #2c3e50;
+    }
+    .about-content {
+        max-width: 900px;
+        margin: 0 auto 60px auto;
+        font-size: 1.2em;
+        line-height: 2;
+        color: #34495e;
+    }
+    .about-content h1, .about-content h2, .about-content h3 {
+        font-weight: 700;
+        color: #2c3e50;
+    }
+
+    .team-section {
+        background-color: #f8f9fa;
+        padding: 60px 20px;
+        border-top: 1px solid #e7e7e7;
+        border-bottom: 1px solid #e7e7e7;
+    }
+    .team-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .team-header h2 {
+        font-size: 2.8em;
+        font-weight: 700;
+        color: #2c3e50;
+    }
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .team-member-card {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+        text-align: center;
+        padding: 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .team-member-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+    .team-member-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 20px auto;
+        border: 5px solid #eaf0f6;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .team-member-name {
+        font-size: 1.5em;
+        font-weight: 700;
+        color: #333;
+        margin: 0;
+    }
+    .team-member-role {
+        font-size: 1em;
+        color: #7f8c8d;
+        margin-top: 5px;
+    }
+    .no-content {
+        text-align: center;
+        padding: 50px;
+        font-size: 1.2em;
+        color: #777;
+    }
+</style>
+
+<div class="about-page-container">
+    <div class="container">
+        {% if about_page %}
+            <header class="about-header">
+                <h1>{{ about_page.title }}</h1>
+            </header>
+
+            <section class="about-content">
+                {{ about_page.content|safe }}
+            </section>
+
+            {% if about_page.team_members.all %}
+                <section class="team-section">
+                    <div class="team-header">
+                        <h2>تعرف على فريقنا</h2>
+                    </div>
+                    <div class="team-grid">
+                        {% for member in about_page.team_members.all %}
+                            <div class="team-member-card">
+                                {% if member.image %}
+                                    <img src="{{ member.image.url }}" alt="{{ member.name }}" class="team-member-img">
+                                {% else %}
+                                    <img src="{% static 'images/default-avatar.png' %}" alt="Default Avatar" class="team-member-img">
+                                {% endif %}
+                                <h3 class="team-member-name">{{ member.name }}</h3>
+                                <p class="team-member-role">{{ member.role }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </section>
+            {% endif %}
+
+        {% else %}
+            <div class="no-content">
+                <p>لم يتم إضافة محتوى صفحة "من نحن" بعد. يرجى إضافته من لوحة التحكم.</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %} 

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "التحقق من رمز OTP" %}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header text-center bg-success text-white">
+                    <h4>{% trans "التحقق من رمز OTP" %}</h4>
+                </div>
+                <div class="card-body p-5">
+
+                    {# Display Django Messages #}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{% if message.tags %}{{ message.tags }}{% else %}info{% endif %} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <p class="text-center mb-4">
+                        {% blocktrans with phone_number=phone_number %}
+                        لقد أرسلنا رمز تحقق مكون من 6 أرقام إلى رقم واتساب الخاص بك: <strong>{{ phone_number }}</strong>.
+                        الرجاء إدخال الرمز أدناه للمتابعة.
+                        {% endblocktrans %}
+                    </p>
+                    
+                    <form method="post" action="{% url 'store:phone_login_verify_otp' %}">
+                        {% csrf_token %}
+                        
+                        <div class="form-group mb-4">
+                            {{ form.otp.label_tag }}
+                            <input type="text" name="otp" class="form-control form-control-lg text-center {% if form.otp.errors %}is-invalid{% endif %}" required>
+                            {% if form.otp.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.otp.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                             {% if form.non_field_errors %}
+                                <div class="alert alert-danger mt-2">
+                                     {% for error in form.non_field_errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success w-100">{% trans "تحقق وتسجيل الدخول" %}</button>
+                    </form>
+                    
+                    <div class="mt-4 text-center">
+                        <a href="{% url 'store:login' %}" class="text-muted"><small>{% trans "لم تستلم الرمز؟ حاول مرة أخرى" %}</small></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

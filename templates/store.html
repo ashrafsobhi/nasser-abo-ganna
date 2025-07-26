@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "المتجر" %} - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <!-- Sidebar for Filters -->
+        <div class="col-lg-3">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">{% trans "الفئات" %}</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="{% url 'store:store' %}" class="list-group-item list-group-item-action {% if not selected_category %}active{% endif %}">
+                        {% trans "كل المنتجات" %}
+                    </a>
+                    {% for c in categories %}
+                    <a href="{% url 'store:store' %}?category={{ c.slug }}" class="list-group-item list-group-item-action {% if selected_category == c.slug %}active{% endif %}">
+                        {{ c.name }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- You can add more filter sections here (e.g., price range) -->
+        </div>
+
+        <!-- Main Content for Products -->
+        <div class="col-lg-9">
+            <h2 class="mb-4">{% if selected_category_object %}{{ selected_category_object.name }}{% else %}{% trans "كل المنتجات" %}{% endif %}</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                {% for product in products %}
+                    {% include '_product_card.html' with product=product %}
+                {% empty %}
+                    <div class="col-12">
+                        <p class="text-center text-muted fs-5">{% trans "لا توجد منتجات في هذه الفئة حاليًا." %}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <!-- Optional: Add pagination controls here -->
+        </div>
+    </div>
+</div>
+{% endblock %} 

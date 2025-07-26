@@ -1,0 +1,379 @@
+{% extends 'accounting/base_accounting.html' %}
+{% load i18n %}
+
+{% block title %}{{ title }} - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h3 class="mb-4 text-center">{{ title }}</h3>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post" id="invoiceForm">
+        {% csrf_token %}
+
+        <!-- Customer Details -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-light">{% trans "بيانات العميل" %}</div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="id_customer_name" class="form-label">{{ invoice_form.customer_name.label }}</label>
+                        {{ invoice_form.customer_name }}
+                    </div>
+                    <div class="col-md-6">
+                        <label for="id_customer_phone" class="form-label">{{ invoice_form.customer_phone.label }}</label>
+                        {{ invoice_form.customer_phone }}
+                    </div>
+                    <div class="col-md-6">
+                        <label for="id_customer_email" class="form-label">{{ invoice_form.customer_email.label }}</label>
+                        {{ invoice_form.customer_email }}
+                    </div>
+                    <div class="col-md-12">
+                        <label for="id_customer_address" class="form-label">{{ invoice_form.customer_address.label }}</label>
+                        {{ invoice_form.customer_address }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products/Services Details -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                <span>{% trans "بيانات المنتجات/الخدمات" %}</span>
+                <button type="button" class="btn btn-sm btn-success" id="addProductButton">
+                    <i class="fas fa-plus"></i> {% trans "إضافة منتج" %}
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped" id="invoiceItemsTable">
+                        <thead>
+                            <tr>
+                                <th>{% trans "المنتج" %}</th>
+                                <th>{% trans "الكمية" %}</th>
+                                <th>{% trans "سعر الوحدة" %}</th>
+                                <th>{% trans "الإجمالي" %}</th>
+                                <th>{% trans "إجراء" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{ invoice_item_formset.management_form }}
+                            {% for form in invoice_item_formset %}
+                                <tr class="formset-row{% if form.instance.pk %} existing-row{% endif %}">
+                                    <td>
+                                        {{ form.product }} {# Product dropdown #}
+                                        {{ form.product_name }} {# Hidden/optional text input #}
+                                    </td>
+                                    <td>{{ form.quantity }}</td>
+                                    <td>{{ form.unit_price }}</td>
+                                    <td class="item-total">0.00</td>
+                                    <td>
+                                        {% if form.instance.pk %}{{ form.DELETE }}{% endif %}
+                                        <button type="button" class="btn btn-danger btn-sm delete-row-button"><i class="fas fa-trash"></i></button>
+                                        {{ form.id }}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Totals Summary -->
+                <div class="row justify-content-end mt-4">
+                    <div class="col-md-6">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                {% trans "إجمالي المبلغ" %}:
+                                <span id="subTotalAmount" class="fw-bold">0.00</span> ريال
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <label for="id_tax_rate" class="form-label mb-0">{{ invoice_form.tax_rate.label }}</label>
+                                <div class="input-group w-auto">
+                                    {{ invoice_form.tax_rate }}
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                {% trans "الضريبة" %}:
+                                <span id="taxAmount" class="fw-bold">0.00</span> ريال
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <label for="id_discount_amount" class="form-label mb-0">{{ invoice_form.discount_amount.label }}</label>
+                                <div class="input-group w-auto">
+                                    {{ invoice_form.discount_amount }}
+                                    <span class="input-group-text">ريال</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center bg-light">
+                                <h5 class="mb-0">{% trans "الإجمالي النهائي" %}</h5>
+                                <h5 class="mb-0"><span id="finalTotalAmount" class="fw-bold">0.00</span> ريال</h5>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Options & Notes -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-light">{% trans "خيارات الدفع وملاحظات داخلية" %}</div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="id_payment_method" class="form-label">{{ invoice_form.payment_method.label }}</label>
+                        {{ invoice_form.payment_method }}
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center">
+                        <div class="form-check form-check-inline mt-3">
+                            {{ invoice_form.is_paid }}
+                            <label class="form-check-label" for="id_is_paid">{{ invoice_form.is_paid.label }}</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="id_internal_notes" class="form-label">{{ invoice_form.internal_notes.label }}</label>
+                        {{ invoice_form.internal_notes }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary btn-lg">{% trans "إنشاء الفاتورة" %}</button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}
+
+{% block js %}
+{{ invoice_item_formset.media }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const invoiceItemsTable = document.getElementById('invoiceItemsTable');
+        const addProductButton = document.getElementById('addProductButton');
+        const totalFormsInput = document.querySelector('#id_items-TOTAL_FORMS');
+        const subTotalAmountSpan = document.getElementById('subTotalAmount');
+        const taxRateInput = document.getElementById('id_tax_rate');
+        const taxAmountSpan = document.getElementById('taxAmount');
+        const discountAmountInput = document.getElementById('id_discount_amount');
+        const finalTotalAmountSpan = document.getElementById('finalTotalAmount');
+
+        const getProductPriceUrl = '{% url "store:get_product_price" %}'; // URL for AJAX
+
+        function updateElementIndex(el, prefix, ndx) {
+            const idRegex = new RegExp(`(${prefix}-(\d+)-)`)
+            el.id = el.id.replace(idRegex, `${prefix}-${ndx}-`);
+            el.name = el.name.replace(idRegex, `${prefix}-${ndx}-`);
+        }
+
+        function calculateTotals() {
+            let subTotal = 0;
+            document.querySelectorAll('#invoiceItemsTable tbody tr').forEach(row => {
+                const quantityInput = row.querySelector('.item-quantity');
+                const unitPriceInput = row.querySelector('.item-unit-price');
+                const itemTotalCell = row.querySelector('.item-total');
+
+                // Only calculate if the row is not marked for deletion
+                const deleteCheckbox = row.querySelector('input[type="checkbox"][name$="-DELETE"]');
+                if (deleteCheckbox && deleteCheckbox.checked) {
+                    return; // Skip deleted rows
+                }
+
+                if (quantityInput && unitPriceInput && itemTotalCell) {
+                    const quantity = parseFloat(quantityInput.value) || 0;
+                    const unitPrice = parseFloat(unitPriceInput.value) || 0;
+                    const itemTotal = quantity * unitPrice;
+                    itemTotalCell.textContent = itemTotal.toFixed(2);
+                    subTotal += itemTotal;
+                }
+            });
+
+            subTotalAmountSpan.textContent = subTotal.toFixed(2);
+
+            const taxRate = parseFloat(taxRateInput.value) || 0;
+            const discountAmount = parseFloat(discountAmountInput.value) || 0;
+
+            const taxAmount = (subTotal * taxRate) / 100;
+            taxAmountSpan.textContent = taxAmount.toFixed(2);
+
+            const finalTotal = subTotal + taxAmount - discountAmount;
+            finalTotalAmountSpan.textContent = finalTotal.toFixed(2);
+        }
+
+        // Function to fetch product price via AJAX
+        function fetchProductPrice(productId, unitPriceInput) {
+            if (!productId) {
+                unitPriceInput.value = '0.00';
+                calculateTotals();
+                return;
+            }
+
+            fetch(`${getProductPriceUrl}?product_id=${productId}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.price) {
+                        unitPriceInput.value = parseFloat(data.price).toFixed(2);
+                    } else {
+                        unitPriceInput.value = '0.00';
+                        console.error('Error fetching product price:', data.error);
+                    }
+                    calculateTotals();
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                    unitPriceInput.value = '0.00';
+                    calculateTotals();
+                });
+        }
+
+        // Initial calculation on page load for existing items
+        document.querySelectorAll('.item-product-select').forEach(selectElement => {
+            const selectedProductId = selectElement.value;
+            const row = selectElement.closest('.formset-row');
+            const unitPriceInput = row.querySelector('.item-unit-price');
+            if (selectedProductId) {
+                fetchProductPrice(selectedProductId, unitPriceInput);
+            }
+        });
+
+        calculateTotals();
+
+        // Event listeners for changes in quantity, unit price, tax, and discount
+        invoiceItemsTable.addEventListener('input', function(e) {
+            if (e.target.classList.contains('item-quantity') || e.target.classList.contains('item-unit-price')) {
+                calculateTotals();
+            }
+        });
+
+        invoiceItemsTable.addEventListener('change', function(e) {
+            if (e.target.classList.contains('item-product-select')) {
+                const selectedProductId = e.target.value;
+                const row = e.target.closest('.formset-row');
+                const unitPriceInput = row.querySelector('.item-unit-price');
+                const productNameInput = row.querySelector('input[name$="-product_name"]');
+
+                // If a product is selected, clear manual product name input
+                if (selectedProductId) {
+                    if (productNameInput) productNameInput.value = '';
+                    fetchProductPrice(selectedProductId, unitPriceInput);
+                } else {
+                    // If no product is selected, allow manual input and reset price
+                    unitPriceInput.value = '0.00';
+                    calculateTotals();
+                }
+            }
+        });
+
+        taxRateInput.addEventListener('input', calculateTotals);
+        discountAmountInput.addEventListener('input', calculateTotals);
+
+        // Add product row functionality
+        addProductButton.addEventListener('click', function() {
+            const currentTotalForms = parseInt(totalFormsInput.value);
+            const newFormIndex = currentTotalForms;
+
+            // Clone the empty form template provided by Django's formset
+            // Django's formset provides an empty form as a template for new rows.
+            // We need to find this template. It's usually in a `data-empty-form` attribute or similar, but
+            // for simplicity and directness with `inlineformset_factory` output, 
+            // we'll manually construct it based on expected formset rendering.
+            // The formset already provides a hidden empty form in the DOM that we can clone.
+            // However, it's safer and more robust to construct it manually as done before, 
+            // ensuring correct IDs and names for new rows.
+
+            // For a ModelChoiceField, the HTML will be a <select> tag.
+            // Need to get the options from an existing select element or pass them via context.
+            // For now, let's assume the first select element has the options and clone its innerHTML
+            // For production, consider passing products JSON via context or a dedicated AJAX call for options.
+            const firstProductSelect = document.querySelector('.item-product-select');
+            let productSelectOptions = '';
+            if (firstProductSelect) {
+                productSelectOptions = firstProductSelect.innerHTML;
+            }
+
+            const emptyFormRow = `
+                <tr class="formset-row">
+                    <td>
+                        <select name="items-${newFormIndex}-product" class="form-control form-control-sm item-product-select" id="id_items-${newFormIndex}-product">
+                            ${productSelectOptions}
+                        </select>
+                        <input type="text" name="items-${newFormIndex}-product_name" class="form-control form-control-sm mt-1" placeholder="{% trans "اسم المنتج/الخدمة (اختياري)" %}" id="id_items-${newFormIndex}-product_name">
+                    </td>
+                    <td>
+                        <input type="number" name="items-${newFormIndex}-quantity" value="1" class="form-control form-control-sm item-quantity" min="1" step="1" id="id_items-${newFormIndex}-quantity">
+                    </td>
+                    <td>
+                        <input type="number" name="items-${newFormIndex}-unit_price" value="0.00" class="form-control form-control-sm item-unit-price" min="0.01" step="0.01" id="id_items-${newFormIndex}-unit_price">
+                    </td>
+                    <td class="item-total">0.00</td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-sm delete-row-button"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+            `;
+
+            invoiceItemsTable.querySelector('tbody').insertAdjacentHTML('beforeend', emptyFormRow);
+            totalFormsInput.value = currentTotalForms + 1;
+            calculateTotals();
+
+            // Add event listener to the newly added product select
+            const newProductSelect = invoiceItemsTable.querySelector(`select[name="items-${newFormIndex}-product"]`);
+            if (newProductSelect) {
+                newProductSelect.addEventListener('change', function(e) {
+                    const selectedProductId = e.target.value;
+                    const row = e.target.closest('.formset-row');
+                    const unitPriceInput = row.querySelector('.item-unit-price');
+                    const productNameInput = row.querySelector('input[name$="-product_name"]');
+
+                    if (selectedProductId) {
+                        if (productNameInput) productNameInput.value = '';
+                        fetchProductPrice(selectedProductId, unitPriceInput);
+                    } else {
+                        unitPriceInput.value = '0.00';
+                        calculateTotals();
+                    }
+                });
+            }
+        });
+
+        // Delete product row functionality
+        invoiceItemsTable.addEventListener('click', function(e) {
+            if (e.target.classList.contains('delete-row-button')) {
+                const row = e.target.closest('.formset-row');
+                if (row) {
+                    // If it's an existing row, mark the DELETE checkbox
+                    const deleteCheckbox = row.querySelector('input[type="checkbox"][name$="-DELETE"]');
+                    if (deleteCheckbox) {
+                        deleteCheckbox.checked = true;
+                        row.style.display = 'none'; // Hide it visually
+                    } else {
+                        // If it's a newly added row, just remove it
+                        row.remove();
+                        // Reindex forms after deletion for dynamic forms
+                        let index = 0;
+                        document.querySelectorAll('#invoiceItemsTable tbody tr').forEach(function(row) {
+                            // Only reindex if the row is not deleted (hidden)
+                            if (row.style.display !== 'none') {
+                                row.querySelectorAll('input, select, textarea').forEach(function(el) {
+                                    updateElementIndex(el, 'items', index);
+                                });
+                                index++;
+                            }
+                        });
+                        totalFormsInput.value = index; // Update TOTAL_FORMS
+                    }
+                    calculateTotals();
+                }
+            }
+        });
+    });
+</script>
+{% endblock js %} 

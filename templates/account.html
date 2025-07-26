@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "حسابي" %} - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container account-dashboard my-5">
+    <div class="row">
+        <!-- Sidebar Navigation -->
+        <div class="col-lg-3">
+            <div class="card p-3 shadow-sm mb-4">
+                <div class="account-sidebar-header text-center mb-3">
+                    {% if customer.profile_picture %}
+                        <img src="{{ customer.profile_picture.url }}" alt="{{ customer.name }}" class="profile-picture rounded-circle mb-2" width="80" height="80">
+                    {% else %}
+                        <img src="{% static 'images/default-avatar.png' %}" alt="Default Avatar" class="profile-picture rounded-circle mb-2" width="80" height="80">
+                    {% endif %}
+                    <h5 class="mb-0">{{ customer.name|default:request.user.username }}</h5>
+                    <small class="text-muted">{{ customer.email }}</small>
+                </div>
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active" id="v-pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dashboard" type="button" role="tab" aria-controls="v-pills-dashboard" aria-selected="true"><i class="fas fa-tachometer-alt me-2"></i>{% trans "لوحة القيادة" %}</button>
+                    <button class="nav-link" id="v-pills-orders-tab" data-bs-toggle="pill" data-bs-target="#v-pills-orders" type="button" role="tab" aria-controls="v-pills-orders" aria-selected="false"><i class="fas fa-box me-2"></i>{% trans "الطلبات" %}</button>
+                    <button class="nav-link" id="v-pills-addresses-tab" data-bs-toggle="pill" data-bs-target="#v-pills-addresses" type="button" role="tab" aria-controls="v-pills-addresses" aria-selected="false"><i class="fas fa-map-marker-alt me-2"></i>{% trans "العناوين" %}</button>
+                    <button class="nav-link" id="v-pills-payment-tab" data-bs-toggle="pill" data-bs-target="#v-pills-payment" type="button" role="tab" aria-controls="v-pills-payment" aria-selected="false"><i class="fas fa-credit-card me-2"></i>{% trans "طرق الدفع" %}</button>
+                    <button class="nav-link" id="v-pills-notifications-tab" data-bs-toggle="pill" data-bs-target="#v-pills-notifications" type="button" role="tab" aria-controls="v-pills-notifications" aria-selected="false"><i class="fas fa-bell me-2"></i>{% trans "الإشعارات" %}</button>
+                    <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fas fa-user-cog me-2"></i>{% trans "إعدادات الحساب" %}</button>
+                    <form action="{% url 'store:logout' %}" method="post" class="d-inline-block w-100">
+                        {% csrf_token %}
+                        <button type="submit" class="nav-link w-100 text-start">
+                            <i class="fas fa-sign-out-alt me-2"></i>{% trans "تسجيل الخروج" %}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="col-lg-9">
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab">
+                    <h4>{% trans "لوحة القيادة" %}</h4>
+                    <p>{% trans "أهلاً بك في لوحة تحكم حسابك. من هنا يمكنك إدارة طلباتك، معلوماتك الشخصية، وعناوين الشحن." %}</p>
+                    {% include 'account/_dashboard_details.html' %}
+                </div>
+                <div class="tab-pane fade" id="v-pills-orders" role="tabpanel" aria-labelledby="v-pills-orders-tab">
+                    <!-- Order history will be loaded here -->
+                    {% include 'account/_order_history.html' %}
+                </div>
+                <div class="tab-pane fade" id="v-pills-addresses" role="tabpanel" aria-labelledby="v-pills-addresses-tab">
+                    <!-- Address management will be loaded here -->
+                    {% include 'account/_address_book.html' %}
+                </div>
+                <div class="tab-pane fade" id="v-pills-payment" role="tabpanel" aria-labelledby="v-pills-payment-tab">
+                    <!-- Payment methods will be loaded here -->
+                    {% include 'account/_payment_methods.html' %}
+                </div>
+                <div class="tab-pane fade" id="v-pills-notifications" role="tabpanel" aria-labelledby="v-pills-notifications-tab">
+                    <h4>{% trans "إعدادات الإشعارات" %}</h4>
+                    <p>{% trans "قم بتفعيل الإشعارات لتلقي آخر التحديثات حول طلباتك ومنتجاتنا الجديدة." %}</p>
+                    <button id="subscribeBtn" class="btn btn-primary" onclick="requestNotificationPermission()">{% trans "تفعيل الإشعارات" %}</button>
+                    <button id="unsubscribeBtn" class="btn btn-danger" style="display:none;">{% trans "إلغاء تفعيل الإشعارات" %}</button>
+                </div>
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    {% include 'account/profile_edit.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .account-sidebar-header .profile-picture {
+        border: 3px solid var(--color-primary);
+    }
+    .nav-pills .nav-link {
+        color: var(--color-text);
+        text-align: right;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+    .nav-pills .nav-link.active {
+        background-color: var(--color-primary);
+        color: white;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .nav-pills .nav-link:not(.active):hover {
+        background-color: var(--color-bg);
+    }
+    .tab-content .tab-pane {
+        background-color: var(--color-surface);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    }
+</style>
+{% endblock %}
+
+{% block js %}
+{% endblock js %} 

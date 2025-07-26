@@ -1,0 +1,64 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "حالة تأكيد الطلب" %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> {# Adjust path if your main style is elsewhere #}
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: right; /* Right-to-left for Arabic */
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .alert {
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+        .order-details p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .order-details strong {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{% trans "حالة طلبك" %}</h1>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-info">{% trans "لقد تم معالجة طلبك." %}</div>
+        {% endif %}
+
+        <div class="order-details">
+            <p><strong>{% trans "رقم الطلب" %}:</strong> #{{ order.id }}</p>
+            <p><strong>{% trans "الحالة الحالية" %}:</strong> {{ order.get_status_display }}</p>
+        </div>
+
+        <p><a href="{% url 'store' %}" class="btn btn-primary">{% trans "العودة إلى المتجر" %}</a></p>
+
+    </div>
+</body>
+</html> 

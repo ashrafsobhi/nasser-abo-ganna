@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "تسجيل حساب جديد" %}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body p-5">
+                    <h3 class="card-title text-center mb-4">{% trans "اختر طريقة التسجيل" %}</h3>
+                    <div class="d-grid gap-3">
+                        <a href="{% url 'store:register_phone_request_otp' %}" class="btn btn-success btn-lg">
+                            <i class="fab fa-whatsapp me-2"></i> {% trans "التسجيل باستخدام رقم الهاتف" %}
+                        </a>
+                        <hr>
+                        <p class="text-center text-muted">{% trans "أو التسجيل باستخدام البريد الإلكتروني" %}</p>
+                        
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-primary w-100">{% trans "تسجيل بالبريد الإلكتروني" %}</button>
+                        </form>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p>{% trans "لديك حساب بالفعل؟" %} <a href="{% url 'store:login' %}">{% trans "قم بتسجيل الدخول" %}</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

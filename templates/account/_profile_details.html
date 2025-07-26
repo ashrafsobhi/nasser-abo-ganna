@@ -1,0 +1,60 @@
+{% load i18n %}
+{% load static %}
+
+<div class="card shadow-sm">
+    <div class="card-body p-4">
+        <h4 class="card-title">{% trans "تفاصيل الملف الشخصي" %}</h4>
+        <hr>
+        
+        <!-- Profile Picture Form -->
+        <form method="post" enctype="multipart/form-data" class="mb-4 text-center">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="picture_update">
+            {% if customer.profile_picture %}
+                <img src="{{ customer.profile_picture.url }}" alt="{{ customer.name }}" class="profile-picture rounded-circle mb-3" width="120" height="120">
+            {% else %}
+                <img src="{% static 'images/default-avatar.png' %}" alt="Default Avatar" class="profile-picture rounded-circle mb-3" width="120" height="120">
+            {% endif %}
+            <div>
+                {{ picture_form.profile_picture }}
+            </div>
+            {% if picture_form.profile_picture.errors %}
+                <div class="alert alert-danger mt-2">{{ picture_form.profile_picture.errors.as_text }}</div>
+            {% endif %}
+            <button type="submit" class="btn btn-sm btn-outline-secondary mt-2">{% trans "تغيير الصورة" %}</button>
+        </form>
+        
+        <hr>
+
+        <!-- Personal Details Form -->
+        <h5 class="mb-3">{% trans "المعلومات الشخصية" %}</h5>
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="profile_update">
+            <div class="mb-3">
+                <label for="{{ profile_form.name.id_for_label }}" class="form-label">{{ profile_form.name.label }}</label>
+                {{ profile_form.name }}
+            </div>
+            <div class="mb-3">
+                <label for="{{ profile_form.email.id_for_label }}" class="form-label">{{ profile_form.email.label }}</label>
+                {{ profile_form.email }}
+            </div>
+            <div class="mb-3">
+                <label for="{{ profile_form.phone_number.id_for_label }}" class="form-label">{{ profile_form.phone_number.label }}</label>
+                {{ profile_form.phone_number }}
+            </div>
+            <button type="submit" class="btn btn-primary">{% trans "حفظ التغييرات" %}</button>
+        </form>
+
+        <hr class="my-4">
+
+        <!-- Change Password Form -->
+        <h5 class="mb-3">{% trans "تغيير كلمة المرور" %}</h5>
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="password_change">
+            {{ password_form.as_p }}
+            <button type="submit" class="btn btn-primary">{% trans "تغيير كلمة المرور" %}</button>
+        </form>
+    </div>
+</div> 

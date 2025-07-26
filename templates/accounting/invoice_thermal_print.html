@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+{% load i18n %}
+{% load store_extras %}
+<html>
+<head>
+    <title>{% trans "فاتورة حرارية" %} #{{ invoice.pk }}</title>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Consolas', 'Courier New', monospace; /* Monospace font for thermal printers */
+            font-size: 10px; /* Smaller font size */
+            width: 80mm; /* Typical thermal printer width */
+            margin: 0; /* No margins */
+            padding: 5mm; /* Small padding for content */
+            box-sizing: border-box;
+            direction: rtl; /* Right-to-left for Arabic */
+            text-align: right;
+        }
+        .header,
+        .footer {
+            text-align: center;
+            margin-bottom: 5mm;
+        }
+        .header h3,
+        .header h4 {
+            margin: 0;
+            padding: 0;
+        }
+        .info-section p {
+            margin: 1mm 0;
+            padding: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5mm;
+            margin-bottom: 5mm;
+        }
+        table th,
+        table td {
+            border-top: 1px dashed #000; /* Dashed line separator */
+            padding: 1mm 0; /* Compact padding */
+            text-align: right;
+        }
+        table th:first-child,
+        table td:first-child {
+            text-align: right; /* Ensure first column is right-aligned */
+        }
+        table th:last-child,
+        table td:last-child {
+            text-align: left; /* Last column (total/price) usually left-aligned or right-aligned based on preference */
+        }
+        .total-row td {
+            font-weight: bold;
+            border-top: 2px solid #000; /* Thicker line for totals */
+        }
+        .total-summary p {
+            margin: 1mm 0;
+            padding: 0;
+        }
+        .barcode {
+            text-align: center;
+            margin-top: 10mm;
+        }
+        .thank-you {
+            text-align: center;
+            margin-top: 5mm;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>{{ site_name }}</h3>
+        <h4>{% trans "فاتورة بيع" %}</h4>
+        <p>{% trans "رقم الفاتورة" %}: {{ invoice.pk }}</p>
+        <p>{% trans "التاريخ" %}: {{ date }}</p>
+    </div>
+
+    <div class="info-section">
+        <p><strong>{% trans "العميل" %}:</strong> {{ invoice.customer_name }}</p>
+        <p><strong>{% trans "الهاتف" %}:</strong> {{ invoice.customer_phone }}</p>
+        {% if invoice.customer_address %}<p><strong>{% trans "العنوان" %}:</strong> {{ invoice.customer_address }}</p>{% endif %}
+        <p><strong>{% trans "طريقة الدفع" %}:</strong> {{ invoice.get_payment_method_display }}</p>
+        <p><strong>{% trans "حالة الدفع" %}:</strong> {% if invoice.is_paid %}{% trans "تم الدفع" %}{% else %}{% trans "معلق" %}{% endif %}</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>{% trans "الصنف" %}</th>
+                <th style="text-align: center;">{% trans "كمية" %}</th>
+                <th style="text-align: center;">{% trans "سعر" %}</th>
+                <th style="text-align: left;">{% trans "إجمالي" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in invoice_items %}
+            <tr>
+                <td>{{ item.description }}</td>
+                <td style="text-align: center;">{{ item.quantity }}</td>
+                <td style="text-align: center;">{{ item.unit_price|floatformat:2 }}</td>
+                <td style="text-align: left;">{{ item.subtotal|floatformat:2 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="total-summary">
+        <p><strong>{% trans "الإجمالي الفرعي" %}:</strong> <span style="float: left;">{{ invoice.total_amount|floatformat:2|default:0.00 }} ريال</span></p>
+        {% comment %}
+        Ensure tax_rate is treated as 0 if None to prevent errors in calculations/comparisons.
+        {% endcomment %}
+        {% if invoice.tax_rate|default:0 > 0 %}
+        <p><strong>{% trans "الضريبة" %} ({{ invoice.tax_rate|floatformat:2|default:0.00 }}%):</strong> 
+            <span style="float: left;">
+                {% with tax_amount=invoice.total_amount|default:0.00|multiply:invoice.tax_rate|default:0.00|divide:100 %}
+                    {{ tax_amount|floatformat:2|default:0.00 }} ريال
+                {% endwith %}
+            </span>
+        </p>
+        {% endif %}
+        {% comment %}
+        Ensure discount_amount is treated as 0 if None to prevent errors in calculations/comparisons.
+        {% endcomment %}
+        {% if invoice.discount_amount|default:0 > 0 %}
+        <p><strong>{% trans "الخصم" %}:</strong> <span style="float: left;">{{ invoice.discount_amount|floatformat:2|default:0.00 }} ريال</span></p>
+        {% endif %}
+        <p><strong>-----------------------------------</strong></p>
+        <p><strong>{% trans "الإجمالي النهائي" %}:</strong> <span style="float: left;">{{ invoice.final_total|floatformat:2|default:0.00 }} ريال</span></p>
+    </div>
+
+    <div class="footer">
+        {% if invoice.internal_notes %}
+        <p><strong>{% trans "ملاحظات" %}:</strong> {{ invoice.internal_notes }}</p>
+        {% endif %}
+        <p class="thank-you">*** {% trans "شكرا لتعاملك معنا!" %} ***</p>
+        {% if qr_code_base64 %}
+        <div class="qr-code" style="text-align: center; margin-top: 10mm;">
+            <img src="data:image/png;base64,{{ qr_code_base64 }}" alt="QR Code" style="width: 50mm; height: 50mm;">
+        </div>
+        {% endif %}
+    </div>
+    <script>
+        window.onload = function() {
+            window.print();
+        };
+    </script>
+</body>
+</html> 

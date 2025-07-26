@@ -1,0 +1,193 @@
+{% load i18n %}
+{% load store_extras %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "فاتورتك" %} #{{ invoice.pk }} - {{ site_name }}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif; /* Or any other suitable Arabic font */
+            background-color: #f8f9fa;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .invoice-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+        }
+        .invoice-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .invoice-header h1 {
+            color: #343a40;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .invoice-header p {
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        .section-title {
+            background-color: #e9ecef;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #495057;
+        }
+        .invoice-details p {
+            margin-bottom: 8px;
+        }
+        .table-invoice th,
+        .table-invoice td {
+            vertical-align: middle;
+        }
+        .table-invoice th {
+            background-color: #f2f2f2;
+        }
+        .invoice-summary {
+            margin-top: 30px;
+            border-top: 1px solid #dee2e6;
+            padding-top: 20px;
+        }
+        .invoice-summary .list-group-item {
+            border: none;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .invoice-summary .list-group-item:last-child {
+            border-top: 2px solid #343a40; /* Stronger line for final total */
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .footer-info {
+            text-align: center;
+            margin-top: 40px;
+            color: #6c757d;
+            font-size: 0.85em;
+        }
+        @media print {
+            body {
+                margin: 0; /* Remove margins for print */
+                padding: 0;
+                background-color: #fff; /* White background for print */
+            }
+            .invoice-container {
+                box-shadow: none; /* Remove shadow for print */
+                border: none; /* Remove border for print */
+                margin: 0; /* No margins for print */
+                max-width: none;
+                width: 100%;
+                padding: 0; /* No padding for print */
+            }
+            .no-print {
+                display: none; /* Hide elements not needed in print */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <div class="invoice-header">
+            <h1>{% trans "فاتورة" %}</h1>
+            <p>{% trans "رقم الفاتورة" %}: <strong>{{ invoice.pk }}</strong></p>
+            <p>{% trans "تاريخ الإصدار" %}: {{ invoice.date_issued|date:"Y-m-d H:i" }}</p>
+        </div>
+
+        <div class="section-title">{% trans "تفاصيل العميل" %}</div>
+        <div class="invoice-details">
+            <p><strong>{% trans "الاسم الكامل" %}:</strong> {{ invoice.customer_name }}</p>
+            <p><strong>{% trans "رقم الهاتف" %}:</strong> {{ invoice.customer_phone }}</p>
+            {% if invoice.customer_email %}<p><strong>{% trans "البريد الإلكتروني" %}:</strong> {{ invoice.customer_email }}</p>{% endif %}
+            {% if invoice.customer_address %}<p><strong>{% trans "العنوان" %}:</strong> {{ invoice.customer_address }}</p>{% endif %}
+        </div>
+
+        <div class="section-title">{% trans "المنتجات/الخدمات" %}</div>
+        {% if invoice_items %}
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-invoice">
+                <thead>
+                    <tr>
+                        <th>{% trans "المنتج" %}</th>
+                        <th class="text-center">{% trans "الكمية" %}</th>
+                        <th class="text-center">{% trans "سعر الوحدة" %}</th>
+                        <th class="text-end">{% trans "الإجمالي" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in invoice_items %}
+                    <tr>
+                        <td>{{ item.product.name|default:item.product_name }}</td>
+                        <td class="text-center">{{ item.quantity }}</td>
+                        <td class="text-center">{{ item.unit_price|floatformat:2 }}</td>
+                        <td class="text-end">{{ item.subtotal|floatformat:2 }} ريال</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p>{% trans "لا توجد منتجات/خدمات في هذه الفاتورة." %}</p>
+        {% endif %}
+
+        <div class="section-title">{% trans "ملخص الفاتورة" %}</div>
+        <div class="invoice-summary">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong>{% trans "إجمالي المبلغ (قبل الضريبة والخصم)" %}:</strong>
+                    <span>{{ invoice.total_amount|floatformat:2 }} ريال</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong>{% trans "نسبة الضريبة" %} ({{ invoice.tax_rate|floatformat:2 }}%):</strong>
+                    <span>
+                        {% with tax_amount=invoice.total_amount|multiply:invoice.tax_rate|divide:100 %}
+                            {{ tax_amount|floatformat:2 }} ريال
+                        {% endwith %}
+                    </span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong>{% trans "الخصم اليدوي" %}:</strong>
+                    <span>{{ invoice.discount_amount|floatformat:2 }} ريال</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center bg-light">
+                    <h5 class="mb-0"><strong>{% trans "الإجمالي النهائي" %}:</strong></h5>
+                    <h5 class="mb-0">{{ invoice.final_total|floatformat:2 }} ريال</h5>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-title">{% trans "معلومات الدفع وملاحظات" %}</div>
+        <div class="invoice-details">
+            <p><strong>{% trans "طريقة الدفع" %}:</strong> {{ invoice.get_payment_method_display }}</p>
+            <p><strong>{% trans "حالة الدفع" %}:</strong> 
+                {% if invoice.is_paid %}
+                    <span class="badge bg-success">{% trans "تم الدفع" %}</span>
+                {% else %}
+                    <span class="badge bg-warning text-dark">{% trans "معلق" %}</span>
+                {% endif %}
+            </p>
+            {% if invoice.internal_notes %}<p><strong>{% trans "ملاحظات داخلية" %}:</strong> {{ invoice.internal_notes }}</p>{% endif %}
+        </div>
+
+        <div class="footer-info">
+            <p>{% trans "شكراً لتعاملكم مع" %} {{ site_name }}</p>
+            <p>{% trans "لأي استفسارات، يرجى التواصل معنا." %}</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional, for some components if needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

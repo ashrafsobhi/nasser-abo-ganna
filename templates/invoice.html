@@ -1,0 +1,154 @@
+{% load static %}
+{% load store_extras %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>فاتورة طلب رقم {{ order.id }}</title>
+    <style>
+        @font-face {
+            font-family: 'DejaVu Sans';
+            src: url('/static/fonts/DejaVuSans.ttf');
+        }
+        body {
+            font-family: 'DejaVu Sans', sans-serif;
+            direction: rtl;
+            text-align: right;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            font-size: 16px;
+            background-color: #fff;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #2c3e50;
+        }
+        .invoice-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        .invoice-details div {
+            text-align: right;
+        }
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+        }
+        .items-table th, .items-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+        .items-table th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        .totals {
+            margin-top: 30px;
+            width: 50%;
+            margin-left: auto; /* Aligns to the right */
+        }
+        .totals table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .totals td {
+            padding: 8px;
+        }
+        .totals .final-total {
+            font-weight: bold;
+            font-size: 1.2em;
+            border-top: 2px solid #333;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-box">
+        <div class="header">
+            <h1>فاتورة ضريبية مبسطة</h1>
+            <h2>متجر الهدايا</h2>
+        </div>
+
+        <div class="invoice-details">
+            <div>
+                <strong>فاتورة إلى:</strong><br>
+                {{ order.customer.name }}<br>
+                {{ order.shipping_address }}<br>
+                {{ order.phone_number }}
+            </div>
+            <div>
+                <strong>رقم الفاتورة:</strong> {{ order.id }}<br>
+                <strong>تاريخ الطلب:</strong> {{ order.date_ordered|date:"d F Y" }}<br>
+                <strong>طريقة الدفع:</strong> {{ order.get_payment_method_display }}
+            </div>
+        </div>
+
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th>المنتج</th>
+                    <th>الكمية</th>
+                    <th>سعر الوحدة</th>
+                    <th>الإجمالي</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in order.orderitem_set.all %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.price|floatformat:2 }} جنيه</td>
+                    <td>{{ item.get_total|floatformat:2 }} جنيه</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="totals">
+            <table>
+                <tr>
+                    <td>الإجمالي الفرعي</td>
+                    <td>{{ order.total_before_discount|floatformat:2 }} جنيه</td>
+                </tr>
+                {% if order.coupon %}
+                <tr>
+                    <td>الخصم ({{ order.coupon.discount }}%)</td>
+                    <td>-{{ order.total_before_discount|sub:order.final_total|floatformat:2 }} جنيه</td>
+                </tr>
+                {% endif %}
+                <tr>
+                    <td>رسوم الشحن</td>
+                    <td>0.00 جنيه</td>
+                </tr>
+                <tr class="final-total">
+                    <td>الإجمالي النهائي</td>
+                    <td>{{ order.final_total|floatformat:2 }} جنيه</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p>شكراً لتسوقكم معنا!</p>
+        </div>
+    </div>
+</body>
+</html> 

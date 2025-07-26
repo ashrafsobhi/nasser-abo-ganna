@@ -1,0 +1,162 @@
+{% extends 'admin/base_site.html' %}
+{% load i18n static %}
+
+{% block extrahead %}
+    {{ block.super }}
+    {{ form.media }}
+    {{ formset.media }}
+{% endblock %}
+
+{% block content %}
+<div id="content-main">
+    <div class="module" id="changelist">
+        <div class="changelist-form">
+            <h2 class="text-center mb-4">{{ title }}</h2>
+
+            {% if messages %}
+                <ul class="messagelist">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <form action="" method="post" id="invoice_form">
+                {% csrf_token %}
+
+                <fieldset class="module aligned">
+                    <div class="form-row">
+                        {{ form.order.label_tag }}
+                        {{ form.order }}
+                        {% if form.order.errors %}
+                            <p class="errornote">{{ form.order.errors }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="form-row">
+                        {{ form.customer.label_tag }}
+                        {{ form.customer }}
+                        {% if form.customer.errors %}
+                            <p class="errornote">{{ form.customer.errors }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="form-row">
+                        {{ form.invoice_number.label_tag }}
+                        {{ form.invoice_number }}
+                        {% if form.invoice_number.errors %}
+                            <p class="errornote">{{ form.invoice_number.errors }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="form-row">
+                        {{ form.invoice_date.label_tag }}
+                        {{ form.invoice_date }}
+                        {% if form.invoice_date.errors %}
+                            <p class="errornote">{{ form.invoice_date.errors }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="form-row">
+                        {{ form.due_date.label_tag }}
+                        {{ form.due_date }}
+                        {% if form.due_date.errors %}
+                            <p class="errornote">{{ form.due_date.errors }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="form-row">
+                        {{ form.total_amount.label_tag }}
+                        {{ form.total_amount }}
+                        {% if form.total_amount.errors %}
+                            <p class="errornote">{{ form.total_amount.errors }}</p>
+                        {% endif %}
+                    </div>
+                     <div class="form-row">
+                        {{ form.is_paid.label_tag }}
+                        {{ form.is_paid }}
+                        {% if form.is_paid.errors %}
+                            <p class="errornote">{{ form.is_paid.errors }}</p>
+                        {% endif %}
+                    </div>
+                </fieldset>
+
+                <h4 class="mt-4">{% trans "عناصر الفاتورة" %}</h4>
+                <div id="invoice_items_container">
+                    {{ formset.management_form }}
+                    {% for item_form in formset %}
+                        <div class="inline-group module aligned">
+                            <fieldset class="module aligned">
+                                {{ item_form.id }}
+                                <div class="form-row">
+                                    {{ item_form.product.label_tag }}
+                                    {{ item_form.product }}
+                                    {% if item_form.product.errors %}
+                                        <p class="errornote">{{ item_form.product.errors }}</p>
+                                    {% endif %}
+                                </div>
+                                <div class="form-row">
+                                    {{ item_form.description.label_tag }}
+                                    {{ item_form.description }}
+                                    {% if item_form.description.errors %}
+                                        <p class="errornote">{{ item_form.description.errors }}</p>
+                                    {% endif %}
+                                </div>
+                                <div class="form-row">
+                                    {{ item_form.quantity.label_tag }}
+                                    {{ item_form.quantity }}
+                                    {% if item_form.quantity.errors %}
+                                        <p class="errornote">{{ item_form.quantity.errors }}</p>
+                                    {% endif %}
+                                </div>
+                                <div class="form-row">
+                                    {{ item_form.unit_price.label_tag }}
+                                    {{ item_form.unit_price }}
+                                    {% if item_form.unit_price.errors %}
+                                        <p class="errornote">{{ item_form.unit_price.errors }}</p>
+                                    {% endif %}
+                                </div>
+                                {% if item_form.DELETE %}
+                                    <div class="form-row">
+                                        {{ item_form.DELETE.label_tag }}
+                                        {{ item_form.DELETE }}
+                                    </div>
+                                {% endif %}
+                            </fieldset>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="submit-row">
+                    <input type="submit" value="{% trans "حفظ" %}" class="default" name="_save">
+                    {% if invoice %}
+                        <a href="{% url 'store:customer_invoice_public' invoice.uuid %}" class="button">{% trans "عرض الفاتورة (PDF)" %}</a>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    (function($) {
+        $(document).ready(function() {
+            // Function to update total amount
+            function updateTotalAmount() {
+                let total = 0;
+                $('#invoice_items_container .inline-group').each(function() {
+                    const quantity = parseFloat($(this).find('input[name$="-quantity"]').val()) || 0;
+                    const unitPrice = parseFloat($(this).find('input[name$="-unit_price"]').val()) || 0;
+                    const deleteChecked = $(this).find('input[name$="-DELETE"]').is(':checked');
+
+                    if (!deleteChecked) {
+                        total += (quantity * unitPrice);
+                    }
+                });
+                $('#id_total_amount').val(total.toFixed(2));
+            }
+
+            // Attach event listeners to quantity and unit price fields
+            $('#invoice_items_container').on('change', 'input[name$="-quantity"], input[name$="-unit_price"], input[name$="-DELETE"]', updateTotalAmount);
+
+            // Initial calculation
+            updateTotalAmount();
+        });
+    })(django.jQuery);
+</script>
+{% endblock %} 

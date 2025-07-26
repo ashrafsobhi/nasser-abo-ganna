@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="homepage-wrapper">
+
+    <!-- 1. Hero Section -->
+    <section class="hero-section">
+        {% with first_promo=promotions.first %}
+        {% if first_promo %}
+            <div class="hero-background" style="background-image: url('{{ first_promo.image.url }}');"></div>
+            <div class="hero-content">
+                <h1>{{ first_promo.title }}</h1>
+                <p>نبث حياة جديدة في الحرف الثقافية.</p>
+                <a href="{{ first_promo.link|default:'#' }}" class="btn btn-primary btn-lg">تسوق الآن</a>
+            </div>
+        {% else %}
+            <div class="hero-background" style="background-image: url('{% static 'images/placeholder_banner.jpg' %}');"></div>
+            <div class="hero-content">
+                <h1>منتجات للروح</h1>
+                <p>نبث حياة جديدة في الحرف الثقافية.</p>
+                <a href="{% url 'store:store' %}" class="btn btn-primary btn-lg">تسوق الآن</a>
+            </div>
+        {% endif %}
+        {% endwith %}
+    </section>
+
+    <!-- 2. Favorites Section -->
+    <section class="content-section favorites-section-alt py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>المفضلة لدينا</h2>
+                <p class="lead text-muted">لقد قمنا بتشكيل مجموعة من المنتجات المفضلة لعملائنا.</p>
+            </div>
+            <div class="row">
+                {% for product in products %}
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product-card-container">
+                    {% include '_product_card.html' with product=product %}
+                </div>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-4">
+                 <a href="{% url 'store:store' %}" class="btn btn-outline-primary">عرض كل المنتجات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Category Showcase -->
+    <section class="content-section category-showcase py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                {% for category in categories|slice:":3" %}
+                <div class="col-md-4">
+                    <a href="{% url 'store:store' %}?category={{ category.slug }}" class="category-showcase-card text-white text-decoration-none">
+                        <img src="{% if category.image %}{{ category.image.url }}{% else %}{% static 'images/placeholder_cat.jpg' %}{% endif %}" class="img-fluid" alt="{{ category.name }}">
+                        <div class="category-card-content">
+                            <h3>{{ category.name }}</h3>
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. About Us Section -->
+    <section class="content-section about-us-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="{% static 'images/placeholder_about.jpg' %}" alt="من نحن" loading="lazy" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <h2>من نحن</h2>
+                    <p class="lead text-muted">يسعى هذا المتجر إلى تلبية جميع احتياجاتك من المزهريات الأنيقة وأطقم الشاي والتماثيل المعقدة. مع إيلاء اهتمام خاص لجودة التصنيع والتصميم الفريد، يتم اختيار منتجاتنا الخزفية بعناية لتقديم مجموعة متنوعة من الأذواق والتفضيلات.</p>
+                    <a href="{% url 'store:about' %}" class="btn btn-primary">اعرف المزيد</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Value Proposition -->
+    <section class="content-section value-prop-section py-5 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="value-prop-item">
+                        <div class="icon-circle bg-primary text-white mb-3"><i class="fas fa-gem"></i></div>
+                        <h3>تصميم حصري</h3>
+                        <p class="text-muted">قطع فنية فريدة من صنع أساتذة الحرف لدينا لجعل مساحتك تتجاوز الموضة والاتجاهات.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="value-prop-item">
+                        <div class="icon-circle bg-primary text-white mb-3"><i class="fas fa-hand-sparkles"></i></div>
+                        <h3>عمل يدوي</h3>
+                        <p class="text-muted">هذا عمل يتم على أعلى مستوى، فكرة مؤلف أصلي، يتم تنفيذه بواسطة مواد احترافية عالية الجودة.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="value-prop-item">
+                        <div class="icon-circle bg-primary text-white mb-3"><i class="fas fa-truck-fast"></i></div>
+                        <h3>توصيل بعناية</h3>
+                        <p class="text-muted">سنقوم بتعبئة ونقل البضائع الخاصة بك بكفاءة وأمان إلى مدخل منزلك أو المصعد.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Blog Section -->
+    <section class="content-section blog-section py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>من مدونتنا</h2>
+                <a href="#" class="btn btn-outline-secondary">كل المقالات</a>
+            </div>
+            <div class="row">
+                {% for post in blog_posts %}
+                <div class="col-md-6 mb-4">
+                    <div class="card blog-card h-100">
+                        {% if post.image %}
+                        <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
+                        {% endif %}
+                        <div class="card-body">
+                             {% if post.category %}
+                                <span class="badge bg-secondary mb-2">{{ post.category.name }}</span>
+                            {% endif %}
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <p class="card-text text-muted"><small>{{ post.published_date|date:"d M Y" }}</small></p>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col">
+                    <p>لا توجد مقالات في المدونة حاليًا.</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FAQ Section -->
+    <section class="content-section faq-section py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-center mb-4">الأسئلة الشائعة</h2>
+                    <div class="accordion" id="faqAccordion">
+                        {% for faq in faqs %}
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+                                    {{ faq.question }}
+                                </button>
+                            </h2>
+                            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    {{ faq.answer|linebreaksbr }}
+                                </div>
+                            </div>
+                        </div>
+                        {% empty %}
+                        <p class="text-center">لا توجد أسئلة شائعة حاليًا.</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Newsletter Signup -->
+    <section class="newsletter-section py-5 text-white text-center" style="background-color: #4a3f35;">
+        <div class="container">
+            <h2>انضم إلى قائمتنا البريدية</h2>
+            <p class="lead">احصل على عروض حصرية، قصص أصلية، والمزيد.</p>
+            <form class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="عنوان بريدك الإلكتروني...">
+                        <button type="submit" class="btn btn-primary">اشتراك</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</div>
+{% endblock content %}
+
+{% block extra_scripts %}
+<script>
+// This script is no longer needed as Bootstrap's Collapse plugin handles the accordion functionality.
+</script>
+{% endblock extra_scripts %} 

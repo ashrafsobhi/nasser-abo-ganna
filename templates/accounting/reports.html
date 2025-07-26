@@ -1,0 +1,329 @@
+{% extends 'accounting/base_accounting.html' %}
+{% load i18n store_extras %}
+
+{% block title %}{{ title }} - {{ block.super }}{% endblock %}
+
+{% block extra_head %}
+    {{ block.super }}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+{% endblock extra_head %}
+
+{% block content %}
+<div class="container my-5">
+    <h3 class="mb-4 text-center">{{ title }}</h3>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-light">{% trans "تصفية التقارير" %}</div>
+        <div class="card-body">
+            <form method="GET" class="row g-3 align-items-end">
+                <div class="col-md-5">
+                    <label for="startDate" class="form-label">{% trans "تاريخ البدء" %}</label>
+                    <input type="date" class="form-control" id="startDate" name="start_date" value="{{ start_date }}">
+                </div>
+                <div class="col-md-5">
+                    <label for="endDate" class="form-label">{% trans "تاريخ الانتهاء" %}</label>
+                    <input type="date" class="form-control" id="endDate" name="end_date" value="{{ end_date }}">
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary w-100">{% trans "تطبيق الفلتر" %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <!-- Revenue Card -->
+        <div class="col-md-4">
+            <div class="card text-white bg-success mb-3 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title">{% trans "إجمالي الإيرادات" %}</h5>
+                            <p class="card-text display-4 fw-bold">{{ period_revenue|floatformat:2 }} {% trans "ريال" %}</p>
+                        </div>
+                        <i class="fas fa-money-bill-wave fa-4x opacity-25"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expenses Card -->
+        <div class="col-md-4">
+            <div class="card text-white bg-danger mb-3 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title">{% trans "إجمالي المصروفات" %}</h5>
+                            <p class="card-text display-4 fw-bold">{{ period_expenses|floatformat:2 }} {% trans "ريال" %}</p>
+                        </div>
+                        <i class="fas fa-minus-circle fa-4x opacity-25"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Net Profit Card -->
+        <div class="col-md-4">
+            <div class="card text-white bg-dark mb-3 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title">{% trans "صافي الربح" %}</h5>
+                            <p class="card-text display-4 fw-bold">{{ period_net_profit|floatformat:2 }} {% trans "ريال" %}</p>
+                        </div>
+                        <i class="fas fa-hand-holding-usd fa-4x opacity-25"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Section -->
+    <div class="row mb-4">
+        <div class="col-lg-8 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-light">{% trans "الإيرادات والمصروفات وصافي الربح بمرور الوقت" %}</div>
+                <div class="card-body">
+                    <canvas id="revenueExpensesProfitChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-light">{% trans "توزيع المصروفات حسب الفئة" %}</div>
+                <div class="card-body">
+                    <canvas id="expensesByCategoryChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <!-- Top Selling Products -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-light">{% trans "أكثر المنتجات مبيعاً" %}</div>
+                <div class="card-body">
+                    {% if top_selling_products %}
+                    <ul class="list-group list-group-flush">
+                        {% for product in top_selling_products %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{ product.product__name }}
+                            <span class="badge bg-primary rounded-pill">{{ product.total_quantity_sold }} {% trans "وحدة" %}</span>
+                            <span class="badge bg-success rounded-pill">{{ product.total_sales_value|floatformat:2 }} {% trans "ريال" %}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <div class="alert alert-info text-center" role="alert">{% trans "لا توجد منتجات مبيعة في هذه الفترة." %}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Expenses by Category -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-light">{% trans "المصروفات حسب الفئة" %}</div>
+                <div class="card-body">
+                    {% if expenses_by_category %}
+                    <ul class="list-group list-group-flush">
+                        {% for expense_category in expenses_by_category %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{ expense_category.category|default:"" }} {% if not expense_category.category %}({% trans "غير مصنف" %}){% endif %}
+                            <span class="badge bg-danger rounded-pill">{{ expense_category.total_amount|floatformat:2 }} {% trans "ريال" %}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <div class="alert alert-info text-center" role="alert">{% trans "لا توجد مصروفات في هذه الفترة." %}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+    Chart.register(ChartDataLabels);
+
+    // Data from Django context will be injected here
+    const revenueData = JSON.parse('{{ revenue_data|safe }}');
+    const expensesData = JSON.parse('{{ expenses_data|safe }}');
+    const profitData = JSON.parse('{{ profit_data|safe }}');
+    const expensesByCategoryData = JSON.parse('{{ expenses_by_category_chart_data|safe }}');
+
+    // Chart: Revenue, Expenses, Profit over Time
+    const ctx1 = document.getElementById('revenueExpensesProfitChart').getContext('2d');
+    new Chart(ctx1, {
+        type: 'line',
+        data: {
+            labels: revenueData.map(item => item.date), // Assuming dates are consistent across all three
+            datasets: [
+                {
+                    label: '{% trans "الإيرادات" %}',
+                    data: revenueData.map(item => item.amount),
+                    borderColor: 'rgb(46, 204, 113)', // Success green
+                    backgroundColor: 'rgba(46, 204, 113, 0.2)',
+                    fill: true,
+                    tension: 0.3
+                },
+                {
+                    label: '{% trans "المصروفات" %}',
+                    data: expensesData.map(item => item.amount),
+                    borderColor: 'rgb(231, 76, 60)', // Danger red
+                    backgroundColor: 'rgba(231, 76, 60, 0.2)',
+                    fill: true,
+                    tension: 0.3
+                },
+                {
+                    label: '{% trans "صافي الربح" %}',
+                    data: profitData.map(item => item.amount),
+                    borderColor: 'rgb(52, 73, 94)', // Dark blue-grey
+                    backgroundColor: 'rgba(52, 73, 94, 0.2)',
+                    fill: true,
+                    tension: 0.3
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: '{% trans "الأداء المالي بمرور الوقت" %}'
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                datalabels: { // Hide datalabels by default for line charts
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: '{% trans "التاريخ" %}'
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: '{% trans "المبلغ (ريال)" %}'
+                    },
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Chart: Expenses by Category (Pie Chart)
+    const ctx2 = document.getElementById('expensesByCategoryChart').getContext('2d');
+    new Chart(ctx2, {
+        type: 'pie',
+        data: {
+            labels: expensesByCategoryData.map(item => item.category),
+            datasets: [{
+                label: '{% trans "المبلغ (ريال)" %}',
+                data: expensesByCategoryData.map(item => item.amount),
+                backgroundColor: [
+                    '#e74c3c', // Red
+                    '#3498db', // Blue
+                    '#2ecc71', // Green
+                    '#f39c12', // Orange
+                    '#9b59b6', // Purple
+                    '#1abc9c', // Teal
+                    '#f1c40f', // Yellow
+                    '#34495e', // Dark
+                    '#95a5a6', // Grey
+                    '#d35400'  // Dark Orange
+                ],
+                hoverOffset: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: '{% trans "توزيع المصروفات حسب الفئة" %}'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed !== null) {
+                                label += context.parsed.toFixed(2) + ' {% trans "ريال" %}';
+                            }
+                            return label;
+                        }
+                    }
+                },
+                datalabels: {
+                    formatter: (value, ctx) => {
+                        let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value * 100 / sum).toFixed(2) + '%';
+                        return percentage;
+                    },
+                    color: '#fff',
+                    font: {
+                        weight: 'bold'
+                    }
+                }
+            }
+        }
+    });
+</script>
+{% endblock js %}
+
+{% block extra_css %}
+<style>
+    .card.bg-primary {
+        background-color: #007bff !important;
+    }
+    .card.bg-info {
+        background-color: #17a2b8 !important;
+    }
+    .card.bg-success {
+        background-color: #28a745 !important;
+    }
+    .card.bg-warning {
+        background-color: #ffc107 !important;
+    }
+    .card.bg-danger {
+        background-color: #dc3545 !important;
+    }
+    .card.bg-dark {
+        background-color: #343a40 !important;
+    }
+    .card-title {
+        font-size: 1.25rem;
+    }
+    .card-text {
+        font-size: 2.5rem;
+    }
+    .opacity-25 {
+        opacity: 0.25;
+    }
+    .list-group-item span.badge {
+        min-width: 80px; /* Ensure badges have consistent width */
+    }
+</style>
+{% endblock extra_css %} 

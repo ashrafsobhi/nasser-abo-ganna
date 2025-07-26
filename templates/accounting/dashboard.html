@@ -1,0 +1,256 @@
+{% extends 'accounting/base_accounting.html' %}
+{% load i18n store_extras %}
+
+{% block title %}{{ title }} - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h3 class="mb-4 text-center">{{ title }}</h3>
+
+    <div class="row mb-4">
+        <!-- Total Orders Card -->
+        <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title">{% trans "إجمالي الطلبات" %}</h5>
+                            <p class="card-text display-4 fw-bold">{{ total_orders }}</p>
+                        </div>
+                        <i class="fas fa-shopping-bag fa-4x opacity-25"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Orders Today Card -->
+        <div class="col-md-3">
+            <div class="card text-white bg-info mb-3 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title">{% trans "طلبات جديدة اليوم" %}</h5>
+                            <p class="card-text display-4 fw-bold">{{ new_orders_today }}</p>
+                        </div>
+                        <i class="fas fa-cart-plus fa-4x opacity-25"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Revenue Card -->
+        <div class="col-md-3">
+            <div class="card text-white bg-success mb-3 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title">{% trans "إجمالي الإيرادات" %}</h5>
+                            <p class="card-text display-4 fw-bold">{{ total_revenue|floatformat:2 }} {% trans "ريال" %}</p>
+                        </div>
+                        <i class="fas fa-money-bill-wave fa-4x opacity-25"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Daily Revenue Card -->
+        <div class="col-md-3">
+            <div class="card text-white bg-warning mb-3 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title">{% trans "إيرادات اليوم" %}</h5>
+                            <p class="card-text display-4 fw-bold">{{ daily_revenue|floatformat:2 }} {% trans "ريال" %}</p>
+                        </div>
+                        <i class="fas fa-calendar-day fa-4x opacity-25"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Expenses Card -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-white bg-danger mb-3 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title">{% trans "إجمالي المصروفات" %}</h5>
+                            <p class="card-text display-4 fw-bold">{{ total_expenses|floatformat:2 }} {% trans "ريال" %}</p>
+                        </div>
+                        <i class="fas fa-minus-circle fa-4x opacity-25"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-light">{% trans "المصروفات حسب الفترة" %}</div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {% trans "مصروفات اليوم" %}
+                            <span class="badge bg-danger rounded-pill">{{ daily_expenses|floatformat:2 }} {% trans "ريال" %}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {% trans "مصروفات الشهر" %}
+                            <span class="badge bg-danger rounded-pill">{{ monthly_expenses|floatformat:2 }} {% trans "ريال" %}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {% trans "مصروفات السنة" %}
+                            <span class="badge bg-danger rounded-pill">{{ annual_expenses|floatformat:2 }} {% trans "ريال" %}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Net Profit Card -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-white bg-dark mb-3 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title">{% trans "صافي الربح الإجمالي" %}</h5>
+                            <p class="card-text display-4 fw-bold">{{ total_net_profit|floatformat:2 }} {% trans "ريال" %}</p>
+                        </div>
+                        <i class="fas fa-hand-holding-usd fa-4x opacity-25"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-light">{% trans "صافي الربح حسب الفترة" %}</div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {% trans "صافي ربح اليوم" %}
+                            <span class="badge bg-success rounded-pill">{{ daily_net_profit|floatformat:2 }} {% trans "ريال" %}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {% trans "صافي ربح الشهر" %}
+                            <span class="badge bg-success rounded-pill">{{ monthly_net_profit|floatformat:2 }} {% trans "ريال" %}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {% trans "صافي ربح السنة" %}
+                            <span class="badge bg-success rounded-pill">{{ annual_net_profit|floatformat:2 }} {% trans "ريال" %}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Revenue Breakdown by Period -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-light">{% trans "الإيرادات حسب الفترة" %}</div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {% trans "إيرادات اليوم" %}
+                            <span class="badge bg-primary rounded-pill">{{ daily_revenue|floatformat:2 }} {% trans "ريال" %}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {% trans "إيرادات الشهر" %}
+                            <span class="badge bg-primary rounded-pill">{{ monthly_revenue|floatformat:2 }} {% trans "ريال" %}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {% trans "إيرادات السنة" %}
+                            <span class="badge bg-primary rounded-pill">{{ annual_revenue|floatformat:2 }} {% trans "ريال" %}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Orders by Status -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-light">{% trans "الطلبات حسب الحالة" %}</div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        {% for status_key, count in status_counts.items %}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                {{ order_status_choices|keyvalue:status_key }}
+                                <span class="badge bg-secondary rounded-pill">{{ count }}</span>
+                            </li>
+                        {% empty %}
+                            <li class="list-group-item">{% trans "لا توجد طلبات." %}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sales by Payment Method -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">{% trans "المبيعات حسب طريقة الدفع" %}</div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        {% for method_key, total_sales in sales_by_payment_method.items %}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                {{ payment_method_choices|keyvalue:method_key }}
+                                <span class="badge bg-success rounded-pill">{{ total_sales|floatformat:2 }} {% trans "ريال" %}</span>
+                            </li>
+                        {% empty %}
+                            <li class="list-group-item">{% trans "لا توجد مبيعات حسب طريقة الدفع." %}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'accounting:order_list' %}" class="btn btn-primary btn-lg">{% trans "عرض جميع الطلبات" %} <i class="fas fa-arrow-circle-right ms-2"></i></a>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+    // You can add Chart.js or other charting libraries here later if needed
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Custom styles for the accounting dashboard cards */
+    .card.bg-primary {
+        background-color: #007bff !important;
+    }
+    .card.bg-info {
+        background-color: #17a2b8 !important;
+    }
+    .card.bg-success {
+        background-color: #28a745 !important;
+    }
+    .card.bg-warning {
+        background-color: #ffc107 !important;
+    }
+    .card-title {
+        font-size: 1.25rem;
+    }
+    .card-text {
+        font-size: 2.5rem;
+    }
+    .opacity-25 {
+        opacity: 0.25;
+    }
+    .list-group-item span.badge {
+        min-width: 80px; /* Ensure badges have consistent width */
+    }
+</style>
+{% endblock extra_css %} 

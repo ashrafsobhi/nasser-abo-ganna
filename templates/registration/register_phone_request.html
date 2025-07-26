@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "التسجيل برقم الهاتف - الخطوة 1" %}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header text-center bg-primary text-white">
+                    <h4>{% trans "تسجيل حساب جديد" %}</h4>
+                    <p class="mb-0">{% trans "الخطوة 1 من 3: أدخل رقم هاتفك" %}</p>
+                </div>
+                <div class="card-body p-5">
+                    
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-danger">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            {{ form.phone_number.label_tag }}
+                            {{ form.phone_number }}
+                            <div class="form-text">{% trans "سوف نرسل لك رمز تحقق عبر واتساب." %}</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">{% trans "متابعة" %}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

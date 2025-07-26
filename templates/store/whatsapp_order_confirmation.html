@@ -1,0 +1,118 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "تأكيد الطلب عبر واتساب" %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> {# Adjust path if your main style is elsewhere #}
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: right; /* Right-to-left for Arabic */
+        }
+        h1, h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .order-details p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .order-details strong {
+            color: #555;
+        }
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .btn-group .btn {
+            padding: 12px;
+            font-size: 1.1em;
+            border-radius: 5px;
+        }
+        .alert {
+            margin-top: 20px;
+        }
+        .address-form {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{% trans "تأكيد طلبك" %}</h1>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="order-details">
+            <p><strong>{% trans "رقم الطلب" %}:</strong> #{{ order.id }}</p>
+            <p><strong>{% trans "الاسم" %}:</strong> {{ order.customer.get_full_name if order.customer else order.shipping_address|split:'\n'|first }}</p>
+            <p><strong>{% trans "رقم الهاتف" %}:</strong> {{ order.phone_number }}</p>
+            <p><strong>{% trans "العنوان الحالي" %}:</strong> {{ order.shipping_address|linebreaksbr }}</p>
+            <p><strong>{% trans "الإجمالي النهائي" %}:</strong> {{ order.final_total|floatformat:2 }} {% trans "ريال" %}</p>
+            
+            <h2>{% trans "المنتجات المطلوبة" %}:</h2>
+            <ul>
+                {% for item in order.orderitem_set.all %}
+                    <li>{{ item.quantity }} x {{ item.product.name }} @ {{ item.price|floatformat:2 }} {% trans "ريال" %}</li>
+                {% empty %}
+                    <li>{% trans "لا توجد منتجات في هذا الطلب." %}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        {% if order.status == 'address_pending' %}
+            <div class="btn-group">
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="action" value="confirm" class="btn btn-success">✅ {% trans "تأكيد الطلب والعنوان" %}</button>
+                </form>
+                
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#editAddressForm" aria-expanded="false" aria-controls="editAddressForm">✏️ {% trans "تعديل العنوان" %}</button>
+                
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="action" value="cancel" class="btn btn-danger">❌ {% trans "إلغاء الطلب" %}</button>
+                </form>
+            </div>
+
+            <div class="collapse address-form" id="editAddressForm">
+                <h3>{% trans "تعديل العنوان" %}</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" name="action" value="edit_address" class="btn btn-primary">{% trans "حفظ العنوان الجديد" %}</button>
+                </form>
+            </div>
+        {% else %}
+            <p class="alert alert-info">{% trans "حالة الطلب الحالية:" %} <strong>{{ order.get_status_display }}</strong></p>
+        {% endif %}
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html> 

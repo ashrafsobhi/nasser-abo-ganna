@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "سلة المشتريات" %} - {% trans "متجر الهدايا" %}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-5">{% trans "سلة المشتريات" %}</h1>
+
+    {% if items %}
+    <div class="row">
+        <!-- Cart Items -->
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width: 55%;">{% trans "المنتج" %}</th>
+                                    <th scope="col" class="text-center">{% trans "الكمية" %}</th>
+                                    <th scope="col" class="text-center">{% trans "السعر" %}</th>
+                                    <th scope="col" class="text-center">{% trans "الإجمالي" %}</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in items %}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <a href="{{ item.product.get_absolute_url }}">
+                                                <img src="{% if item.product.image %}{{ item.product.image.url }}{% else %}{% static 'images/placeholder.png' %}{% endif %}" alt="{{ item.product.name }}" class="img-fluid rounded me-3" style="width: 100px; height: 100px; object-fit: cover;">
+                                            </a>
+                                            <div>
+                                                <h6 class="mb-0"><a href="{{ item.product.get_absolute_url }}" class="text-dark text-decoration-none">{{ item.product.name }}</a></h6>
+                                                <small class="text-muted">{{ item.product.category.name }}</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <button data-product="{{ item.product.id }}" data-action="remove" class="btn btn-sm btn-outline-secondary update-cart px-2">-</button>
+                                            <span class="mx-2">{{ item.quantity }}</span>
+                                            <button data-product="{{ item.product.id }}" data-action="add" class="btn btn-sm btn-outline-secondary update-cart px-2">+</button>
+                                        </div>
+                                    </td>
+                                    <td class="text-center fw-bold">{{ item.product.price|floatformat:2 }} {% trans "جنيه" %}</td>
+                                    <td class="text-center fw-bold">{{ item.get_total|floatformat:2 }} {% trans "جنيه" %}</td>
+                                    <td class="text-center">
+                                        <button data-product="{{ item.product.id }}" data-action="delete" class="btn btn-sm btn-outline-danger update-cart">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">{% trans "ملخص السلة" %}</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                            {% trans "الإجمالي الفرعي" %}
+                            <span>{{ cart.get_cart_total|floatformat:2 }} {% trans "جنيه" %}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                            {% trans "الشحن" %}
+                            <span>{% trans "يتم تحديده عند الدفع" %}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                            <div>
+                                <strong>{% trans "الإجمالي الكلي" %}</strong>
+                                <p class="mb-0"><small>({% trans "شامل الضريبة" %})</small></p>
+                            </div>
+                            <strong class="h5">{{ cart.get_cart_total|floatformat:2 }} {% trans "جنيه" %}</strong>
+                        </li>
+                    </ul>
+                    <a href="{% url 'store:checkout' %}" class="btn btn-primary btn-lg w-100">{% trans "التقدم لإتمام الطلب" %}</a>
+                </div>
+            </div>
+             <div class="text-center mt-3">
+                <a href="{% url 'store:store' %}" class="text-muted text-decoration-none">
+                    <i class="fas fa-arrow-left me-1"></i> {% trans "متابعة التسوق" %}
+                </a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="text-center py-5">
+        <i class="fas fa-shopping-cart fa-4x text-muted mb-3"></i>
+        <h3 class="mb-3">{% trans "سلة المشتريات فارغة" %}</h3>
+        <p class="text-muted">{% trans "ليس لديك أي منتجات في سلتك حتى الآن." %}</p>
+        <a href="{% url 'store:store' %}" class="btn btn-primary mt-3">{% trans "ابدأ التسوق الآن" %}</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+    console.log("Cart script started.");
+
+    // Add a simple way to get the CSRF token
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    const csrftoken = getCookie('csrftoken');
+    const user = '{{ request.user.is_authenticated|yesno:"true,false" }}';
+
+    var updateBtns = document.getElementsByClassName('update-cart');
+
+    console.log("Found " + updateBtns.length + " update buttons.");
+
+    for (var i = 0; i < updateBtns.length; i++) {
+        updateBtns[i].addEventListener('click', function(){
+            var productId = this.dataset.product;
+            var action = this.dataset.action;
+            console.log('productId:', productId, 'Action:', action);
+            console.log('User authenticated:', user);
+
+            if (user === 'false'){
+                // Handle anonymous user if needed, e.g., redirect to login
+                console.log('Not logged in, redirecting...');
+                window.location.href = "{% url 'store:login' %}";
+            } else {
+                updateUserOrder(productId, action);
+            }
+        });
+    }
+
+    function updateUserOrder(productId, action){
+        console.log('User is logged in, sending data...');
+        var url = '{% url "store:add_to_cart" %}'; // Use Django's url template tag
+
+        fetch(url, {
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+                'X-CSRFToken': csrftoken,
+            },
+            body:JSON.stringify({'productId': productId, 'action': action})
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((data) => {
+            console.log('data:', data);
+            // Reload the page to show changes. 
+            // A more advanced implementation could update the DOM directly.
+            location.reload();
+        })
+        .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+        });
+    }
+</script>
+{% endblock %} 

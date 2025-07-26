@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}نتائج البحث - متجر الهدايا{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>نتائج البحث لـ "{{ query }}"</h1>
+
+        <div class="filter-section">
+            <form action="{% url 'store:search' %}" method="get">
+                <input type="hidden" name="q" value="{{ query }}">
+                <label for="category-filter">تصفية حسب التصنيف:</label>
+                <select name="category" id="category-filter" onchange="this.form.submit()">
+                    <option value="">جميع التصنيفات</option>
+                    {% for category in categories %}
+                        <option value="{{ category.id }}" {% if selected_category and selected_category|stringformat:"s" == category.id|stringformat:"s" %}selected{% endif %}>{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+            </form>
+        </div>
+
+        <div class="product-list">
+            {% if products %}
+                {% for product in products %}
+                    <div class="product-card">
+                        <a href="{% url 'store:product_detail' product.id %}">
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                            <h3>{{ product.name }}</h3>
+                            <p>{{ product.price }} ريال</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>عذرًا، لم يتم العثور على أي منتجات تتطابق مع بحثك.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %} 
